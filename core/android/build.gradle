@@ -1,0 +1,22 @@
+
+import dependencies.Dependencies
+
+apply plugin: 'com.android.library'
+
+apply from: rootProject.file("gradle/android.gradle")
+
+dependencies {
+    api(project(":core:model"))
+
+    // threeten
+    api(Dependencies.threeTen)
+
+    // kotlin
+    api(Dependencies.Kotlin.stdlib)
+    api(Dependencies.KotlinX.Coroutine.core)
+    api(Dependencies.KotlinX.Coroutine.android)
+
+    api(Dependencies.AndroidX.AppCompat.runtime)
+    api(Dependencies.AndroidX.ktx)
+    api(Dependencies.AndroidX.constraint)
+}

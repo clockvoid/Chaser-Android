@@ -1,7 +1,5 @@
 
-import dependencies.Dependencies
 import dependencies.Versions
-import org.jetbrains.kotlin.config.KotlinCompilerVersion
 
 plugins {
     id("com.android.application")
@@ -30,13 +28,19 @@ android {
         }
     }
 
+    dataBinding {
+        isEnabled = true
+    }
+
+    compileOptions {
+        encoding = "UTF-8"
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
 }
 
 dependencies {
-    implementation(Dependencies.Kotlin.stdlib(KotlinCompilerVersion.VERSION))
-    implementation(Dependencies.AndroidX.AppCompat.runtime)
-    implementation(Dependencies.AndroidX.ktx)
-    implementation(Dependencies.AndroidX.constraint)
+    implementation(project(":core:android"))
 
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test.ext:junit:1.1.1")
