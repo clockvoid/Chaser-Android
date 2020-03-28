@@ -4,13 +4,13 @@ package dependencies
 object Dependencies {
     object GradlePlugin {
         const val android = "com.android.tools.build:gradle:3.6.1"
-        const val kotlin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${Kotlin.version}"
     }
 
     object Kotlin {
-        const val version = "1.3.61"
+        private const val version = "1.3.61"
 
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version"
+        const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${version}"
     }
 
     object KotlinX {
@@ -27,6 +27,19 @@ object Dependencies {
             private const val version = "1.1.0"
 
             const val runtime = "androidx.appcompat:appcompat:$version"
+        }
+
+        object Navigation {
+            private const val version = "2.2.1"
+
+            const val fragment = "androidx.navigation:navigation-fragment:$version"
+            const val ui = "androidx.navigation:navigation-ui:$version"
+            const val gradlePlugin = "androidx.navigation:navigation-safe-args-gradle-plugin:$version"
+
+            object Ktx {
+                const val fragment = "androidx.navigation:navigation-fragment-ktx:$version"
+                const val ui = "androidx.navigation:navigation-ui-ktx:$version"
+            }
         }
 
         const val constraint = "androidx.constraintlayout:constraintlayout:1.1.3"

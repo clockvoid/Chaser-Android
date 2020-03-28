@@ -1,8 +1,6 @@
 
 import dependencies.Dependencies
 
-apply plugin: 'com.android.library'
-
 apply from: rootProject.file("gradle/android.gradle")
 
 dependencies {
