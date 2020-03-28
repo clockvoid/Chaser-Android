@@ -1,6 +1,8 @@
 
 import dependencies.Versions
 
+apply plugin: "kotlin-android"
+
 android {
     compileSdkVersion(Versions.compileSdkVersion)
     buildToolsVersion = Versions.buildToolsVersion
