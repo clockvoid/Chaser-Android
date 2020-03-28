@@ -6,7 +6,7 @@ apply plugin: 'com.android.library'
 apply from: rootProject.file("gradle/android.gradle")
 
 dependencies {
-    api(project(":core:model"))
+    implementation(project(":core:model"))
 
     // threeten
     api(Dependencies.threeTen)
@@ -20,9 +20,4 @@ dependencies {
     api(Dependencies.AndroidX.AppCompat.runtime)
     api(Dependencies.AndroidX.ktx)
     api(Dependencies.AndroidX.constraint)
-
-    // dagger
-    api(Dependencies.Dagger.dagger)
-    api(Dependencies.Dagger.android)
-    api(Dependencies.Dagger.androidSupport)
 }

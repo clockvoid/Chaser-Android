@@ -42,7 +42,15 @@ android {
 }
 
 dependencies {
+    implementation(project(":core:model"))
     implementation(project(":core:android"))
+    implementation(project(":data:repository"))
+    implementation(project(":data:repository-impl"))
+
+    // dagger
+    implementation(Dependencies.Dagger.dagger)
+    implementation(Dependencies.Dagger.android)
+    implementation(Dependencies.Dagger.androidSupport)
     kapt(Dependencies.Dagger.compiler)
     kapt(Dependencies.Dagger.androidProcessor)
 

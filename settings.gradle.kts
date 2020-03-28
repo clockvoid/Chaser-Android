@@ -1,2 +1,2 @@
 rootProject.name="Chaser"
-include(":app", ":core:android", ":core:model")
+include(":app", ":data:repository-impl", ":data:repository", ":core:android", ":core:model")
