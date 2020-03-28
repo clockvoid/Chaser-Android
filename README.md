@@ -26,3 +26,6 @@
 ### 2020-03-29
 - 結局unresolved referenceの原因は`build.gradle`に`apply plugin: "kotlin-android"`を書き忘れていたことであったことが判明．
 - Threetenにも何故かZoneが登録されていないとか言って怒られたが，これは`AndroidThreeTen.init(this)`を`Application`で行う必要があった．
+- BottomNavigationを追加（このとき，materialも追加）
+- Navigation Architecture Componentsの依存関係を追加
+- CigaretteFragmentを追加してDaggerのModuleを作ったが，何故かdependencies could be resolvedになってAppComponentsが作成できない
