@@ -22,3 +22,7 @@
     - `data`に入れる`:repository`と`:rpository-impl`を実装
         - その際に，DaggerでRepositoryを解決したいため，`:app`モジュールは`:repository-impl`を知っている構造になってしまった
         - また，`:app`内で何故か`:core:model`と`:data:*`の中に入っているオブジェクトが解決できず，unresolved referenceでコンパイルエラーになってしまっている
+
+### 2020-03-29
+- 結局unresolved referenceの原因は`build.gradle`に`apply plugin: "kotlin-android"`を書き忘れていたことであったことが判明．
+- Threetenにも何故かZoneが登録されていないとか言って怒られたが，これは`AndroidThreeTen.init(this)`を`Application`で行う必要があった．
