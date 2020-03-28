@@ -16,7 +16,13 @@ dependencies {
     api(Dependencies.KotlinX.Coroutine.core)
     api(Dependencies.KotlinX.Coroutine.android)
 
+    // android
     api(Dependencies.AndroidX.AppCompat.runtime)
     api(Dependencies.AndroidX.ktx)
     api(Dependencies.AndroidX.constraint)
+
+    // dagger
+    api(Dependencies.Dagger.dagger)
+    api(Dependencies.Dagger.android)
+    api(Dependencies.Dagger.androidSupport)
 }

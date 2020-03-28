@@ -1,10 +1,12 @@
 
 import dependencies.Versions
+import dependencies.Dependencies
 
 plugins {
     id("com.android.application")
     kotlin("android")
     kotlin("android.extensions")
+    kotlin("kapt")
 }
 
 android {
@@ -41,6 +43,8 @@ android {
 
 dependencies {
     implementation(project(":core:android"))
+    kapt(Dependencies.Dagger.compiler)
+    kapt(Dependencies.Dagger.androidProcessor)
 
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test.ext:junit:1.1.1")

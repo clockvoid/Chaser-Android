@@ -33,5 +33,14 @@ object Dependencies {
         const val ktx = "androidx.core:core-ktx:1.1.0"
     }
 
+    object Dagger {
+        private const val version = "2.25.2"
+        const val dagger = "com.google.dagger:dagger:$version"
+        const val android = "com.google.dagger:dagger-android:$version"
+        const val androidSupport = "com.google.dagger:dagger-android-support:$version"
+        const val compiler = "com.google.dagger:dagger-compiler:$version"
+        const val androidProcessor = "com.google.dagger:dagger-android-processor:$version"
+    }
+
     const val threeTen = "com.jakewharton.threetenabp:threetenabp:1.2.1"
 }
