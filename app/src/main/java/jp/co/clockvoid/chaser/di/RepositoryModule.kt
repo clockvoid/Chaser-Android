@@ -18,6 +18,5 @@ abstract class RepositoryModule {
     }
 
     @Binds
-    @Singleton
     abstract fun bindsCigaretteRepository(impl: CigaretteRepositoryImpl): CigaretteRepository
 }

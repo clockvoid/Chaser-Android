@@ -1,17 +1,16 @@
-package jp.co.clockvoid.chaser
+package jp.co.clockvoid.chaser.feature.home
 
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import dagger.android.support.DaggerAppCompatActivity
 import jp.co.clockvoid.chaser.core.model.Smoke
 import jp.co.clockvoid.chaser.data.repository.CigaretteRepository
-import jp.co.clockvoid.chaser.databinding.ActivityMainBinding
+import jp.co.clockvoid.chaser.feature.home.databinding.ActivityMainBinding
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onCompletion
 import kotlinx.coroutines.launch
-import org.threeten.bp.ZoneId
 import org.threeten.bp.ZonedDateTime
 import javax.inject.Inject
 
