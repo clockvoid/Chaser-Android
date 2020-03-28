@@ -22,4 +22,7 @@ dependencies {
     // dagger
     api(Dependencies.Dagger.dagger)
     api(Dependencies.Dagger.androidSupport)
+
+    // material
+    api(Dependencies.AndroidX.material)
 }

@@ -44,6 +44,7 @@ object Dependencies {
 
         const val constraint = "androidx.constraintlayout:constraintlayout:1.1.3"
         const val ktx = "androidx.core:core-ktx:1.1.0"
+        const val material = "com.google.android.material:material:1.1.0"
     }
 
     object Dagger {
