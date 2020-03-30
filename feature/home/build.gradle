@@ -3,6 +3,7 @@ import dependencies.Dependencies
 
 apply from: rootProject.file("gradle/android.gradle")
 
+apply plugin: "kotlin-kapt"
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android.dataBinding.enabled = true
@@ -15,4 +16,7 @@ dependencies {
     implementation(Dependencies.AndroidX.Navigation.ui)
     implementation(Dependencies.AndroidX.Navigation.Ktx.fragment)
     implementation(Dependencies.AndroidX.Navigation.Ktx.ui)
+
+    kapt(Dependencies.Dagger.compiler)
+    kapt(Dependencies.Dagger.androidProcessor)
 }

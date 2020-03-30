@@ -7,5 +7,5 @@ import jp.co.clockvoid.chaser.feature.home.CigaretteFragment
 @Module
 abstract class HomeModule {
     @ContributesAndroidInjector
-    abstract fun contributesCigaretteFragment(): CigaretteFragment
+    internal abstract fun contributesCigaretteFragment(): CigaretteFragment
 }
