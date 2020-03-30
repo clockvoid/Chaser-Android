@@ -29,3 +29,6 @@
 - BottomNavigationを追加（このとき，materialも追加）
 - Navigation Architecture Componentsの依存関係を追加
 - CigaretteFragmentを追加してDaggerのModuleを作ったが，何故かdependencies could be resolvedになってAppComponentsが作成できない
+
+### 2020-03-30
+- Daggerがdependencies could not be resolvedになるのは`:feature:home`にDaggerのapt系のDependenciesが追加されていないことが原因だった
