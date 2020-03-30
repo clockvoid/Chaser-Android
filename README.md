@@ -13,6 +13,13 @@
 - DaggerによるDI
 - Navigation Architecture Componentによる画面遷移
 
+## Features
+### Alcohol
+量を入力するのは面倒くさいので，とりあえずその日飲みましたという記録だけをつけたい
+
+### Caffeine
+RedBull，Monster，Coffeeボタンが有り，それぞれ押せるようにしたら良さそう
+
 ## Progression
 ### 2020-03-28
 - 名前を考えた
