@@ -12,8 +12,6 @@ dependencies {
     implementation(project(":core:android"))
     implementation(project(":data:repository"))
 
-    api(project(":feature:cigarette"))
-
     implementation(Dependencies.AndroidX.Navigation.fragment)
     implementation(Dependencies.AndroidX.Navigation.ui)
     implementation(Dependencies.AndroidX.Navigation.Ktx.fragment)

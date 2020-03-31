@@ -1,4 +1,4 @@
-package jp.co.clockvoid.chaser.feature.home
+package jp.co.clockvoid.chaser.feature.cigarette
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,7 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import dagger.android.support.DaggerFragment
-import jp.co.clockvoid.chaser.feature.home.databinding.FragmentCigaretteBinding
+import jp.co.clockvoid.chaser.feature.cigarette.databinding.FragmentCigaretteBinding
 
 class CigaretteFragment : DaggerFragment() {
     override fun onCreateView(
