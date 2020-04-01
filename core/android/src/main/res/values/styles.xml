@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <style name="MainToolBarStyle" parent="Widget.MaterialComponents.Toolbar">
-        <item name="titleTextColor">?attr/colorOnPrimary</item>
+        <item name="titleTextColor">?attr/colorOnBackground</item>
         <item name="android:background">?android:colorBackground</item>
     </style>
 
