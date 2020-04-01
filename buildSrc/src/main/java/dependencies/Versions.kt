@@ -3,7 +3,7 @@ package dependencies
 @Suppress("unused,WeakerAccess")
 object Versions {
     const val compileSdkVersion: Int = 29
-    const val minSdkVersion: Int = 22
+    const val minSdkVersion: Int = 23
     const val targetSdkVersion: Int = compileSdkVersion
     const val buildToolsVersion: String = "29.0.3"
 
