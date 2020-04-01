@@ -1,6 +1,18 @@
 <resources>
 
-    <style name="Base.Theme.Chaser" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <style name="Base.Theme.Chaser" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Text appearances -->
+        <item name="textAppearanceHeadline5">@style/TextAppearance.Chaser.Headline5</item>
+        <item name="textAppearanceHeadline6">@style/TextAppearance.Chaser.Headline6</item>
+        <item name="textAppearanceSubtitle1">@style/TextAppearance.Chaser.Subtitle1</item>
+        <item name="textAppearanceSubtitle2">@style/TextAppearance.Chaser.Subtitle2</item>
+        <item name="textAppearanceBody1">@style/TextAppearance.Chaser.Body1</item>
+        <item name="textAppearanceBody2">@style/TextAppearance.Chaser.Body2</item>
+        <item name="textAppearanceCaption">@style/TextAppearance.Chaser.Caption</item>
+        <item name="textAppearanceButton">@style/TextAppearance.Chaser.Button</item>
+    </style>
+
+    <style name="Theme.Chaser" parent="Base.Theme.Chaser">
         <!-- color -->
         <item name="colorPrimary">@color/primaryColor</item>
         <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
@@ -13,7 +25,6 @@
         <item name="android:windowLightStatusBar">true</item>
     </style>
 
-    <style name="Theme.Chaser" parent="Base.Theme.Chaser">
-    </style>
+    <style name="Theme.Chaser.DayNight" parent="Theme.Chaser" />
 
 </resources>
