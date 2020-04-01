@@ -1,6 +1,6 @@
 <resources>
 
-    <style name="Base.Theme.Chaser" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+    <style name="Base.Theme.Chaser" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Text appearances -->
         <item name="textAppearanceHeadline5">@style/TextAppearance.Chaser.Headline5</item>
         <item name="textAppearanceHeadline6">@style/TextAppearance.Chaser.Headline6</item>
@@ -10,6 +10,11 @@
         <item name="textAppearanceBody2">@style/TextAppearance.Chaser.Body2</item>
         <item name="textAppearanceCaption">@style/TextAppearance.Chaser.Caption</item>
         <item name="textAppearanceButton">@style/TextAppearance.Chaser.Button</item>
+
+        <!-- Shape appearance -->
+        <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Chaser.SmallComponent</item>
+        <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Chaser.MediumComponent</item>
+        <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Chaser.LargeComponent</item>
     </style>
 
     <style name="Theme.Chaser" parent="Base.Theme.Chaser">

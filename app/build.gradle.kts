@@ -52,4 +52,20 @@ dependencies {
     implementation(Dependencies.Dagger.android)
     kapt(Dependencies.Dagger.compiler)
     kapt(Dependencies.Dagger.androidProcessor)
+
+    // hyperion
+    debugImplementation(Dependencies.Hyperion.core)
+    debugImplementation(Dependencies.Hyperion.attr)
+    debugImplementation(Dependencies.Hyperion.buildConfig)
+    debugImplementation(Dependencies.Hyperion.crash)
+    debugImplementation(Dependencies.Hyperion.disk)
+    debugImplementation(Dependencies.Hyperion.geigerCounter)
+    debugImplementation(Dependencies.Hyperion.measurement)
+    debugImplementation(Dependencies.Hyperion.performances)
+    debugImplementation(Dependencies.Hyperion.phoenix)
+    debugImplementation(Dependencies.Hyperion.recorder)
+    debugImplementation(Dependencies.Hyperion.timber)
+
+    // leak canary
+    debugImplementation(Dependencies.leakCanary)
 }

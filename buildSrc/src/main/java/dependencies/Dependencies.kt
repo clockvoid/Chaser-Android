@@ -56,5 +56,21 @@ object Dependencies {
         const val androidProcessor = "com.google.dagger:dagger-android-processor:$version"
     }
 
+    object Hyperion {
+        private const val version = "0.9.27"
+        const val core = "com.willowtreeapps.hyperion:hyperion-core:$version"
+        const val attr = "com.willowtreeapps.hyperion:hyperion-attr:$version"
+        const val buildConfig = "com.willowtreeapps.hyperion:hyperion-build-config:$version"
+        const val crash = "com.willowtreeapps.hyperion:hyperion-crash:$version"
+        const val disk = "com.willowtreeapps.hyperion:hyperion-disk:$version"
+        const val geigerCounter = "com.willowtreeapps.hyperion:hyperion-geiger-counter:$version"
+        const val measurement = "com.willowtreeapps.hyperion:hyperion-measurement:$version"
+        const val phoenix = "com.willowtreeapps.hyperion:hyperion-phoenix:$version"
+        const val recorder = "com.willowtreeapps.hyperion:hyperion-recorder:$version"
+        const val performances = "com.willowtreeapps.hyperion:hyperion-shared-preferences:$version"
+        const val timber = "com.willowtreeapps.hyperion:hyperion-timber:$version"
+    }
+
     const val threeTen = "com.jakewharton.threetenabp:threetenabp:1.2.1"
+    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.0"
 }
