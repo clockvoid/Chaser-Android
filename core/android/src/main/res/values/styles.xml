@@ -6,9 +6,9 @@
     </style>
 
     <style name="HomeFloatingActionButtonStyle" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
-        <item name="backgroundTint">?attr/colorPrimary</item>
-        <item name="iconTint">?attr/colorOnPrimary</item>
-        <item name="android:textColor">?attr/colorOnPrimary</item>
+        <item name="backgroundTint">@color/home_fab_bg_color</item>
+        <item name="iconTint">@color/home_fab_text_color</item>
+        <item name="android:textColor">@color/home_fab_text_color</item>
         <item name="android:minWidth">200dp</item>
     </style>
 </resources>
