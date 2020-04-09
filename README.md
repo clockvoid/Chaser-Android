@@ -19,6 +19,11 @@
 
 ボタンを一回押したら開始，もう一度押したら終了みたいな，それに費やした時間を測定する機能はアリ
 
+### Graph
+グラフを表示したいので，ライブラリの選定をする
+- https://github.com/PhilJay/MPAndroidChart
+- https://github.com/jjoe64/GraphView
+
 ### Alcohol
 量を入力するのは面倒くさいので，とりあえずその日飲みましたという記録だけをつけたい
 
@@ -44,3 +49,6 @@ RedBull，Monster，Coffeeボタンが有り，それぞれ押せるようにし
 
 ### 2020-03-30
 - Daggerがdependencies could not be resolvedになるのは`:feature:home`にDaggerのapt系のDependenciesが追加されていないことが原因だった
+
+### 2020-04-10
+- CigaretteFragmentの見た目を変更．
