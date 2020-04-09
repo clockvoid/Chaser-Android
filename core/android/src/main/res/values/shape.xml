@@ -10,7 +10,7 @@
 
     <style name="ShapeAppearance.Chaser.MediumComponent" parent="ShapeAppearance.MaterialComponents.MediumComponent">
         <item name="cornerFamily">rounded</item>
-        <item name="cornerSize">8dp</item>
+        <item name="cornerSize">4dp</item>
     </style>
 
     <style name="ShapeAppearance.Chaser.LargeComponent" parent="ShapeAppearance.MaterialComponents.LargeComponent">

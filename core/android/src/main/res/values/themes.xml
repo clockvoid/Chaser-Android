@@ -2,6 +2,7 @@
 
     <style name="Base.Theme.Chaser" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Text appearances -->
+        <item name="textAppearanceHeadline4">@style/TextAppearance.Chaser.Headline4</item>
         <item name="textAppearanceHeadline5">@style/TextAppearance.Chaser.Headline5</item>
         <item name="textAppearanceHeadline6">@style/TextAppearance.Chaser.Headline6</item>
         <item name="textAppearanceSubtitle1">@style/TextAppearance.Chaser.Subtitle1</item>
