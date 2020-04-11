@@ -7,7 +7,7 @@ dependencies {
     implementation(Dependencies.Kotlin.stdlib)
 
     implementation(project(":core:model"))
-    implementation(project(":data:repository"))
+    api(project(":data:repository"))
 
     implementation(Dependencies.threeTen)
     implementation(Dependencies.KotlinX.Coroutine.core)
