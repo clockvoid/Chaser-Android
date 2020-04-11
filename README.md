@@ -55,4 +55,5 @@ RedBull，Monster，Coffeeボタンが有り，それぞれ押せるようにし
 
 ### 2020-04-11
 - Layout Previewが何故かMaterialのものを読み込まなかったが，Theme for PreviewをChaser（このアプリのデフォルト）に変更したらうまく適用された．はじめから適用してほしかった
+  - feature以下のすべてのLibrary Moduleにtheme設定だけを書いたapplicationタグを入れたらちゃんとデフォルトとして選択される（面倒くさい）
 - ついでにandroidx.coreもアップデートした

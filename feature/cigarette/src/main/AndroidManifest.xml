@@ -1,2 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="jp.co.clockvoid.chaser.feature.cigarette" />
+    package="jp.co.clockvoid.chaser.feature.cigarette">
+
+    <application
+        android:theme="@style/Theme.Chaser.DayNight" />
+</manifest>
