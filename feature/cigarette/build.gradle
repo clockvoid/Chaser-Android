@@ -12,11 +12,6 @@ dependencies {
     implementation(project(":core:android"))
     implementation(project(":data:repository"))
 
-    implementation(Dependencies.AndroidX.Navigation.fragment)
-    implementation(Dependencies.AndroidX.Navigation.ui)
-    implementation(Dependencies.AndroidX.Navigation.Ktx.fragment)
-    implementation(Dependencies.AndroidX.Navigation.Ktx.ui)
-
     kapt(Dependencies.Dagger.compiler)
     kapt(Dependencies.Dagger.androidProcessor)
 }

@@ -23,6 +23,12 @@ dependencies {
     api(Dependencies.Dagger.dagger)
     api(Dependencies.Dagger.androidSupport)
 
+    // navigation
+    api(Dependencies.AndroidX.Navigation.fragment)
+    api(Dependencies.AndroidX.Navigation.ui)
+    api(Dependencies.AndroidX.Navigation.Ktx.fragment)
+    api(Dependencies.AndroidX.Navigation.Ktx.ui)
+
     // material
     api(Dependencies.AndroidX.material)
 }
