@@ -1,21 +1,25 @@
 package jp.co.clockvoid.chaser.data.repositoryimpl
 
 import jp.co.clockvoid.chaser.core.model.Smoke
+import jp.co.clockvoid.chaser.data.localdatasource.CigaretteLocalDataSource
 import jp.co.clockvoid.chaser.data.repository.CigaretteRepository
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import org.threeten.bp.LocalDate
+import org.threeten.bp.ZonedDateTime
+import javax.inject.Inject
 
-class CigaretteRepositoryImpl : CigaretteRepository {
-    override suspend fun smoke(data: Smoke): Flow<Unit> {
-        return flow {
-            delay(1000)
-        }
+class CigaretteRepositoryImpl @Inject constructor(
+    private val localDataSource: CigaretteLocalDataSource
+) : CigaretteRepository {
+
+    override suspend fun smoke(date: ZonedDateTime) {
+        return localDataSource.registerSmokeLog(Smoke(1, date))
     }
 
-    override suspend fun getSmokeOfDay(date: LocalDate): Flow<List<Smoke>> {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+    override suspend fun getSmokeOfDay(date: LocalDate): List<Smoke> {
+        return localDataSource.getSmokeLog()
     }
 
     override suspend fun getSmokeOfWeek(startDate: LocalDate): Flow<List<Smoke>> {
