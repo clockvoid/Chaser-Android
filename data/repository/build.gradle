@@ -6,6 +6,7 @@ apply from: rootProject.file("gradle/android.gradle")
 dependencies {
     implementation(Dependencies.Kotlin.stdlib)
     implementation(project(":core:model"))
+
     implementation(Dependencies.threeTen)
     implementation(Dependencies.KotlinX.Coroutine.core)
 }

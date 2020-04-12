@@ -47,6 +47,14 @@ object Dependencies {
         const val material = "com.google.android.material:material:1.1.0"
     }
 
+    object Room {
+        private const val version = "2.2.5"
+        const val runtime = "androidx.room:room-runtime:$version"
+        const val compiler = "androidx.room:room-compiler:$version"
+        const val ktx = "androidx.room:room-ktx:$version"
+        const val test = "androidx.room:room-testing:$version"
+    }
+
     object Dagger {
         private const val version = "2.25.2"
         const val dagger = "com.google.dagger:dagger:$version"

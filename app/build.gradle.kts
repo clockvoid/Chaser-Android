@@ -45,6 +45,7 @@ dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:android"))
     implementation(project(":data:repository-impl"))
+    implementation(project(":data:localdatasource-impl"))
     implementation(project(":feature:home"))
 
     // dagger

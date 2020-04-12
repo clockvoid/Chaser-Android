@@ -3,12 +3,18 @@ import dependencies.Dependencies
 
 apply from: rootProject.file("gradle/android.gradle")
 
+apply plugin: "kotlin-kapt"
+
 dependencies {
     implementation(Dependencies.Kotlin.stdlib)
 
     implementation(project(":core:model"))
+    implementation(project(":data:localdatasource"))
     api(project(":data:repository"))
 
     implementation(Dependencies.threeTen)
     implementation(Dependencies.KotlinX.Coroutine.core)
+
+    implementation(Dependencies.Dagger.dagger)
+    kapt(Dependencies.Dagger.compiler)
 }

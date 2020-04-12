@@ -3,6 +3,8 @@ import dependencies.Dependencies
 
 apply from: rootProject.file("gradle/android.gradle")
 
+android.dataBinding.enabled = true
+
 dependencies {
     api(project(":core:model"))
 
