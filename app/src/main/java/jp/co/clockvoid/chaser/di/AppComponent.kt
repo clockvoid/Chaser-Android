@@ -6,6 +6,8 @@ import dagger.Component
 import dagger.android.AndroidInjectionModule
 import dagger.android.AndroidInjector
 import jp.co.clockvoid.chaser.ChaserApp
+import jp.co.clockvoid.chaser.data.localdatasource_impl.LocalDataSourceModule
+import jp.co.clockvoid.chaser.data.repositoryimpl.RepositoryModule
 import javax.inject.Singleton
 
 @Singleton
@@ -13,6 +15,7 @@ import javax.inject.Singleton
     modules = [
         AndroidInjectionModule::class,
         AppModule::class,
+        LocalDataSourceModule::class,
         RepositoryModule::class,
         MainActivityModule::class
     ]
