@@ -1,6 +1,7 @@
 package jp.co.clockvoid.chaser.feature.cigarette
 
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -19,6 +20,8 @@ import javax.inject.Inject
 class CigaretteFragment : DaggerFragment() {
     @Inject
     lateinit var repository: CigaretteRepository
+    @Inject
+    lateinit var viewModel: CigaretteViewModel
     private val binding: FragmentCigaretteBinding by dataBinding(R.layout.fragment_cigarette)
 
     override fun onCreateView(
@@ -32,6 +35,8 @@ class CigaretteFragment : DaggerFragment() {
     @ExperimentalCoroutinesApi
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        Log.d("CigaretteFragment", viewModel.test)
 
         fetchNumberOfSmoke()
 

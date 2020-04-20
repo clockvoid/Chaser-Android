@@ -5,6 +5,7 @@ import dagger.android.ContributesAndroidInjector
 import jp.co.clockvoid.chaser.feature.home.MainActivity
 import jp.co.clockvoid.chaser.feature.home.di.HomeModule
 
+@Suppress("unused")
 @Module
 abstract class MainActivityModule {
     @ContributesAndroidInjector(
