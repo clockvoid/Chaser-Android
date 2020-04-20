@@ -61,3 +61,7 @@ RedBull，Monster，Coffeeボタンが有り，それぞれ押せるようにし
 ### 2020-04-12
 - Roomを導入した
 - room-ktxの機能を使ってLocalDataSourceでスレッドを変えつつ，UIへ値を通知したり，UIから値をデータベースに登録したりしてみた
+
+### 2020/04/20
+- CigaretteFragmentにCigaretteViewModelをインジェクトできるようにした．
+- ViewModelのKeyがついたbind関数は`@ContributesAndroidInjector`の中に入ってると解決されないことがわかった
