@@ -2,6 +2,7 @@
 import dependencies.Dependencies
 
 apply from: rootProject.file("gradle/android.gradle")
+apply plugin: "kotlin-kapt"
 
 android.dataBinding.enabled = true
 
@@ -23,7 +24,10 @@ dependencies {
 
     // dagger
     api(Dependencies.Dagger.dagger)
+    api(Dependencies.Dagger.android)
     api(Dependencies.Dagger.androidSupport)
+    kapt(Dependencies.Dagger.compiler)
+    kapt(Dependencies.Dagger.androidProcessor)
 
     // navigation
     api(Dependencies.AndroidX.Navigation.fragment)

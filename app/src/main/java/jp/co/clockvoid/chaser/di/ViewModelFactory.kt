@@ -1,4 +1,4 @@
-package jp.co.clockvoid.chaser.core.android.di
+package jp.co.clockvoid.chaser.di
 
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider

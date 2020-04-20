@@ -15,10 +15,10 @@ import javax.inject.Singleton
     modules = [
         AndroidInjectionModule::class,
         AppModule::class,
-        ViewModelModule::class,
         LocalDataSourceModule::class,
         RepositoryModule::class,
-        MainActivityModule::class
+        MainActivityModule::class,
+        ViewModelModule::class
     ]
 )
 interface AppComponent : AndroidInjector<ChaserApp> {
