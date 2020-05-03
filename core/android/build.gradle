@@ -8,6 +8,7 @@ android.dataBinding.enabled = true
 
 dependencies {
     api(project(":core:model"))
+    api(project(":core:resources"))
 
     // threeten
     api(Dependencies.threeTen)

@@ -4,5 +4,5 @@ include(":app",
     ":feature:cigarette",
     ":data:repository-impl", ":data:repository",
     "data:localdatasource-impl", ":data:localdatasource",
-    ":core:android", ":core:model"
+    ":core:android", ":core:resources", ":core:model"
 )

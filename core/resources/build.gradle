@@ -1,0 +1,9 @@
+
+import dependencies.Dependencies
+
+apply from: rootProject.file("gradle/android.gradle")
+apply plugin: "kotlin-kapt"
+
+dependencies {
+    implementation(Dependencies.AndroidX.material)
+}
