@@ -5,7 +5,6 @@ import android.view.View
 import android.widget.ImageView
 import com.xwray.groupie.Item
 import com.xwray.groupie.viewbinding.BindableItem
-import com.xwray.groupie.viewbinding.GroupieViewHolder
 import jp.co.clockvoid.chaser.feature.cigarette.databinding.ItemAnalyticsBinding
 import org.threeten.bp.Duration
 
