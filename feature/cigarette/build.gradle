@@ -7,7 +7,6 @@ apply plugin: "kotlin-kapt"
 apply plugin: "androidx.navigation.safeargs.kotlin"
 
 android.dataBinding.enabled = true
-android.viewBinding.enabled = true
 
 dependencies {
     implementation(project(":core:android"))

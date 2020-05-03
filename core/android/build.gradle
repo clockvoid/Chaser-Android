@@ -5,7 +5,6 @@ apply from: rootProject.file("gradle/android.gradle")
 apply plugin: "kotlin-kapt"
 
 android.dataBinding.enabled = true
-android.viewBinding.enabled = true
 
 dependencies {
     api(project(":core:model"))
