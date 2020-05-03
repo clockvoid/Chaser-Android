@@ -5,6 +5,7 @@ apply from: rootProject.file("gradle/android.gradle")
 apply plugin: "kotlin-kapt"
 
 android.dataBinding.enabled = true
+android.viewBinding.enabled = true
 
 dependencies {
     api(project(":core:model"))
@@ -38,4 +39,9 @@ dependencies {
 
     // material
     api(Dependencies.AndroidX.material)
+
+    // groupie
+    api(Dependencies.Groupie.runtime)
+    api(Dependencies.Groupie.ktx)
+    api(Dependencies.Groupie.viewBinding)
 }

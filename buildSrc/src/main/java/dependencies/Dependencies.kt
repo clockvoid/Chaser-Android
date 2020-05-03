@@ -47,6 +47,13 @@ object Dependencies {
         const val material = "com.google.android.material:material:1.1.0"
     }
 
+    object Groupie {
+        private const val version = "2.8.0"
+        const val runtime = "com.xwray:groupie:$version"
+        const val ktx = "com.xwray:groupie-kotlin-android-extensions:$version"
+        const val viewBinding = "com.xwray:groupie-viewbinding:$version"
+    }
+
     object Room {
         private const val version = "2.2.5"
         const val runtime = "androidx.room:room-runtime:$version"
