@@ -62,6 +62,14 @@ RedBull，Monster，Coffeeボタンが有り，それぞれ押せるようにし
 - Roomを導入した
 - room-ktxの機能を使ってLocalDataSourceでスレッドを変えつつ，UIへ値を通知したり，UIから値をデータベースに登録したりしてみた
 
-### 2020/04/20
+### 2020-04-20
 - CigaretteFragmentにCigaretteViewModelをインジェクトできるようにした．
 - ViewModelのKeyがついたbind関数は`@ContributesAndroidInjector`の中に入ってると解決されないことがわかった
+
+### 2020-05-03
+- Groupieを導入した
+- GroupieのItemを作り，そこから本数と時間の更新ができるようにした．
+  - 更新するとItemのカードが必ずグレーアウトするアニメーションが起きてしまう問題が起こったが，payloadの計算を記述すると治った．
+  - ItemはMutableMapで管理するようにして，書き換えコストを抑えて書き換えられるようになっている．
+  - 現状時間の計算とかは全部Fragmentに書いてあるが，これは後々Repositoryに移動させる予定．
+- メニューのアイテムを増やした
