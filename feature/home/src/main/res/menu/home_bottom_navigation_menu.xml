@@ -1,12 +1,23 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:android="http://schemas.android.com/apk/res/android">
-    <item android:id="@+id/cigarette"
+
+    <item android:id="@+id/cigaretteFragment"
         android:icon="@drawable/ic_smoking_rooms_black_24dp"
-        android:title="cigarette"
+        android:title="@string/cigarette"
         app:showAsAction="ifRoom" />
 
-    <item android:id="@+id/analytics"
+    <item android:id="@+id/alcoholFragment"
+        android:icon="@drawable/ic_local_bar_black_24dp"
+        android:title="alcohol"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/caffeineFragment"
+        android:icon="@drawable/ic_local_cafe_black_24dp"
+        android:title="caffeine"
+        app:showAsAction="ifRoom" />
+
+    <item android:id="@+id/analyticsFragment"
         android:icon="@drawable/ic_equalizer_black_24dp"
         android:title="analytics"
         app:showAsAction="ifRoom" />

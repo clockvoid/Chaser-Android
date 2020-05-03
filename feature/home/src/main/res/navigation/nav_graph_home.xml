@@ -11,4 +11,20 @@
         android:name="jp.co.clockvoid.chaser.feature.cigarette.CigaretteFragment"
         android:label="Cigarette"
         tools:layout="@layout/fragment_cigarette" />
+
+    <fragment
+        android:id="@+id/analyticsFragment"
+        android:name="jp.co.clockvoid.chaser.feature.home.AnalyticsFragment"
+        android:label="Analytics"
+        tools:layout="@layout/fragment_cigarette" />
+
+    <fragment
+        android:id="@+id/alcoholFragment"
+        android:name="jp.co.clockvoid.chaser.feature.home.AnalyticsFragment"
+        android:label="Alcohol" />
+
+    <fragment
+        android:id="@+id/caffeineFragment"
+        android:name="jp.co.clockvoid.chaser.feature.home.AnalyticsFragment"
+        android:label="Caffeine" />
 </navigation>
