@@ -17,6 +17,10 @@ class NumberItem(
         return other is NumberItem && other.number == this.number
     }
 
+    override fun getChangePayload(other: Item<*>): Any? {
+        return other is NumberItem && other.number != this.number
+    }
+
     override fun getLayout(): Int = R.layout.item_analytics
 
     override fun bind(viewBinding: ItemAnalyticsBinding, position: Int) {

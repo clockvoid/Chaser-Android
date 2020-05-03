@@ -5,6 +5,7 @@ import android.view.View
 import android.widget.ImageView
 import com.xwray.groupie.Item
 import com.xwray.groupie.viewbinding.BindableItem
+import com.xwray.groupie.viewbinding.GroupieViewHolder
 import jp.co.clockvoid.chaser.feature.cigarette.databinding.ItemAnalyticsBinding
 import org.threeten.bp.Duration
 
@@ -16,6 +17,10 @@ class TimeItem(
 
     override fun hasSameContentAs(other: Item<*>): Boolean {
         return other is TimeItem && other.durationSinceLastSmoke == this.durationSinceLastSmoke
+    }
+
+    override fun getChangePayload(other: Item<*>): Any? {
+        return other is TimeItem && other.durationSinceLastSmoke != this.durationSinceLastSmoke
     }
 
     override fun getLayout(): Int = R.layout.item_analytics

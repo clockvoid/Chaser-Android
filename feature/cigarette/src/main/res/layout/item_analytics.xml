@@ -4,9 +4,10 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <com.google.android.material.card.MaterialCardView
-        android:id="@+id/timeCardView"
+        android:id="@+id/rootCardView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layoutAnimation="@null"
         app:cardElevation="4dp">
 
         <androidx.constraintlayout.widget.ConstraintLayout
