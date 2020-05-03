@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -19,7 +19,7 @@
                 style="@style/MainToolBarStyle"
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
-                android:title="Chaser" />
+                android:title="@string/cigarette" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <com.google.android.material.card.MaterialCardView
@@ -42,7 +42,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceCaption"
-                    android:text="最後に吸ってから"
+                    android:text="@string/since_last_smoked"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
@@ -63,7 +63,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:contentDescription="smile" />
+                    android:contentDescription="@string/smile" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -87,7 +87,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:textAppearance="?attr/textAppearanceCaption"
-                    android:text="今日の本数"
+                    android:text="@string/number_of_today"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintStart_toStartOf="parent" />
 
@@ -97,9 +97,9 @@
                     android:layout_height="wrap_content"
                     android:layout_marginTop="4dp"
                     android:textAppearance="?attr/textAppearanceHeadline4"
-                    android:text="10本"
                     app:layout_constraintTop_toBottomOf="@id/numberLabelTextView"
-                    app:layout_constraintStart_toStartOf="parent" />
+                    app:layout_constraintStart_toStartOf="parent"
+                    tools:text="10本" />
 
                 <ImageView
                     android:layout_width="48dp"
@@ -108,7 +108,7 @@
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    android:contentDescription="smile" />
+                    android:contentDescription="@string/smile" />
             </androidx.constraintlayout.widget.ConstraintLayout>
         </com.google.android.material.card.MaterialCardView>
 
@@ -117,7 +117,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="24dp"
-            android:text="I smoke"
+            android:text="@string/do_smoke"
             style="@style/HomeFloatingActionButtonStyle"
             app:icon="@drawable/ic_smoking_rooms_black_24dp"
             app:layout_constraintBottom_toBottomOf="parent"

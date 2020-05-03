@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">Chaser</string>
+    <string name="an_error_occured">エラーが発生しました</string>
+
+    <!-- Cigarette Fragment -->
+    <string name="cigarette">Cigarette</string>
+    <string name="since_last_smoked">最後に吸ってから</string>
+    <string name="smile">smile</string>
+    <string name="number_of_today">今日の本数</string>
+    <string name="number_format">%d本</string>
+    <string name="do_smoke">I smoke</string>
 </resources>

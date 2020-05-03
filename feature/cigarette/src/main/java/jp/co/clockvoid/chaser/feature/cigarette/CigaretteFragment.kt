@@ -40,7 +40,6 @@ class CigaretteFragment : DaggerFragment() {
         }
     }
 
-    @ExperimentalCoroutinesApi
     private fun doSmoke() {
         lifecycleScope.launch {
             binding.smokeFloatingActionButton.isEnabled = false
@@ -51,7 +50,7 @@ class CigaretteFragment : DaggerFragment() {
             }.onFailure {
                 Snackbar.make(
                     binding.root,
-                    it.localizedMessage ?: "エラーが発生しました",
+                    it.localizedMessage ?: getString(R.string.an_error_occured),
                     Snackbar.LENGTH_SHORT
                 ).setAnchorView(binding.smokeFloatingActionButton)
                     .show()
@@ -62,7 +61,7 @@ class CigaretteFragment : DaggerFragment() {
 
     private fun fetchNumberOfSmoke() {
         lifecycleScope.launch {
-            binding.numberTextView.text = viewModel.getSmokeOfToday().size.toString()
+            binding.numberTextView.text = getString(R.string.number_format, viewModel.getSmokeOfToday().size)
         }
     }
 }
