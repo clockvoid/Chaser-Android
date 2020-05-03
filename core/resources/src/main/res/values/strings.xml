@@ -14,4 +14,13 @@
     <string name="number_format">%d本</string>
     <string name="do_smoke">I smoke</string>
     <string name="format_hour_min">%1$02d:%2$02d</string>
+
+    <!-- Alcohol Fragment -->
+    <string name="alcohol">Alcohol</string>
+
+    <!-- Caffeine Fragment -->
+    <string name="caffeine">Caffeine</string>
+
+    <!-- Analytics Fragment -->
+    <string name="analytics">Analytics</string>
 </resources>

@@ -9,16 +9,16 @@
 
     <item android:id="@+id/alcoholFragment"
         android:icon="@drawable/ic_local_bar_black_24dp"
-        android:title="alcohol"
+        android:title="@string/alcohol"
         app:showAsAction="ifRoom" />
 
     <item android:id="@+id/caffeineFragment"
         android:icon="@drawable/ic_local_cafe_black_24dp"
-        android:title="caffeine"
+        android:title="@string/caffeine"
         app:showAsAction="ifRoom" />
 
     <item android:id="@+id/analyticsFragment"
         android:icon="@drawable/ic_equalizer_black_24dp"
-        android:title="analytics"
+        android:title="@string/analytics"
         app:showAsAction="ifRoom" />
 </menu>
