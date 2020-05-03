@@ -13,5 +13,5 @@
     <string name="number_of_today">今日の本数</string>
     <string name="number_format">%d本</string>
     <string name="do_smoke">I smoke</string>
-    <string name="format_hour_min">$1%d:$2%d</string>
+    <string name="format_hour_min">%1$02d:%2$02d</string>
 </resources>

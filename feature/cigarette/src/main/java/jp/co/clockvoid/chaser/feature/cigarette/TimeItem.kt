@@ -26,7 +26,7 @@ class TimeItem(
             bodyTextView.text = root.context.getString(
                 R.string.format_hour_min,
                 durationSinceLastSmoke.toHours(),
-                durationSinceLastSmoke.toMinutes()
+                durationSinceLastSmoke.minusHours(durationSinceLastSmoke.toHours()).toMinutes()
             )
             decideSentiment(sentimentImageView, root.context)
         }
