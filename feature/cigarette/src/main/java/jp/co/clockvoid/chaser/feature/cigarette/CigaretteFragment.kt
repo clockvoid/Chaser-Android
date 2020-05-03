@@ -12,10 +12,11 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import dagger.android.support.DaggerFragment
 import jp.co.clockvoid.chaser.core.android.FragmentExtension.dataBinding
+import jp.co.clockvoid.chaser.core.android.SpacingItemDecoration
 import jp.co.clockvoid.chaser.feature.cigarette.databinding.FragmentCigaretteBinding
 import kotlinx.coroutines.launch
-import javax.inject.Inject
 import org.threeten.bp.Duration
+import javax.inject.Inject
 
 class CigaretteFragment : DaggerFragment() {
 
@@ -36,7 +37,10 @@ class CigaretteFragment : DaggerFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.analyticsCigaretteRecyclerView.adapter = adapter
+        binding.analyticsCigaretteRecyclerView.also {
+            it.adapter = adapter
+            it.addItemDecoration(SpacingItemDecoration(8))
+        }
 
         fetchNumberOfSmoke()
 

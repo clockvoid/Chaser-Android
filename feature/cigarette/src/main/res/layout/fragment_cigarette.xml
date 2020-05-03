@@ -26,6 +26,8 @@
             android:id="@+id/analyticsCigaretteRecyclerView"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:paddingBottom="72dp"
+            android:clipToPadding="false"
             app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
             app:layout_constraintTop_toBottomOf="@id/appBarLayout"
             app:layout_constraintBottom_toBottomOf="parent"
