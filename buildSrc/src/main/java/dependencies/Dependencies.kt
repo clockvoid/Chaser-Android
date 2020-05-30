@@ -3,7 +3,7 @@ package dependencies
 @Suppress("unused")
 object Dependencies {
     object GradlePlugin {
-        const val android = "com.android.tools.build:gradle:3.6.1"
+        const val android = "com.android.tools.build:gradle:4.0.0"
     }
 
     object Kotlin {
