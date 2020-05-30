@@ -5,6 +5,18 @@ apply from: rootProject.file("gradle/android.gradle")
 
 apply plugin: "kotlin-kapt"
 
+android {
+    defaultConfig {
+        javaCompileOptions {
+            annotationProcessorOptions {
+                arguments = [
+                        "room.incremental": "true"
+                ]
+            }
+        }
+    }
+}
+
 dependencies {
     implementation(project(":core:model"))
     api(project(":data:localdatasource"))
