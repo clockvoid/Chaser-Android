@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_home"
+    app:startDestination="@id/cigaretteFragment">
+
+    <fragment
+        android:id="@+id/cigaretteFragment"
+        android:name="jp.co.clockvoid.chaser.feature.cigarette.CigaretteFragment"
+        android:label="Cigarette"
+        tools:layout="@layout/fragment_cigarette" />
+
+    <fragment
+        android:id="@+id/analyticsFragment"
+        android:name="jp.co.clockvoid.chaser.feature.analytics.AnalyticsFragment"
+        android:label="Analytics"
+        tools:layout="@layout/fragment_cigarette" />
+
+    <fragment
+        android:id="@+id/alcoholFragment"
+        android:name="jp.co.clockvoid.chaser.feature.analytics.AnalyticsFragment"
+        android:label="Alcohol" />
+
+    <fragment
+        android:id="@+id/caffeineFragment"
+        android:name="jp.co.clockvoid.chaser.feature.analytics.AnalyticsFragment"
+        android:label="Caffeine" />
+</navigation>
