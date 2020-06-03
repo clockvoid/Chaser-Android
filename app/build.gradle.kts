@@ -50,7 +50,8 @@ dependencies {
     implementation(project(":core:android"))
     implementation(project(":data:repository-impl"))
     implementation(project(":data:localdatasource-impl"))
-    implementation(project(":feature:home"))
+    implementation(project(":feature:cigarette"))
+    implementation(project(":feature:analytics"))
 
     // dagger
     kapt(Dependencies.Dagger.compiler)

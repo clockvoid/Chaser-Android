@@ -3,11 +3,11 @@ package jp.co.clockvoid.chaser.di
 import androidx.lifecycle.ViewModelProvider
 import dagger.Binds
 import dagger.Module
-import jp.co.clockvoid.chaser.feature.home.di.HomeViewModelModule
+import jp.co.clockvoid.chaser.feature.cigarette.di.CigaretteViewModelModule
 
 @Suppress("unused")
 @Module(includes = [
-    HomeViewModelModule::class
+    CigaretteViewModelModule::class
 ])
 abstract class ViewModelModule {
     @Binds

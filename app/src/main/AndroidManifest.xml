@@ -10,7 +10,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Chaser.DayNight">
-        <activity android:name=".feature.home.MainActivity">
+        <activity android:name=".view.home.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
