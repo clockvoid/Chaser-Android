@@ -73,3 +73,9 @@ RedBull，Monster，Coffeeボタンが有り，それぞれ押せるようにし
   - ItemはMutableMapで管理するようにして，書き換えコストを抑えて書き換えられるようになっている．
   - 現状時間の計算とかは全部Fragmentに書いてあるが，これは後々Repositoryに移動させる予定．
 - メニューのアイテムを増やした
+
+### 2020-06-03
+- モジュール構成を変更した
+  - `home`モジュールを捨て，中身を`app`モジュールに入れ替えた
+  - それに伴い，diパッケージを各featureモジュールに入れ直し，それぞれでFragment用のDagger ModuleとViewModel用のDagger Moduleを作ることにした
+  - 予定としては，MainActivityModuleに記述されるのはBottomNavigationに直接置かれている4つのFragmentだけで，それ以降はActivity作ろうと思っている
