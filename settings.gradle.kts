@@ -1,7 +1,7 @@
+include(":feature:analytics")
 rootProject.name="Chaser"
 include(":app",
-    ":feature:home",
-    ":feature:cigarette",
+    ":feature:cigarette", ":feature:analytics",
     ":data:repository-impl", ":data:repository",
     "data:localdatasource-impl", ":data:localdatasource",
     ":core:android", ":core:resources", ":core:model"
