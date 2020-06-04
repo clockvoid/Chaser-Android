@@ -9,6 +9,7 @@ import jp.co.clockvoid.chaser.view.home.MainActivity
 @Suppress("unused")
 @Module
 abstract class MainActivityModule {
+
     @ContributesAndroidInjector(
         modules = [
             CigaretteFragmentModule::class,
