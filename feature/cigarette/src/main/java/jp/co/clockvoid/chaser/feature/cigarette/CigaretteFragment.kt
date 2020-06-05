@@ -57,7 +57,7 @@ class CigaretteFragment : DaggerFragment() {
     }
 
     private fun doSmoke() {
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             binding.smokeFloatingActionButton.isEnabled = false
             kotlin.runCatching {
                 viewModel.smoke()
@@ -76,7 +76,7 @@ class CigaretteFragment : DaggerFragment() {
     }
 
     private fun fetchNumberOfSmoke() {
-        lifecycleScope.launch {
+        viewLifecycleOwner.lifecycleScope.launch {
             kotlin.runCatching {
                 viewModel.getSmokeOfToday()
             }.onSuccess {
