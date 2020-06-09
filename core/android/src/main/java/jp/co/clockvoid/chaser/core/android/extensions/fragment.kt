@@ -1,4 +1,4 @@
-package jp.co.clockvoid.chaser.core.android
+package jp.co.clockvoid.chaser.core.android.extensions
 
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
@@ -10,6 +10,7 @@ import androidx.lifecycle.LifecycleObserver
 import androidx.lifecycle.OnLifecycleEvent
 
 object FragmentExtension {
+
     /**
      * bindingをnullにするLifecycleObserverの登録をして、lifecycleOwnerセットをする拡張関数。
      * Lazyを継承しているので、フィールドをvalにすることができる。
