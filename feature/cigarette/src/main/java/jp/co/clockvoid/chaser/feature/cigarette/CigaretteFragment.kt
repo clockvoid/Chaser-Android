@@ -13,7 +13,7 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.viewbinding.BindableItem
 import dagger.android.support.DaggerFragment
-import jp.co.clockvoid.chaser.core.android.FragmentExtension.dataBinding
+import jp.co.clockvoid.chaser.core.android.extensions.FragmentExtension.dataBinding
 import jp.co.clockvoid.chaser.core.android.SpacingItemDecoration
 import jp.co.clockvoid.chaser.feature.cigarette.databinding.FragmentCigaretteBinding
 import kotlinx.coroutines.launch
