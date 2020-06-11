@@ -79,3 +79,7 @@ RedBull，Monster，Coffeeボタンが有り，それぞれ押せるようにし
   - `home`モジュールを捨て，中身を`app`モジュールに入れ替えた
   - それに伴い，diパッケージを各featureモジュールに入れ直し，それぞれでFragment用のDagger ModuleとViewModel用のDagger Moduleを作ることにした
   - 予定としては，MainActivityModuleに記述されるのはBottomNavigationに直接置かれている4つのFragmentだけで，それ以降はActivity作ろうと思っている
+ 
+### 2020-06-09
+- `:core:android`内の拡張関数が入っているファイル名を小文字始まりにした
+  - これはRxKotlin（確か）のパクリ
