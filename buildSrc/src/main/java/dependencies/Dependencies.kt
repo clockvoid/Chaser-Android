@@ -10,7 +10,7 @@ object Dependencies {
         private const val version = "1.3.61"
 
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version"
-        const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:${version}"
+        const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
     }
 
     object KotlinX {
@@ -69,6 +69,13 @@ object Dependencies {
         const val androidSupport = "com.google.dagger:dagger-android-support:$version"
         const val compiler = "com.google.dagger:dagger-compiler:$version"
         const val androidProcessor = "com.google.dagger:dagger-android-processor:$version"
+
+        object Hilt {
+            private const val version = "2.28-alpha"
+            const val runtime = "com.google.dagger:hilt-android:$version"
+            const val compiler = "com.google.dagger:hilt-android-compiler:$version"
+            const val plugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
+        }
     }
 
     object Hyperion {
