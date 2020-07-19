@@ -1,6 +1,7 @@
 package jp.co.clockvoid.chaser.di
 
 import android.app.Application
+import android.content.Context
 import dagger.BindsInstance
 import dagger.Component
 import dagger.android.AndroidInjectionModule
@@ -13,8 +14,8 @@ import javax.inject.Singleton
 @Singleton
 @Component(
     modules = [
-        AndroidInjectionModule::class,
         AppModule::class,
+        AndroidInjectionModule::class,
         LocalDataSourceModule::class,
         RepositoryModule::class,
         MainActivityModule::class,
@@ -22,6 +23,7 @@ import javax.inject.Singleton
     ]
 )
 interface AppComponent : AndroidInjector<ChaserApp> {
+
     @Component.Factory
     interface Factory {
         fun create(@BindsInstance application: Application): AppComponent

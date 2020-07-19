@@ -22,6 +22,8 @@ allprojects {
         jcenter()
         // for groupie-viewbinding. see https://github.com/lisawray/groupie/issues/333
         maven { url 'https://dl.bintray.com/lisawray/maven' }
+        // for inject viewmodel by dagger hilt. see https://aakira.app/blog/2020/05/dagger-hilt/
+        maven { url "https://androidx.dev/snapshots/builds/6543454/artifacts/repository/" }
     }
 }
 

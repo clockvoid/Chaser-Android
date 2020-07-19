@@ -13,8 +13,8 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.viewbinding.BindableItem
 import dagger.android.support.DaggerFragment
-import jp.co.clockvoid.chaser.core.android.extensions.FragmentExtension.dataBinding
 import jp.co.clockvoid.chaser.core.android.SpacingItemDecoration
+import jp.co.clockvoid.chaser.core.android.extensions.FragmentExtension.dataBinding
 import jp.co.clockvoid.chaser.feature.cigarette.databinding.FragmentCigaretteBinding
 import kotlinx.coroutines.launch
 import org.threeten.bp.Duration
@@ -23,8 +23,7 @@ import javax.inject.Inject
 
 class CigaretteFragment : DaggerFragment() {
 
-    @Inject
-    lateinit var viewModelFactory: ViewModelProvider.Factory
+    @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
     private val viewModel: CigaretteViewModel by viewModels { viewModelFactory }
     private val binding: FragmentCigaretteBinding by dataBinding(R.layout.fragment_cigarette)
     private val adapter = GroupAdapter<GroupieViewHolder>()

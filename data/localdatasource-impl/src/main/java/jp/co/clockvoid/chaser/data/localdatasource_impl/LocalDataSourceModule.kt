@@ -1,20 +1,23 @@
 package jp.co.clockvoid.chaser.data.localdatasource_impl
 
 import android.app.Application
+import android.content.Context
 import androidx.room.Room
 import dagger.Binds
 import dagger.Module
 import dagger.Provides
+import dagger.hilt.InstallIn
+import dagger.hilt.android.components.ApplicationComponent
 import jp.co.clockvoid.chaser.data.localdatasource.CigaretteLocalDataSource
-import javax.inject.Singleton
 
+@Suppress("unused")
+@InstallIn(ApplicationComponent::class)
 @Module
 abstract class LocalDataSourceModule {
-    @Module
+
     companion object {
+
         @Provides
-        @Singleton
-        @JvmStatic
         fun provideCigaretteDatabase(application: Application): CigaretteDatabase {
             return Room.databaseBuilder(
                 application.applicationContext,
@@ -24,6 +27,5 @@ abstract class LocalDataSourceModule {
     }
 
     @Binds
-    @Singleton
     protected abstract fun bindCigaretteLocalDataSource(impl: CigaretteLocalDataSourceImpl): CigaretteLocalDataSource
 }

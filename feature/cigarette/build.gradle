@@ -5,6 +5,7 @@ apply from: rootProject.file("gradle/android.gradle")
 
 apply plugin: "kotlin-kapt"
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: "dagger.hilt.android.plugin"
 
 dependencies {
     implementation(project(":core:android"))
@@ -12,4 +13,6 @@ dependencies {
 
     kapt(Dependencies.Dagger.compiler)
     kapt(Dependencies.Dagger.androidProcessor)
+    implementation(Dependencies.Dagger.Hilt.runtime)
+    kapt(Dependencies.Dagger.Hilt.compiler)
 }

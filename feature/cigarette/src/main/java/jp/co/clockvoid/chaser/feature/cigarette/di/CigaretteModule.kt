@@ -4,12 +4,14 @@ import androidx.lifecycle.ViewModel
 import dagger.Binds
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
+import dagger.hilt.migration.DisableInstallInCheck
 import dagger.multibindings.IntoMap
 import jp.co.clockvoid.chaser.core.android.di.ViewModelKey
 import jp.co.clockvoid.chaser.feature.cigarette.CigaretteFragment
 import jp.co.clockvoid.chaser.feature.cigarette.CigaretteViewModel
 
 @Suppress("unused")
+@DisableInstallInCheck
 @Module
 abstract class CigaretteFragmentModule {
 
@@ -18,6 +20,7 @@ abstract class CigaretteFragmentModule {
 }
 
 @Suppress("unused")
+@DisableInstallInCheck
 @Module
 abstract class CigaretteViewModelModule {
 

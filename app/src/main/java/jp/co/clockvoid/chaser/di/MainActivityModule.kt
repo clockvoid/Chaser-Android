@@ -2,19 +2,19 @@ package jp.co.clockvoid.chaser.di
 
 import dagger.Module
 import dagger.android.ContributesAndroidInjector
-import jp.co.clockvoid.chaser.feature.analytics.di.AnalyticsFragmentModule
+import dagger.hilt.migration.DisableInstallInCheck
 import jp.co.clockvoid.chaser.feature.cigarette.di.CigaretteFragmentModule
 import jp.co.clockvoid.chaser.view.home.MainActivity
 
 @Suppress("unused")
+@DisableInstallInCheck
 @Module
 abstract class MainActivityModule {
 
     @ContributesAndroidInjector(
         modules = [
-            CigaretteFragmentModule::class,
-            AnalyticsFragmentModule::class
+            CigaretteFragmentModule::class
         ]
     )
-    internal abstract fun contributeMainActivity(): MainActivity
+    abstract fun contributesMainActivity(): MainActivity
 }
