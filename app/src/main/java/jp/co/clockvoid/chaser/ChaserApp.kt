@@ -1,26 +1,21 @@
 package jp.co.clockvoid.chaser
 
+import android.app.Application
 import com.jakewharton.threetenabp.AndroidThreeTen
 import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
-import jp.co.clockvoid.chaser.di.AppComponent
-import jp.co.clockvoid.chaser.di.DaggerAppComponent
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import dagger.hilt.android.HiltAndroidApp
+import javax.inject.Inject
 
-class ChaserApp : DaggerApplication() {
+@HiltAndroidApp
+class ChaserApp : Application(), HasAndroidInjector {
 
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return DaggerAppComponent.factory().create(this)
-    }
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
 
-    // Instance of the AppComponent that will be used by all the Activities int the project.
-    val appComponent: AppComponent by lazy {
-        initializeComponent()
-    }
-
-    private fun initializeComponent(): AppComponent {
-        // Create an instance of AppComponent using its Factory constructor.
-        // We pass the applicationContext that will be used as Context in the graph.
-        return DaggerAppComponent.factory().create(this)
+    override fun androidInjector(): AndroidInjector<Any> {
+        return dispatchingAndroidInjector
     }
 
     override fun onCreate() {
