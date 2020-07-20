@@ -4,7 +4,6 @@ import dagger.Module
 import dagger.android.AndroidInjectionModule
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
-import dagger.hilt.migration.DisableInstallInCheck
 import jp.co.clockvoid.chaser.data.localdatasource_impl.LocalDataSourceModule
 import jp.co.clockvoid.chaser.data.repositoryimpl.RepositoryModule
 

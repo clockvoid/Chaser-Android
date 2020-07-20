@@ -4,7 +4,6 @@ import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.navigation.findNavController
 import androidx.navigation.ui.NavigationUI
-import dagger.android.DaggerActivity
 import dagger.android.support.DaggerAppCompatActivity
 import jp.co.clockvoid.chaser.R
 import jp.co.clockvoid.chaser.databinding.ActivityMainBinding
