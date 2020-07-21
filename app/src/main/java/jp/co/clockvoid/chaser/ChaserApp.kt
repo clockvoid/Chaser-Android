@@ -1,13 +1,21 @@
 package jp.co.clockvoid.chaser
 
+import android.app.Application
 import com.jakewharton.threetenabp.AndroidThreeTen
 import dagger.android.AndroidInjector
-import dagger.android.DaggerApplication
-import jp.co.clockvoid.chaser.di.DaggerAppComponent
+import dagger.android.DispatchingAndroidInjector
+import dagger.android.HasAndroidInjector
+import dagger.hilt.android.HiltAndroidApp
+import javax.inject.Inject
 
-class ChaserApp : DaggerApplication() {
-    override fun applicationInjector(): AndroidInjector<out DaggerApplication> {
-        return DaggerAppComponent.factory().create(this)
+@HiltAndroidApp
+class ChaserApp : Application(), HasAndroidInjector {
+
+    @Inject
+    lateinit var dispatchingAndroidInjector: DispatchingAndroidInjector<Any>
+
+    override fun androidInjector(): AndroidInjector<Any> {
+        return dispatchingAndroidInjector
     }
 
     override fun onCreate() {

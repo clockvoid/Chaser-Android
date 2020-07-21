@@ -29,6 +29,14 @@ object Dependencies {
             const val runtime = "androidx.appcompat:appcompat:$version"
         }
 
+        object Hilt {
+            private const val version = "1.9.9-SNAPSHOT"
+
+            const val common = "androidx.hilt:hilt-common:$version"
+            const val viewModel = "androidx.hilt:hilt-lifecycle-viewmodel:$version"
+            const val compiler = "androidx.hilt:hilt-compiler:$version"
+        }
+
         object Navigation {
             private const val version = "2.2.1"
 
