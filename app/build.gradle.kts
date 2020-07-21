@@ -45,6 +45,10 @@ android {
     }
 }
 
+kapt {
+    correctErrorTypes = true
+}
+
 dependencies {
     implementation(project(":core:model"))
     implementation(project(":core:android"))
@@ -56,6 +60,8 @@ dependencies {
     // dagger
     kapt(Dependencies.Dagger.compiler)
     kapt(Dependencies.Dagger.androidProcessor)
+    implementation(Dependencies.Dagger.Hilt.runtime)
+    kapt(Dependencies.Dagger.Hilt.compiler)
 
     // hyperion
     debugImplementation(Dependencies.Hyperion.core)
