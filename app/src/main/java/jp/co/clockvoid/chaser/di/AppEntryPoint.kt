@@ -8,4 +8,4 @@ import jp.co.clockvoid.chaser.ChaserApp
 
 @EntryPoint
 @InstallIn(ApplicationComponent::class)
-interface AppComponent : AndroidInjector<ChaserApp>
+interface AppEntryPoint : AndroidInjector<ChaserApp>
