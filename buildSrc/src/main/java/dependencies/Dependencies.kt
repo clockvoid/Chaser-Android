@@ -3,7 +3,7 @@ package dependencies
 @Suppress("unused")
 object Dependencies {
     object GradlePlugin {
-        const val android = "com.android.tools.build:gradle:4.0.0"
+        const val android = "com.android.tools.build:gradle:4.0.1"
     }
 
     object Kotlin {
@@ -30,7 +30,7 @@ object Dependencies {
         }
 
         object Hilt {
-            private const val version = "1.9.9-SNAPSHOT"
+            private const val version = "1.0.0-alpha02"
 
             const val common = "androidx.hilt:hilt-common:$version"
             const val viewModel = "androidx.hilt:hilt-lifecycle-viewmodel:$version"
@@ -38,7 +38,7 @@ object Dependencies {
         }
 
         object Navigation {
-            private const val version = "2.2.1"
+            private const val version = "2.3.0"
 
             const val fragment = "androidx.navigation:navigation-fragment:$version"
             const val ui = "androidx.navigation:navigation-ui:$version"
@@ -51,7 +51,7 @@ object Dependencies {
         }
 
         const val constraint = "androidx.constraintlayout:constraintlayout:1.1.3"
-        const val ktx = "androidx.core:core-ktx:1.2.0"
+        const val ktx = "androidx.core:core-ktx:1.3.1"
         const val material = "com.google.android.material:material:1.1.0"
     }
 
