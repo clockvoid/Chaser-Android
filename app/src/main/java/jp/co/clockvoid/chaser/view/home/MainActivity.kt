@@ -23,7 +23,6 @@ class MainActivity : AppCompatActivity(), HasAndroidInjector {
     override fun androidInjector(): AndroidInjector<Any> = dispatchingAndroidInjector
 
     override fun onCreate(savedInstanceState: Bundle?) {
-
         super.onCreate(savedInstanceState)
 
         AndroidInjection.inject(this)
