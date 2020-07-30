@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
@@ -12,7 +13,7 @@ import com.google.android.material.snackbar.Snackbar
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.viewbinding.BindableItem
-import dagger.android.support.DaggerFragment
+import dagger.hilt.android.AndroidEntryPoint
 import jp.co.clockvoid.chaser.core.android.SpacingItemDecoration
 import jp.co.clockvoid.chaser.core.android.extensions.FragmentExtension.dataBinding
 import jp.co.clockvoid.chaser.feature.cigarette.databinding.FragmentCigaretteBinding
@@ -21,7 +22,8 @@ import org.threeten.bp.Duration
 import org.threeten.bp.ZonedDateTime
 import javax.inject.Inject
 
-class CigaretteFragment : DaggerFragment() {
+@AndroidEntryPoint
+class CigaretteFragment : Fragment() {
 
     @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
     private val viewModel: CigaretteViewModel by viewModels { viewModelFactory }
