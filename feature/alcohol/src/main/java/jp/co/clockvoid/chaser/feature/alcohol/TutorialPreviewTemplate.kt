@@ -1,4 +1,4 @@
-package jp.co.clockvoid.chaser.alcohol
+package jp.co.clockvoid.chaser.feature.alcohol
 
 import androidx.compose.Composable
 import androidx.ui.foundation.Text
