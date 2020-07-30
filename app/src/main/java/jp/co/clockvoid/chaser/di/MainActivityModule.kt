@@ -11,10 +11,6 @@ import jp.co.clockvoid.chaser.view.home.MainActivity
 @Module
 abstract class MainActivityModule {
 
-    @ContributesAndroidInjector(
-        modules = [
-            CigaretteFragmentModule::class
-        ]
-    )
+    @ContributesAndroidInjector
     abstract fun contributesMainActivity(): MainActivity
 }
