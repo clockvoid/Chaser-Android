@@ -13,7 +13,6 @@ import jp.co.clockvoid.chaser.data.repositoryimpl.RepositoryModule
     AndroidInjectionModule::class,
     LocalDataSourceModule::class,
     RepositoryModule::class,
-    MainActivityModule::class,
     ViewModelModule::class
 ])
 interface AggregatorModule
