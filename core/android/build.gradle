@@ -24,9 +24,7 @@ dependencies {
     // dagger
     api(Dependencies.Dagger.dagger)
     api(Dependencies.Dagger.android)
-    api(Dependencies.Dagger.androidSupport)
     kapt(Dependencies.Dagger.compiler)
-    kapt(Dependencies.Dagger.androidProcessor)
 
     // navigation
     api(Dependencies.AndroidX.Navigation.fragment)

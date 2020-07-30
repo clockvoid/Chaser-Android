@@ -74,9 +74,7 @@ object Dependencies {
         private const val version = "2.25.2"
         const val dagger = "com.google.dagger:dagger:$version"
         const val android = "com.google.dagger:dagger-android:$version"
-        const val androidSupport = "com.google.dagger:dagger-android-support:$version"
         const val compiler = "com.google.dagger:dagger-compiler:$version"
-        const val androidProcessor = "com.google.dagger:dagger-android-processor:$version"
 
         object Hilt {
             private const val version = "2.28-alpha"
