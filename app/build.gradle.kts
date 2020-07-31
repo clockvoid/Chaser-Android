@@ -57,6 +57,7 @@ dependencies {
     implementation(project(":data:localdatasource-impl"))
     implementation(project(":feature:cigarette"))
     implementation(project(":feature:analytics"))
+    implementation(project(":feature:alcohol"))
 
     // dagger
     kapt(Dependencies.Dagger.compiler)

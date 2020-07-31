@@ -20,7 +20,7 @@
 
     <fragment
         android:id="@+id/alcoholFragment"
-        android:name="jp.co.clockvoid.chaser.feature.analytics.AnalyticsFragment"
+        android:name="jp.co.clockvoid.chaser.feature.alcohol.AlcoholFragment"
         android:label="Alcohol" />
 
     <fragment
