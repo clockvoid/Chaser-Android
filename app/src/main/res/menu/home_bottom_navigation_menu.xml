@@ -9,7 +9,7 @@
 
     <item android:id="@+id/alcoholFragment"
         android:icon="@drawable/ic_local_bar_black_24dp"
-        android:title="@string/alcohol"
+        android:title="@string/caffeine"
         app:showAsAction="ifRoom" />
 
     <item android:id="@+id/caffeineFragment"
