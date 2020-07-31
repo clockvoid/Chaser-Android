@@ -1,4 +1,4 @@
-package jp.co.clockvoid.chaser.feature.analytics
+package jp.co.clockvoid.chaser.feature.caffeine
 
 import org.junit.Test
 

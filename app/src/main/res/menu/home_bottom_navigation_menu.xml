@@ -16,9 +16,4 @@
         android:icon="@drawable/ic_local_cafe_black_24dp"
         android:title="@string/caffeine"
         app:showAsAction="ifRoom" />
-
-    <item android:id="@+id/analyticsFragment"
-        android:icon="@drawable/ic_equalizer_black_24dp"
-        android:title="@string/analytics"
-        app:showAsAction="ifRoom" />
 </menu>

@@ -1,4 +1,4 @@
-package jp.co.clockvoid.chaser.feature.analytics
+package jp.co.clockvoid.chaser.feature.caffeine
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
