@@ -24,9 +24,9 @@ dependencies {
     implementation(Dependencies.Kotlin.stdlib)
     implementation(Dependencies.threeTen)
 
-    api(Dependencies.Room.runtime)
-    implementation(Dependencies.Room.ktx)
-    kapt(Dependencies.Room.compiler)
+    api(Dependencies.AndroidX.Room.runtime)
+    implementation(Dependencies.AndroidX.Room.ktx)
+    kapt(Dependencies.AndroidX.Room.compiler)
 
     implementation(Dependencies.Dagger.dagger)
     kapt(Dependencies.Dagger.compiler)
