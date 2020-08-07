@@ -1,4 +1,4 @@
-package jp.co.clockvoid.chaser.core.android.extensions
+package jp.co.clockvoid.chaser.feature.cigarette.extensions
 
 import android.view.ViewGroup
 import androidx.annotation.LayoutRes
