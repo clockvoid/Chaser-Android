@@ -13,6 +13,14 @@ jobs:
     
     steps:
     - uses: actions/checkout@v2
+
+    - name: cache gradle
+      id: cache-gradle
+      uses: actions/cache@v1
+      with:
+        path: ~/.gradle
+        key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
+        restore-keys: ${{ runner-os }}-gradle-
     
     - name: Setup Java JDK
       uses: actions/setup-java@v1.4.0
@@ -23,3 +31,9 @@ jobs:
       run: |
         chmod +x ./gradlew
         ./gradlew build
+
+    - name: Upload apk file
+      uses: actions/upload-artifact@v1
+      with:
+        name: apk
+        path: app/build/outputs/apk/debug/app-debug.apk
