@@ -16,8 +16,8 @@ jobs:
     
     - name: Setup Java JDK
       uses: actions/setup-java@v1.4.0
-        with:
-          java-version: 1.8
+      with:
+        java-version: 1.8
 
     - name: Build with Gradle
       run: |
