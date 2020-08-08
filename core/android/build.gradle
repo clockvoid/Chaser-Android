@@ -39,4 +39,7 @@ dependencies {
     api(Dependencies.Groupie.runtime)
     api(Dependencies.Groupie.ktx)
     api(Dependencies.Groupie.viewBinding)
+
+    // timber
+    api(Dependencies.timber)
 }
