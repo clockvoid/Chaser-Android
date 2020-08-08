@@ -20,7 +20,7 @@ jobs:
       with:
         path: ~/.gradle
         key: ${{ runner.os }}-gradle-${{ hashFiles('**/*.gradle') }}
-        restore-keys: ${{ runner-os }}-gradle-
+        restore-keys: ${{ runner.os }}-gradle-
     
     - name: Setup Java JDK
       uses: actions/setup-java@v1.4.0
