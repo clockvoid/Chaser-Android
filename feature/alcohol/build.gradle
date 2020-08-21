@@ -9,8 +9,8 @@ apply plugin: "dagger.hilt.android.plugin"
 
 android {
     composeOptions {
-        kotlinCompilerVersion = "1.4.0-rc"
-        kotlinCompilerExtensionVersion = "0.1.0-dev16"
+        kotlinCompilerVersion = "1.4.0"
+        kotlinCompilerExtensionVersion = "0.1.0-dev17"
     }
 
     buildFeatures {
@@ -26,13 +26,14 @@ dependencies {
     implementation(Dependencies.Dagger.Hilt.runtime)
     kapt(Dependencies.Dagger.Hilt.compiler)
 
-    implementation("androidx.compose.animation:animation:0.1.0-dev16")
-    implementation("androidx.compose.foundation:foundation:0.1.0-dev16")
-    implementation("androidx.compose.foundation:foundation-layout:0.1.0-dev16")
-    implementation("androidx.compose.material:material:0.1.0-dev16")
-    implementation("androidx.compose.material:material-icons-extended:0.1.0-dev16")
-    implementation("androidx.compose.runtime:runtime:0.1.0-dev16")
-    implementation("androidx.compose.runtime:runtime-livedata:0.1.0-dev16")
-    implementation("androidx.compose.ui:ui:0.1.0-dev16")
-    implementation("androidx.ui:ui-tooling:0.1.0-dev16")
+    version = "0.1.0-dev17"
+    implementation("androidx.compose.animation:animation:${version}")
+    implementation("androidx.compose.foundation:foundation:${version}")
+    implementation("androidx.compose.foundation:foundation-layout:${version}")
+    implementation("androidx.compose.material:material:${version}")
+    implementation("androidx.compose.material:material-icons-extended:${version}")
+    implementation("androidx.compose.runtime:runtime:${version}")
+    implementation("androidx.compose.runtime:runtime-livedata:${version}")
+    implementation("androidx.compose.ui:ui:${version}")
+    implementation("androidx.ui:ui-tooling:${version}")
 }
