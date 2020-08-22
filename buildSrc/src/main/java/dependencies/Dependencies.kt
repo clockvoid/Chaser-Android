@@ -71,7 +71,7 @@ object Dependencies {
     }
 
     object Dagger {
-        private const val version = "2.25.2"
+        private const val version = "2.28.3"
         const val dagger = "com.google.dagger:dagger:$version"
         const val android = "com.google.dagger:dagger-android:$version"
         const val compiler = "com.google.dagger:dagger-compiler:$version"
@@ -99,6 +99,6 @@ object Dependencies {
         const val timber = "com.willowtreeapps.hyperion:hyperion-timber:$version"
     }
 
-    const val threeTen = "com.jakewharton.threetenabp:threetenabp:1.2.1"
-    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.0"
+    const val threeTen = "com.jakewharton.threetenabp:threetenabp:1.2.4"
+    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.4"
 }
