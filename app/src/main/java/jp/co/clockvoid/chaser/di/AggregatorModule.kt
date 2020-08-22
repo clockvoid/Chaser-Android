@@ -10,7 +10,6 @@ import jp.co.clockvoid.chaser.data.repositoryimpl.RepositoryModule
 @Module(includes = [
     AppModule::class,
     LocalDataSourceModule::class,
-    RepositoryModule::class,
-    ViewModelModule::class
+    RepositoryModule::class
 ])
 interface AggregatorModule
