@@ -1,6 +1,6 @@
 
-import dependencies.Versions
 import dependencies.Dependencies
+import dependencies.Versions
 
 plugins {
     id("com.android.application")
@@ -63,6 +63,7 @@ dependencies {
     kapt(Dependencies.Dagger.compiler)
     implementation(Dependencies.Dagger.Hilt.runtime)
     kapt(Dependencies.Dagger.Hilt.compiler)
+    implementation(Dependencies.AndroidX.Hilt.viewModel)
 
     // hyperion
     debugImplementation(Dependencies.Hyperion.core)

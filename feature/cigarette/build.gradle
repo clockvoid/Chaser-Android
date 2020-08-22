@@ -13,7 +13,9 @@ dependencies {
     implementation(project(":core:android"))
     implementation(project(":data:repository"))
 
-    kapt(Dependencies.Dagger.compiler)
     implementation(Dependencies.Dagger.Hilt.runtime)
     kapt(Dependencies.Dagger.Hilt.compiler)
+    implementation(Dependencies.AndroidX.Hilt.common)
+    implementation(Dependencies.AndroidX.Hilt.viewModel)
+    kapt(Dependencies.AndroidX.Hilt.compiler)
 }
