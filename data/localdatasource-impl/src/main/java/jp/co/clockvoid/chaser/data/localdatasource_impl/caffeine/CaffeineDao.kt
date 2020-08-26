@@ -7,7 +7,7 @@ import androidx.room.Query
 @Dao
 interface CaffeineDao {
 
-    @Query("SELECT * FROM smoke_log")
+    @Query("SELECT * FROM boost_log")
     fun getBoostLog(): List<BoostEntity>
 
     @Insert
