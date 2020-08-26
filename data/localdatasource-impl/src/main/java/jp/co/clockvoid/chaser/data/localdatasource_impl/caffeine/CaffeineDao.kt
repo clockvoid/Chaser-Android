@@ -8,8 +8,8 @@ import androidx.room.Query
 interface CaffeineDao {
 
     @Query("SELECT * FROM smoke_log")
-    fun getBoostLog(): List<CaffeineEntity>
+    fun getBoostLog(): List<BoostEntity>
 
     @Insert
-    fun registerBoostLog(smoke: CaffeineEntity)
+    fun registerBoostLog(smoke: BoostEntity)
 }
