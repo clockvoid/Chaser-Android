@@ -1,7 +1,6 @@
-package jp.co.clockvoid.chaser.data.localdatasource_impl
+package jp.co.clockvoid.chaser.data.localdatasource_impl.di
 
 import android.app.Application
-import android.content.Context
 import androidx.room.Room
 import dagger.Binds
 import dagger.Module
@@ -9,6 +8,9 @@ import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
 import jp.co.clockvoid.chaser.data.localdatasource.CigaretteLocalDataSource
+import jp.co.clockvoid.chaser.data.localdatasource_impl.caffeine.CaffeineDatabase
+import jp.co.clockvoid.chaser.data.localdatasource_impl.cigarette.CigaretteDatabase
+import jp.co.clockvoid.chaser.data.localdatasource_impl.cigarette.CigaretteLocalDataSourceImpl
 
 @Suppress("unused")
 @InstallIn(ApplicationComponent::class)
@@ -22,6 +24,14 @@ abstract class LocalDataSourceModule {
             return Room.databaseBuilder(
                 application.applicationContext,
                 CigaretteDatabase::class.java, "cigarette_database"
+            ).build()
+        }
+
+        @Provides
+        fun provideCaffeineDatabase(application: Application): CaffeineDatabase {
+            return Room.databaseBuilder(
+                application.applicationContext,
+                CaffeineDatabase::class.java, "caffeine_database"
             ).build()
         }
     }
