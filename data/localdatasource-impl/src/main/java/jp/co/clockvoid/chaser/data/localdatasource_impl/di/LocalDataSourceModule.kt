@@ -7,8 +7,10 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
+import jp.co.clockvoid.chaser.data.localdatasource.CaffeineLocalDataSource
 import jp.co.clockvoid.chaser.data.localdatasource.CigaretteLocalDataSource
 import jp.co.clockvoid.chaser.data.localdatasource_impl.caffeine.CaffeineDatabase
+import jp.co.clockvoid.chaser.data.localdatasource_impl.caffeine.CaffeineLocalDataSourceImpl
 import jp.co.clockvoid.chaser.data.localdatasource_impl.cigarette.CigaretteDatabase
 import jp.co.clockvoid.chaser.data.localdatasource_impl.cigarette.CigaretteLocalDataSourceImpl
 
@@ -38,4 +40,7 @@ abstract class LocalDataSourceModule {
 
     @Binds
     protected abstract fun bindCigaretteLocalDataSource(impl: CigaretteLocalDataSourceImpl): CigaretteLocalDataSource
+
+    @Binds
+    protected abstract fun bindCaffeineLocalDataSource(impl: CaffeineLocalDataSourceImpl): CaffeineLocalDataSource
 }
