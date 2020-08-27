@@ -1,6 +1,5 @@
 package jp.co.clockvoid.chaser.feature.alcohol
 
-import androidx.compose.foundation.Box
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.*
