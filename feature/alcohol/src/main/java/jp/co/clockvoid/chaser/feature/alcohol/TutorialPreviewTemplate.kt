@@ -1,5 +1,6 @@
 package jp.co.clockvoid.chaser.feature.alcohol
 
+import androidx.compose.foundation.Box
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.*
@@ -51,15 +52,33 @@ fun AnalyticsItem(title: String, body: String, sentimentLevel: Int) {
                 start.linkTo(parent.start)
             }
             constrain(sentimentImageView) {
-                top.linkTo(parent.top)
-                bottom.linkTo(parent.bottom)
+                top.linkTo(titleTextView.top)
+                bottom.linkTo(bodyTextView.bottom)
                 end.linkTo(parent.end)
+                height = Dimension.fillToConstraints
             }
-        }, modifier = Modifier.padding(12.dp).fillMaxWidth()) {
+        }, modifier = Modifier
+            .padding(12.dp)
+            .fillMaxWidth()) {
 
-            Text(text = title, fontSize = 12.sp, modifier = Modifier.layoutId("titleTextView"))
-            Text(modifier = Modifier.padding(top = 4.dp).layoutId("bodyTextView"), text = body, fontSize = 34.sp)
-            Image(vectorResource(id = R.drawable.ic_sentiment_satisfied_black_24dp), modifier = Modifier.layoutId("sentimentImageView"))
+            Text(
+                text = title,
+                fontSize = 12.sp,
+                modifier = Modifier.layoutId("titleTextView")
+            )
+            Text(
+                text = body,
+                fontSize = 34.sp,
+                modifier = Modifier
+                    .padding(top = 4.dp)
+                    .layoutId("bodyTextView"),
+            )
+            Image(
+                vectorResource(id = R.drawable.ic_sentiment_satisfied_black_24dp),
+                modifier = Modifier
+                    .aspectRatio(1f)
+                    .layoutId("sentimentImageView")
+            )
         }
     }
 }
