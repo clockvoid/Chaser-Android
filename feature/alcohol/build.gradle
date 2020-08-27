@@ -1,6 +1,5 @@
 
 import dependencies.Dependencies
-import org.jetbrains.kotlin.gradle.tasks.KotlinCompile
 
 apply from: rootProject.file("gradle/android.gradle")
 
@@ -10,19 +9,15 @@ apply plugin: "dagger.hilt.android.plugin"
 
 android {
     composeOptions {
-        kotlinCompilerVersion = "1.4.0"
-        kotlinCompilerExtensionVersion = "0.1.0-dev17"
+        kotlinCompilerExtensionVersion = "1.0.0-alpha01"
     }
 
     buildFeatures {
         compose true
     }
-}
 
-tasks.withType(KotlinCompile).configureEach {
     kotlinOptions {
-        jvmTarget = "1.8"
-        freeCompilerArgs += ["-Xallow-jvm-ir-dependencies", "-Xskip-prerelease-check"]
+        useIR = true
     }
 }
 
@@ -34,7 +29,7 @@ dependencies {
     implementation(Dependencies.Dagger.Hilt.runtime)
     kapt(Dependencies.Dagger.Hilt.compiler)
 
-    version = "0.1.0-dev17"
+    version = "1.0.0-alpha01"
     implementation("androidx.compose.animation:animation:${version}")
     implementation("androidx.compose.foundation:foundation:${version}")
     implementation("androidx.compose.foundation:foundation-layout:${version}")
