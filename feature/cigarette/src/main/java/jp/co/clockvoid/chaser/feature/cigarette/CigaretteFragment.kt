@@ -6,7 +6,6 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
-import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
 import com.google.android.material.snackbar.Snackbar
@@ -20,13 +19,11 @@ import jp.co.clockvoid.chaser.feature.cigarette.extensions.FragmentExtension.dat
 import kotlinx.coroutines.launch
 import org.threeten.bp.Duration
 import org.threeten.bp.ZonedDateTime
-import javax.inject.Inject
 
 @AndroidEntryPoint
 class CigaretteFragment : Fragment() {
 
-    @Inject lateinit var viewModelFactory: ViewModelProvider.Factory
-    private val viewModel: CigaretteViewModel by viewModels { viewModelFactory }
+    private val viewModel: CigaretteViewModel by viewModels()
     private val binding: FragmentCigaretteBinding by dataBinding(R.layout.fragment_cigarette)
     private val adapter = GroupAdapter<GroupieViewHolder>()
     private val items = mutableMapOf<Int, BindableItem<out ViewBinding>?>(
