@@ -1,5 +1,6 @@
 package jp.co.clockvoid.chaser.feature.alcohol
 
+import androidx.annotation.IntRange
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.*
@@ -8,6 +9,8 @@ import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.MutableState
+import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.res.stringResource
@@ -16,16 +19,28 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.ui.tooling.preview.Preview
 
+data class AlcoholItem(
+    val title: String,
+    val body: String,
+    @IntRange(from = 0, to = 2)
+    val sentimentLevel: Int
+)
+
 @Composable
-fun TutorialPreviewTemplate() {
+fun TutorialPreviewTemplate(items: MutableState<List<AlcoholItem>>) {
 
     Column {
         TopAppBar(
             title = { Text(stringResource(id = R.string.alcohol)) },
             backgroundColor = (MaterialTheme.colors).background
         )
-        LazyColumnFor(items = listOf(Triple("最後に吸ってから", "12時間", 1))) { (title, body, sentiment) ->
-            AnalyticsItem(title = title, body = body, sentimentLevel = sentiment)
+        LazyColumnFor(items = items.value) { item ->
+
+            AnalyticsItem(
+                title = item.title,
+                body = item.body,
+                sentimentLevel = item.sentimentLevel
+            )
         }
     }
 }
@@ -85,5 +100,9 @@ fun AnalyticsItem(title: String, body: String, sentimentLevel: Int) {
 @Preview
 @Composable
 fun TutorialPreview() {
-   TutorialPreviewTemplate()
+   TutorialPreviewTemplate(mutableStateOf(listOf(AlcoholItem(
+       title = "最後に吸ってから",
+       body = "12時間",
+       sentimentLevel = 1
+   ))))
 }
