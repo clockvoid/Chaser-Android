@@ -37,9 +37,6 @@
 
         <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
             android:id="@+id/smokeFloatingActionButton"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="24dp"
             android:text="@string/do_smoke"
             style="@style/HomeFloatingActionButtonStyle"
             app:icon="@drawable/ic_smoking_rooms_black_24dp"
