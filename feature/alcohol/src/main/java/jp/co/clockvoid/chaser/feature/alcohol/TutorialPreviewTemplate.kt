@@ -7,6 +7,7 @@ import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumnFor
 import androidx.compose.material.Card
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Scaffold
 import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
@@ -29,11 +30,12 @@ data class AlcoholItem(
 @Composable
 fun TutorialPreviewTemplate(items: MutableState<List<AlcoholItem>>) {
 
-    Column {
-        TopAppBar(
+    Scaffold(
+        topBar = { TopAppBar(
             title = { Text(stringResource(id = R.string.alcohol)) },
             backgroundColor = (MaterialTheme.colors).background
-        )
+        ) }
+    ) {
         LazyColumnFor(items = items.value) { item ->
 
             AnalyticsItem(

@@ -9,10 +9,13 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.platform.setContent
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import com.google.android.material.composethemeadapter.MdcTheme
+import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 
+@AndroidEntryPoint
 class AlcoholFragment : Fragment() {
 
     private val alcoholItem1 = AlcoholItem(
@@ -36,7 +39,9 @@ class AlcoholFragment : Fragment() {
     ): View? {
         val fragmentView = inflater.inflate(R.layout.fragment_alcohol, container, false)
         (fragmentView as ViewGroup).setContent(Recomposer.current()) {
-            TutorialPreviewTemplate(items)
+            MdcTheme {
+                TutorialPreviewTemplate(items)
+            }
         }
         return fragmentView
     }
