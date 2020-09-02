@@ -1,4 +1,4 @@
-package jp.co.clockvoid.chaser.data.localdatasource_impl
+package jp.co.clockvoid.chaser.data.localdatasource_impl.cigarette
 
 import androidx.room.CoroutinesRoom
 import jp.co.clockvoid.chaser.core.model.Smoke
