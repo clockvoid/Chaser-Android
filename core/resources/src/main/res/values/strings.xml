@@ -20,6 +20,9 @@
 
     <!-- Caffeine Fragment -->
     <string name="caffeine">Caffeine</string>
+    <string name="do_boost">I have a boost</string>
+    <string name="caffeine_number_of_today">今日のカフェイン量</string>
+    <string name="since_last_boost">最後に飲んでから</string>
 
     <!-- Analytics Fragment -->
     <string name="analytics">Analytics</string>
