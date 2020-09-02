@@ -14,4 +14,10 @@ enum class BoostType(val rawValue: String) {
     ENERGY_DRINK("energy_drink"),
     VAPE("vape"),
     OTHER("other");
+
+    companion object {
+        fun from(value: String): BoostType {
+            return values().findLast { it.rawValue == value }!!
+        }
+    }
 }

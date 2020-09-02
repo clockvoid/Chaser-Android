@@ -14,7 +14,7 @@ class CaffeineLocalDataSourceImpl @Inject constructor(
     override suspend fun getBoostLog(): List<Boost> {
         return CoroutinesRoom.execute(caffeineDatabase, false, Callable {
             caffeineDatabase.caffeineDao().getBoostLog().map {
-                Boost(type = BoostType.valueOf(it.type), timeStamp = it.timeStamp)
+                Boost(type = BoostType.from(it.type), timeStamp = it.timeStamp)
             }
         })
     }
