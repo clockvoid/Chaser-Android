@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.FrameLayout
 import androidx.compose.runtime.Recomposer
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.platform.setContent
@@ -37,13 +38,13 @@ class AlcoholFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val fragmentView = inflater.inflate(R.layout.fragment_alcohol, container, false)
-        (fragmentView as ViewGroup).setContent(Recomposer.current()) {
-            MdcTheme {
-                TutorialPreviewTemplate(items)
+        return FrameLayout(requireContext()).apply {
+            setContent(Recomposer.current()) {
+                MdcTheme {
+                    TutorialPreviewTemplate(items)
+                }
             }
         }
-        return fragmentView
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
