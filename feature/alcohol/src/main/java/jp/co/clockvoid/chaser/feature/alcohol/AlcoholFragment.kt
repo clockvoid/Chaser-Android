@@ -5,45 +5,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.FrameLayout
+import androidx.compose.runtime.Composable
 import androidx.compose.runtime.Recomposer
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.platform.setContent
 import androidx.fragment.app.Fragment
+import androidx.ui.tooling.preview.Preview
 import com.google.android.material.composethemeadapter.MdcTheme
 import dagger.hilt.android.AndroidEntryPoint
+import jp.co.clockvoid.chaser.feature.alcohol.model.AlcoholItem
+import jp.co.clockvoid.chaser.feature.alcohol.ui.AlcoholFragmentBody
 
 @AndroidEntryPoint
 class AlcoholFragment : Fragment() {
-
-    private val alcoholItem1 = AlcoholItem(
-        title = "最後に吸ってから",
-        body = "12時間",
-        sentimentLevel = 1
-    )
-
-    private val alcoholItem2 = AlcoholItem(
-        title = "最後に吸ってから",
-        body = "15時間",
-        sentimentLevel = 2
-    )
-
-    private val items = mutableStateOf(
-        listOf(alcoholItem1, alcoholItem2)
-                + listOf(alcoholItem1, alcoholItem2)
-                + listOf(alcoholItem1, alcoholItem2)
-                + listOf(alcoholItem1, alcoholItem2)
-                + listOf(alcoholItem1, alcoholItem2)
-                + listOf(alcoholItem1, alcoholItem2)
-                + listOf(alcoholItem1, alcoholItem2)
-                + listOf(alcoholItem1, alcoholItem2)
-                + listOf(alcoholItem1, alcoholItem2)
-                + listOf(alcoholItem1, alcoholItem2)
-                + listOf(alcoholItem1, alcoholItem2)
-                + listOf(alcoholItem1, alcoholItem2)
-                + listOf(alcoholItem1, alcoholItem2)
-                + listOf(alcoholItem1, alcoholItem2)
-                + listOf(alcoholItem1, alcoholItem2)
-    )
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -53,7 +27,7 @@ class AlcoholFragment : Fragment() {
         return FrameLayout(requireContext()).apply {
             setContent(Recomposer.current()) {
                 MdcTheme {
-                    AlcoholFragmentBody(items)
+                    AlcoholFragmentBody(mutableStateOf(emptyList()))
                 }
             }
         }
@@ -61,5 +35,19 @@ class AlcoholFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+    }
+}
+
+@Preview
+@Composable
+fun AlcoholFragmentPreview() {
+    MdcTheme {
+        AlcoholFragmentBody(mutableStateOf(listOf(
+            AlcoholItem(
+                title = "最後に吸ってから",
+                body = "12時間",
+                sentimentLevel = 1
+            )
+        )))
     }
 }
