@@ -15,7 +15,7 @@ import jp.co.clockvoid.chaser.feature.alcohol.R
 import jp.co.clockvoid.chaser.feature.alcohol.model.AlcoholItem
 
 @Composable
-fun AlcoholFragmentBody(items: MutableState<List<AlcoholItem>>) {
+fun AlcoholFragmentBody(items: MutableState<List<AlcoholItem>>, onClickFab: () -> Unit) {
 
     Scaffold(
         topBar = {
@@ -25,7 +25,7 @@ fun AlcoholFragmentBody(items: MutableState<List<AlcoholItem>>) {
             )
         },
         floatingActionButton = {
-            HomeFloatingActionButton()
+            HomeFloatingActionButton(onClickFab)
         },
         floatingActionButtonPosition = FabPosition.Center,
     ) {

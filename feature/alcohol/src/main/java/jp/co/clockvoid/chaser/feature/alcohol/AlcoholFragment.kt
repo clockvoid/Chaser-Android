@@ -10,14 +10,22 @@ import androidx.compose.runtime.Recomposer
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.platform.setContent
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.coroutineScope
 import androidx.ui.tooling.preview.Preview
 import com.google.android.material.composethemeadapter.MdcTheme
 import dagger.hilt.android.AndroidEntryPoint
 import jp.co.clockvoid.chaser.feature.alcohol.model.AlcoholItem
 import jp.co.clockvoid.chaser.feature.alcohol.ui.AlcoholFragmentBody
+import kotlinx.coroutines.launch
+import org.threeten.bp.LocalDate
+import org.threeten.bp.ZonedDateTime
+import timber.log.Timber
 
 @AndroidEntryPoint
 class AlcoholFragment : Fragment() {
+
+    private val viewModel: AlcoholViewModel by viewModels()
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -27,7 +35,17 @@ class AlcoholFragment : Fragment() {
         return FrameLayout(requireContext()).apply {
             setContent(Recomposer.current()) {
                 MdcTheme {
-                    AlcoholFragmentBody(mutableStateOf(emptyList()))
+                    AlcoholFragmentBody(viewModel.alcoholItem) {
+                        viewLifecycleOwner.lifecycle.coroutineScope.launch {
+                            runCatching {
+                                viewModel.drink(ZonedDateTime.now())
+                            }.onSuccess {
+                                viewModel.getDrinkNumberOfDay(LocalDate.now())
+                            }.onFailure {
+                                Timber.d(it)
+                            }
+                        }
+                    }
                 }
             }
         }
@@ -35,6 +53,14 @@ class AlcoholFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        viewLifecycleOwner.lifecycle.coroutineScope.launch {
+            runCatching {
+                viewModel.getDrinkNumberOfDay(LocalDate.now())
+            }.onFailure {
+                Timber.e(it)
+            }
+        }
     }
 }
 
@@ -48,6 +74,7 @@ fun AlcoholFragmentPreview() {
                 body = "12時間",
                 sentimentLevel = 1
             )
-        )))
+        ))) {
+        }
     }
 }

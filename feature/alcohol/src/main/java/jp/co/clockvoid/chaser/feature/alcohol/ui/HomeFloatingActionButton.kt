@@ -13,9 +13,9 @@ import androidx.compose.ui.unit.dp
 import jp.co.clockvoid.chaser.feature.alcohol.R
 
 @Composable
-fun HomeFloatingActionButton() {
+fun HomeFloatingActionButton(onClick: () -> Unit) {
     FloatingActionButton(
-        onClick = {},
+        onClick = { onClick() },
         backgroundColor = MaterialTheme.colors.primary,
         contentColor = MaterialTheme.colors.background,
         modifier = Modifier
