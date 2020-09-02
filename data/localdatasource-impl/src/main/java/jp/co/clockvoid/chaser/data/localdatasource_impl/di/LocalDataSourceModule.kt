@@ -7,8 +7,11 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.android.components.ApplicationComponent
+import jp.co.clockvoid.chaser.data.localdatasource.AlcoholLocalDataSource
 import jp.co.clockvoid.chaser.data.localdatasource.CaffeineLocalDataSource
 import jp.co.clockvoid.chaser.data.localdatasource.CigaretteLocalDataSource
+import jp.co.clockvoid.chaser.data.localdatasource_impl.alcohol.AlcoholDatabase
+import jp.co.clockvoid.chaser.data.localdatasource_impl.alcohol.AlcoholLocalDataSourceImpl
 import jp.co.clockvoid.chaser.data.localdatasource_impl.caffeine.CaffeineDatabase
 import jp.co.clockvoid.chaser.data.localdatasource_impl.caffeine.CaffeineLocalDataSourceImpl
 import jp.co.clockvoid.chaser.data.localdatasource_impl.cigarette.CigaretteDatabase
@@ -36,6 +39,14 @@ abstract class LocalDataSourceModule {
                 CaffeineDatabase::class.java, "caffeine_database"
             ).build()
         }
+
+        @Provides
+        fun provideAlcoholDatabase(application: Application): AlcoholDatabase {
+            return Room.databaseBuilder(
+                application.applicationContext,
+                AlcoholDatabase::class.java, "alcohol_database"
+            ).build()
+        }
     }
 
     @Binds
@@ -43,4 +54,7 @@ abstract class LocalDataSourceModule {
 
     @Binds
     protected abstract fun bindCaffeineLocalDataSource(impl: CaffeineLocalDataSourceImpl): CaffeineLocalDataSource
+
+    @Binds
+    protected abstract fun bindAlcoholLocalDataSource(impl: AlcoholLocalDataSourceImpl): AlcoholLocalDataSource
 }
