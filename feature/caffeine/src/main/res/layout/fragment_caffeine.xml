@@ -35,9 +35,6 @@
 
     <com.google.android.material.floatingactionbutton.ExtendedFloatingActionButton
         android:id="@+id/boostFloatingActionButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
         android:text="@string/do_boost"
         style="@style/HomeFloatingActionButtonStyle"
         app:icon="@drawable/ic_local_cafe_black_24dp"

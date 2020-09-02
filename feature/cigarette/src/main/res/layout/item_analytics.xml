@@ -36,10 +36,11 @@
 
             <ImageView
                 android:id="@+id/sentimentImageView"
-                android:layout_width="48dp"
-                android:layout_height="48dp"
+                android:layout_width="wrap_content"
+                android:layout_height="0dp"
                 android:contentDescription="@string/sentiment"
                 android:tint="?colorOnBackground"
+                android:adjustViewBounds="true"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
