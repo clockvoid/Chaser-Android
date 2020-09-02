@@ -35,6 +35,7 @@ dependencies {
     implementation("androidx.compose.foundation:foundation-layout:${version}")
     implementation("androidx.compose.material:material:${version}")
     implementation("androidx.compose.material:material-icons-extended:${version}")
+    implementation("com.google.android.material:compose-theme-adapter:${version}")
     implementation("androidx.compose.runtime:runtime:${version}")
     implementation("androidx.compose.runtime:runtime-livedata:${version}")
     implementation("androidx.compose.ui:ui:${version}")
