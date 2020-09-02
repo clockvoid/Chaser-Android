@@ -3,9 +3,7 @@ package jp.co.clockvoid.chaser.data.repositoryimpl
 import jp.co.clockvoid.chaser.core.model.Smoke
 import jp.co.clockvoid.chaser.data.localdatasource.CigaretteLocalDataSource
 import jp.co.clockvoid.chaser.data.repository.CigaretteRepository
-import kotlinx.coroutines.delay
 import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flow
 import org.threeten.bp.LocalDate
 import org.threeten.bp.ZonedDateTime
 import javax.inject.Inject

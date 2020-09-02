@@ -1,9 +1,8 @@
-package jp.co.clockvoid.chaser.data.localdatasource_impl
+package jp.co.clockvoid.chaser.data.localdatasource_impl.cigarette
 
 import androidx.room.Dao
 import androidx.room.Insert
 import androidx.room.Query
-import jp.co.clockvoid.chaser.core.model.Smoke
 
 @Dao
 interface CigaretteDao {
