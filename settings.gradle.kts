@@ -1,5 +1,6 @@
-include()
+
 rootProject.name="Chaser"
+
 include(":app",
     ":feature:cigarette", ":feature:caffeine", ":feature:alcohol",
     ":data:repository-impl", ":data:repository",
