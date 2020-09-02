@@ -9,12 +9,8 @@ import androidx.compose.runtime.Recomposer
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.platform.setContent
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.lifecycleScope
 import com.google.android.material.composethemeadapter.MdcTheme
 import dagger.hilt.android.AndroidEntryPoint
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.launch
 
 @AndroidEntryPoint
 class AlcoholFragment : Fragment() {
@@ -31,7 +27,23 @@ class AlcoholFragment : Fragment() {
         sentimentLevel = 2
     )
 
-    private val items = mutableStateOf(listOf(alcoholItem1, alcoholItem2))
+    private val items = mutableStateOf(
+        listOf(alcoholItem1, alcoholItem2)
+                + listOf(alcoholItem1, alcoholItem2)
+                + listOf(alcoholItem1, alcoholItem2)
+                + listOf(alcoholItem1, alcoholItem2)
+                + listOf(alcoholItem1, alcoholItem2)
+                + listOf(alcoholItem1, alcoholItem2)
+                + listOf(alcoholItem1, alcoholItem2)
+                + listOf(alcoholItem1, alcoholItem2)
+                + listOf(alcoholItem1, alcoholItem2)
+                + listOf(alcoholItem1, alcoholItem2)
+                + listOf(alcoholItem1, alcoholItem2)
+                + listOf(alcoholItem1, alcoholItem2)
+                + listOf(alcoholItem1, alcoholItem2)
+                + listOf(alcoholItem1, alcoholItem2)
+                + listOf(alcoholItem1, alcoholItem2)
+    )
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -41,7 +53,7 @@ class AlcoholFragment : Fragment() {
         return FrameLayout(requireContext()).apply {
             setContent(Recomposer.current()) {
                 MdcTheme {
-                    TutorialPreviewTemplate(items)
+                    AlcoholFragmentBody(items)
                 }
             }
         }
@@ -49,13 +61,5 @@ class AlcoholFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
-        lifecycleScope.launch(Dispatchers.IO) {
-            delay(1000)
-
-            lifecycleScope.launch(Dispatchers.Main) {
-                items.value = listOf(alcoholItem2)
-            }
-        }
     }
 }

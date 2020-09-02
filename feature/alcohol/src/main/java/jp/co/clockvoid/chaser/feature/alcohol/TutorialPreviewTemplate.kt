@@ -1,14 +1,12 @@
 package jp.co.clockvoid.chaser.feature.alcohol
 
 import androidx.annotation.IntRange
+import androidx.compose.foundation.Icon
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.*
-import androidx.compose.foundation.lazy.LazyColumnFor
-import androidx.compose.material.Card
-import androidx.compose.material.MaterialTheme
-import androidx.compose.material.Scaffold
-import androidx.compose.material.TopAppBar
+import androidx.compose.foundation.lazy.LazyColumnForIndexed
+import androidx.compose.material.*
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
@@ -19,6 +17,7 @@ import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.ui.tooling.preview.Preview
+import com.google.android.material.composethemeadapter.MdcTheme
 
 data class AlcoholItem(
     val title: String,
@@ -28,29 +27,91 @@ data class AlcoholItem(
 )
 
 @Composable
-fun TutorialPreviewTemplate(items: MutableState<List<AlcoholItem>>) {
-
-    Scaffold(
-        topBar = { TopAppBar(
-            title = { Text(stringResource(id = R.string.alcohol)) },
-            backgroundColor = (MaterialTheme.colors).background
-        ) }
+fun HomeFloatingActionButton() {
+    FloatingActionButton(
+        onClick = {},
+        backgroundColor = MaterialTheme.colors.primary,
+        contentColor = MaterialTheme.colors.background,
+        modifier = Modifier
+            .height(48.dp)
     ) {
-        LazyColumnFor(items = items.value) { item ->
+        ConstraintLayout(
+            constraintSet = ConstraintSet {
 
-            AnalyticsItem(
-                title = item.title,
-                body = item.body,
-                sentimentLevel = item.sentimentLevel
+                val text = createRefFor("text")
+                val icon = createRefFor("icon")
+
+                constrain(icon) {
+                    top.linkTo(parent.top)
+                    start.linkTo(parent.start)
+                    bottom.linkTo(parent.bottom)
+                }
+                constrain(text) {
+                    top.linkTo(parent.top)
+                    start.linkTo(icon.end)
+                    end.linkTo(parent.end)
+                    bottom.linkTo(parent.bottom)
+                }
+            },
+            modifier = Modifier
+                .defaultMinSizeConstraints(minWidth = 200.dp)
+        ) {
+            Icon(
+                asset = vectorResource(id = R.drawable.ic_local_bar_black_24dp),
+                tint = MaterialTheme.colors.onPrimary,
+                modifier = Modifier
+                    .padding(start = 20.dp)
+                    .layoutId("icon")
+            )
+            Text(
+                text = "I DRANK",
+                modifier = Modifier.layoutId("text")
             )
         }
     }
 }
 
 @Composable
-fun AnalyticsItem(title: String, body: String, sentimentLevel: Int) {
+fun AlcoholFragmentBody(items: MutableState<List<AlcoholItem>>) {
 
-    Card(modifier = Modifier.padding(8.dp), elevation = 4.dp) {
+    Scaffold(
+        topBar = {
+            TopAppBar(
+                title = { Text(stringResource(id = R.string.alcohol)) },
+                backgroundColor = (MaterialTheme.colors).background
+            )
+        },
+        floatingActionButton = {
+            HomeFloatingActionButton()
+        },
+        floatingActionButtonPosition = FabPosition.Center,
+    ) {
+        LazyColumnForIndexed(
+            items = items.value,
+            contentPadding = InnerPadding(top = 8.dp)
+        ) { index, item ->
+
+            AnalyticsItem(
+                title = item.title,
+                body = item.body,
+                sentimentLevel = item.sentimentLevel,
+                isLast = items.value.size - 1 == index
+            )
+        }
+    }
+}
+
+@Composable
+fun AnalyticsItem(title: String, body: String, sentimentLevel: Int, isLast: Boolean) {
+
+    Card(
+        modifier = Modifier.padding(
+            bottom = if (isLast) 72.dp else 8.dp,
+            start = 8.dp,
+            end = 8.dp
+        ),
+        elevation = 4.dp
+    ) {
 
         ConstraintLayout(constraintSet = ConstraintSet {
 
@@ -101,10 +162,12 @@ fun AnalyticsItem(title: String, body: String, sentimentLevel: Int) {
 
 @Preview
 @Composable
-fun TutorialPreview() {
-   TutorialPreviewTemplate(mutableStateOf(listOf(AlcoholItem(
-       title = "最後に吸ってから",
-       body = "12時間",
-       sentimentLevel = 1
-   ))))
+fun AlcoholFragmentPreview() {
+    MdcTheme {
+        AlcoholFragmentBody(mutableStateOf(listOf(AlcoholItem(
+            title = "最後に吸ってから",
+            body = "12時間",
+            sentimentLevel = 1
+        ))))
+    }
 }
