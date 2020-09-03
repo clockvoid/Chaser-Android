@@ -20,7 +20,7 @@ class CaffeineViewModel @ViewModelInject constructor(
         }
     }
 
-    suspend fun boost(date: ZonedDateTime, type: BoostType = BoostType.COFFEE) {
+    suspend fun boost(date: ZonedDateTime, type: BoostType) {
         withContext(Dispatchers.IO) {
             repository.boost(date, type)
         }

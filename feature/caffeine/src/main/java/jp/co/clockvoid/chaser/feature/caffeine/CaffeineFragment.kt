@@ -9,12 +9,16 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.lifecycle.lifecycleOwner
+import com.afollestad.materialdialogs.list.listItemsSingleChoice
 import com.google.android.material.snackbar.Snackbar
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.viewbinding.BindableItem
 import dagger.hilt.android.AndroidEntryPoint
 import jp.co.clockvoid.chaser.core.android.SpacingItemDecoration
+import jp.co.clockvoid.chaser.core.model.BoostType
 import jp.co.clockvoid.chaser.feature.caffeine.databinding.FragmentCaffeineBinding
 import kotlinx.coroutines.launch
 import org.threeten.bp.Duration
@@ -54,7 +58,14 @@ class CaffeineFragment : Fragment() {
         fetchNumberOfBoost(adapter)
 
         binding.boostFloatingActionButton.setOnClickListener {
-            doBoost(adapter)
+            val myItems = BoostType.values().map { it.displayName }.toList().dropLast(1)
+            MaterialDialog(requireContext()).show {
+                listItemsSingleChoice(items = myItems, initialSelection = 0) { _, index, _ ->
+                    doBoost(adapter, BoostType.values()[index])
+                }
+                title(text = "飲んだものを選択してください")
+                positiveButton(text = "選択")
+            }.lifecycleOwner(viewLifecycleOwner)
         }
     }
 
@@ -64,11 +75,11 @@ class CaffeineFragment : Fragment() {
         _binding = null
     }
 
-    private fun doBoost(adapter: GroupAdapter<GroupieViewHolder>) {
+    private fun doBoost(adapter: GroupAdapter<GroupieViewHolder>, type: BoostType) {
         viewLifecycleOwner.lifecycleScope.launch {
             binding.boostFloatingActionButton.isEnabled = false
             runCatching {
-                viewModel.boost(ZonedDateTime.now())
+                viewModel.boost(ZonedDateTime.now(), type)
             }.onSuccess {
                 fetchNumberOfBoost(adapter)
             }.onFailure {
