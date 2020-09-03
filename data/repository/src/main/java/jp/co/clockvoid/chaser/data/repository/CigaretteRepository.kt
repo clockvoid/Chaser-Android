@@ -7,7 +7,7 @@ import org.threeten.bp.ZonedDateTime
 
 interface CigaretteRepository {
 
-    suspend fun smoke(date: ZonedDateTime)
+    suspend fun smoke(date: ZonedDateTime, number: Int)
 
     suspend fun getSmokeOfDay(date: LocalDate): List<Smoke>
 

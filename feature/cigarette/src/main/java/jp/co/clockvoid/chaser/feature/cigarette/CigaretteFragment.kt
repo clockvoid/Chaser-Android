@@ -1,6 +1,7 @@
 package jp.co.clockvoid.chaser.feature.cigarette
 
 import android.os.Bundle
+import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,6 +9,8 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.viewbinding.ViewBinding
+import com.afollestad.materialdialogs.MaterialDialog
+import com.afollestad.materialdialogs.input.input
 import com.google.android.material.snackbar.Snackbar
 import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
@@ -50,15 +53,22 @@ class CigaretteFragment : Fragment() {
         fetchNumberOfSmoke()
 
         binding.smokeFloatingActionButton.setOnClickListener {
-            doSmoke()
+            MaterialDialog(requireContext()).show {
+                input(inputType = InputType.TYPE_CLASS_NUMBER, prefill = "1") { _, text ->
+                    doSmoke(text.toString().toInt())
+                }
+                title(text = "吸った本数を入力してください")
+                positiveButton(text = "OK")
+            }
+            MaterialDialog
         }
     }
 
-    private fun doSmoke() {
+    private fun doSmoke(number: Int) {
         viewLifecycleOwner.lifecycleScope.launch {
             binding.smokeFloatingActionButton.isEnabled = false
             kotlin.runCatching {
-                viewModel.smoke()
+                viewModel.smoke(number)
             }.onSuccess {
                 fetchNumberOfSmoke()
             }.onFailure {
@@ -78,7 +88,7 @@ class CigaretteFragment : Fragment() {
             kotlin.runCatching {
                 viewModel.getSmokeOfToday()
             }.onSuccess {
-                items[NUMBER] = NumberItem(it.size)
+                items[NUMBER] = NumberItem(it.fold(0) { acc, smoke -> acc + smoke.number })
                 it.map { smoke -> smoke.timeStamp }.max()?.let { lastSmokedTime ->
                     items[TIME] = TimeItem(Duration.between(lastSmokedTime, ZonedDateTime.now()))
                 }
