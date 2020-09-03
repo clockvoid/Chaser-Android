@@ -8,6 +8,9 @@ plugins {
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
+
+    // https://github.com/jmatsu/license-list-plugin
+    id("io.github.jmatsu.license-list") version ("0.5.0")
 }
 
 android {
