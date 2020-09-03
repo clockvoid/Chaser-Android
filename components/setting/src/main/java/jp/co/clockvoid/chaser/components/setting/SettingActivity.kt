@@ -4,12 +4,15 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.preference.Preference
+import androidx.preference.CheckBoxPreference
 import androidx.preference.PreferenceFragmentCompat
 import jp.co.clockvoid.chaser.components.setting.databinding.ActivitySettingBinding
 
-class SettingActivity : AppCompatActivity(),
-    PreferenceFragmentCompat.OnPreferenceStartFragmentCallback {
+/**
+ * SettingActivity
+ * It's based on https://github.com/android/user-interface-samples/blob/master/PreferencesKotlin/app/src/main/java/com/example/androidx/preference/sample/MainActivity.kt
+ */
+class SettingActivity : AppCompatActivity() {
 
     private var _binding: ActivitySettingBinding? = null
     private val binding: ActivitySettingBinding
@@ -36,7 +39,7 @@ class SettingActivity : AppCompatActivity(),
         }
         supportFragmentManager.addOnBackStackChangedListener {
             if (supportFragmentManager.backStackEntryCount == 0) {
-                setTitle(R.string.title)
+                setTitle(R.string.setting_title)
             }
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
@@ -54,40 +57,24 @@ class SettingActivity : AppCompatActivity(),
         outState.putCharSequence(TITLE_TAG, title)
     }
 
-    override fun onSupportNavigateUp(): Boolean {
-        if (supportFragmentManager.popBackStackImmediate()) {
-            return true
-        }
-        return super.onSupportNavigateUp()
-    }
-
-    override fun onPreferenceStartFragment(
-        caller: PreferenceFragmentCompat?,
-        pref: Preference?
-    ): Boolean {
-        if (pref == null) return false
-
-        val args = pref.extras
-        val fragment = supportFragmentManager.fragmentFactory.instantiate(
-            classLoader,
-            pref.fragment
-        ).apply {
-            arguments = args
-            setTargetFragment(caller, 0)
-        }
-
-        supportFragmentManager.beginTransaction()
-            .replace(R.id.settings, fragment)
-            .addToBackStack(null)
-            .commit()
-        title = pref.title
-
-        return true
-    }
-
     class SettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.chaser_preferences, rootKey)
+            val visibleList: List<CheckBoxPreference?> = listOf(
+                findPreference("is_alcohol_visible"),
+                findPreference("is_caffeine_visible"),
+                findPreference("is_cigarette_visible")
+
+            )
+            visibleList.map { item ->
+                requireNotNull(item)
+                item.setOnPreferenceChangeListener { preference, newValue ->
+                    visibleList.forEach { it!!.isEnabled = true }
+                    val checked = visibleList.filter { it!!.isChecked && (newValue == false && it == item).not() }
+                    if (checked.size == 1 && newValue == false) checked.last()!!.isEnabled = false
+                    true
+                }
+            }
         }
     }
 
