@@ -7,7 +7,7 @@ apply plugin: "kotlin-kapt"
 apply plugin: "androidx.navigation.safeargs.kotlin"
 apply plugin: "dagger.hilt.android.plugin"
 
-android.buildFeatures.dataBinding = true
+android.buildFeatures.viewBinding = true
 
 dependencies {
     implementation(project(":core:android"))
@@ -18,4 +18,9 @@ dependencies {
     implementation(Dependencies.AndroidX.Hilt.common)
     implementation(Dependencies.AndroidX.Hilt.viewModel)
     kapt(Dependencies.AndroidX.Hilt.compiler)
+
+    implementation("androidx.preference:preference:1.1.1")
+    implementation("androidx.preference:preference-ktx:1.1.1")
+    implementation("androidx.activity:activity-ktx:1.2.0-alpha08")
+    implementation("androidx.fragment:fragment:1.3.0-alpha08")
 }

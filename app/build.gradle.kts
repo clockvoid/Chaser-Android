@@ -55,6 +55,7 @@ dependencies {
     implementation(project(":core:android"))
     implementation(project(":data:repository-impl"))
     implementation(project(":data:localdatasource-impl"))
+    implementation(project(":components:setting"))
     implementation(project(":feature:cigarette"))
     implementation(project(":feature:caffeine"))
     implementation(project(":feature:alcohol"))
