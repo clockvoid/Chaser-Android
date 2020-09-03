@@ -8,6 +8,10 @@ plugins {
     kotlin("android")
     kotlin("android.extensions")
     kotlin("kapt")
+
+    // https://github.com/jmatsu/license-list-plugin
+    id("io.github.jmatsu.license-list") version ("0.6.1")
+    id("com.google.android.gms.oss-licenses-plugin")
 }
 
 android {
@@ -56,6 +60,7 @@ dependencies {
     implementation(project(":data:repository-impl"))
     implementation(project(":data:localdatasource-impl"))
     implementation(project(":components:setting"))
+    implementation(project(":components:license"))
     implementation(project(":feature:cigarette"))
     implementation(project(":feature:caffeine"))
     implementation(project(":feature:alcohol"))
@@ -82,7 +87,30 @@ dependencies {
     // leak canary
     debugImplementation(Dependencies.leakCanary)
 
+    implementation("com.google.android.gms:play-services-oss-licenses:17.0.0")
+
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test.ext:junit:1.1.1")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
+}
+
+// https://github.com/jmatsu/license-list-plugin#extension
+licenseList {
+    defaultVariant = "release"
+
+    variants {
+
+        create("release") {
+            baseDir = file("license-list")
+
+            assembly {
+                format = "yaml"
+                style = "structured"
+            }
+
+            visualization {
+                format = "html"
+            }
+        }
+    }
 }

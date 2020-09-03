@@ -1,0 +1,13 @@
+
+apply from: rootProject.file("gradle/android.gradle")
+
+apply plugin: "kotlin-kapt"
+
+android.buildFeatures.viewBinding = true
+
+dependencies {
+    implementation(project(":core:android"))
+
+    implementation("androidx.activity:activity:1.2.0-alpha08")
+    implementation("com.google.android.gms:play-services-oss-licenses:17.0.0")
+}

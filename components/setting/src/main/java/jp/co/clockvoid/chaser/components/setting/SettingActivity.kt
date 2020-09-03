@@ -5,7 +5,9 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.preference.CheckBoxPreference
+import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import jp.co.clockvoid.chaser.components.license.License
 import jp.co.clockvoid.chaser.components.setting.databinding.ActivitySettingBinding
 
 /**
@@ -74,6 +76,13 @@ class SettingActivity : AppCompatActivity() {
                     if (checked.size == 1 && newValue == false) checked.last()!!.isEnabled = false
                     true
                 }
+            }
+            findPreference<Preference>("license")?.setOnPreferenceClickListener {
+                //OssLicensesMenuActivity.setActivityTitle(requireContext().getString(R.string.open_source_license))
+                //val intent = Intent(requireActivity(), OssLicensesMenuActivity::class.java)
+                //startActivity(intent)
+                License.launch(requireContext())
+                true
             }
         }
     }

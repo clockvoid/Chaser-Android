@@ -44,4 +44,15 @@
     </style>
 
     <style name="Theme.Chaser.DayNight" parent="Theme.Chaser" />
+
+    <style name="Theme.Chaser.OssLicense" parent="Theme.AppCompat.Light">
+        <!-- color -->
+        <item name="android:textColorPrimary">@color/black</item>
+        <item name="colorPrimary">@color/white</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorOnBackground">@color/black</item>
+        <item name="android:colorBackground">@color/white</item>
+        <item name="android:statusBarColor">@color/white</item>
+        <item name="android:windowLightStatusBar">true</item>
+    </style>
 </resources>

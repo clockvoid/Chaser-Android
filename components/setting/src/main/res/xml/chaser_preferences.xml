@@ -19,4 +19,8 @@
         app:title="@string/display_cigarette"
         app:defaultValue="true"
         app:icon="@drawable/ic_smoking_rooms_black_24dp" />
+
+    <Preference
+        app:key="license"
+        app:title="@string/open_source_license" />
 </PreferenceScreen>
