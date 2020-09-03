@@ -16,6 +16,9 @@
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Chaser.SmallComponent</item>
         <item name="shapeAppearanceMediumComponent">@style/ShapeAppearance.Chaser.MediumComponent</item>
         <item name="shapeAppearanceLargeComponent">@style/ShapeAppearance.Chaser.LargeComponent</item>
+
+        <!-- Material Dialogs -->
+        <item name="md_corner_radius">4dp</item>
     </style>
 
     <style name="Theme.Chaser" parent="Base.Theme.Chaser">
@@ -31,8 +34,14 @@
         <item name="android:colorBackground">@color/white</item>
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowLightStatusBar">true</item>
+
+        <!-- Material Dialogs -->
+        <item name="md_color_title">?attr/colorOnBackground</item>
+        <item name="md_color_content">?attr/colorOnBackground</item>
+        <item name="md_color_button_text">?attr/colorPrimary</item>
+        <item name="md_ripple_color">?attr/colorPrimary</item>
+        <item name="md_color_widget">?attr/colorPrimary</item>
     </style>
 
     <style name="Theme.Chaser.DayNight" parent="Theme.Chaser" />
-
 </resources>
