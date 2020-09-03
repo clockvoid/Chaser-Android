@@ -12,6 +12,7 @@ android.buildFeatures.viewBinding = true
 dependencies {
     implementation(project(":core:android"))
     implementation(project(":data:repository"))
+    implementation(project(":components:license"))
 
     implementation(Dependencies.Dagger.Hilt.runtime)
     kapt(Dependencies.Dagger.Hilt.compiler)
