@@ -12,8 +12,8 @@ class CigaretteRepositoryImpl @Inject constructor(
     private val localDataSource: CigaretteLocalDataSource
 ) : CigaretteRepository {
 
-    override suspend fun smoke(date: ZonedDateTime) {
-        return localDataSource.registerSmokeLog(Smoke(1, date))
+    override suspend fun smoke(date: ZonedDateTime, number: Int) {
+        return localDataSource.registerSmokeLog(Smoke(number, date))
     }
 
     override suspend fun getSmokeOfDay(date: LocalDate): List<Smoke> {

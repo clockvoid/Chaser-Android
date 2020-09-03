@@ -18,4 +18,6 @@ dependencies {
     implementation(Dependencies.AndroidX.Hilt.common)
     implementation(Dependencies.AndroidX.Hilt.viewModel)
     kapt(Dependencies.AndroidX.Hilt.compiler)
+
+    implementation(Dependencies.MaterialDialogs.input)
 }
