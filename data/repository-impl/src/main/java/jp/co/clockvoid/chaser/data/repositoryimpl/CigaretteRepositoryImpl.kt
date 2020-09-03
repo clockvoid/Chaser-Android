@@ -17,7 +17,9 @@ class CigaretteRepositoryImpl @Inject constructor(
     }
 
     override suspend fun getSmokeOfDay(date: LocalDate): List<Smoke> {
-        return localDataSource.getSmokeLog()
+        return localDataSource.getSmokeLog().filter { smoke ->
+            smoke.timeStamp.toLocalDate() == date
+        }
     }
 
     override suspend fun getSmokeOfWeek(startDate: LocalDate): Flow<List<Smoke>> {
@@ -27,5 +29,4 @@ class CigaretteRepositoryImpl @Inject constructor(
     override suspend fun getSmokeOfMonth(startDate: LocalDate): Flow<List<Smoke>> {
         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
     }
-
 }
