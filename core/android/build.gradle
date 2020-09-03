@@ -42,4 +42,7 @@ dependencies {
 
     // timber
     api(Dependencies.timber)
+
+    // material dialogs
+    api(Dependencies.MaterialDialogs.core)
 }
