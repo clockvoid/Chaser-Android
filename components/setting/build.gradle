@@ -1,0 +1,21 @@
+
+import dependencies.Dependencies
+
+apply from: rootProject.file("gradle/android.gradle")
+
+apply plugin: "kotlin-kapt"
+apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: "dagger.hilt.android.plugin"
+
+android.buildFeatures.dataBinding = true
+
+dependencies {
+    implementation(project(":core:android"))
+    implementation(project(":data:repository"))
+
+    implementation(Dependencies.Dagger.Hilt.runtime)
+    kapt(Dependencies.Dagger.Hilt.compiler)
+    implementation(Dependencies.AndroidX.Hilt.common)
+    implementation(Dependencies.AndroidX.Hilt.viewModel)
+    kapt(Dependencies.AndroidX.Hilt.compiler)
+}
