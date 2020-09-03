@@ -4,5 +4,4 @@
     <string name="assets_license_html_path" translatable="false">file:///android_asset/license-list.html</string>
 
     <string name="screen_license">オープンソースライセンス</string>
-
 </resources>
