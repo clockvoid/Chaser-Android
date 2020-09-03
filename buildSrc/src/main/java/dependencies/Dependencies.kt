@@ -70,6 +70,15 @@ object Dependencies {
         const val viewBinding = "com.xwray:groupie-viewbinding:$version"
     }
 
+    object MaterialDialogs {
+        private const val version = "3.3.0"
+
+        const val core = "com.afollestad.material-dialogs:core:$version"
+        const val input = "com.afollestad.material-dialogs:input:$version"
+        const val color = "com.afollestad.material-dialogs:color:$version"
+        const val lifecycle = "com.afollestad.material-dialogs:lifecycle:$version"
+    }
+
     object Dagger {
         private const val version = "2.28.3"
         const val dagger = "com.google.dagger:dagger:$version"
