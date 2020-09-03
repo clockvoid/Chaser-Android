@@ -62,7 +62,11 @@ fun AnalyticsItem(title: String, body: String, sentimentLevel: Int, isLast: Bool
                     .layoutId("bodyTextView"),
             )
             Image(
-                vectorResource(id = R.drawable.ic_sentiment_satisfied_black_24dp),
+                vectorResource(id = when (sentimentLevel) {
+                    0 -> R.drawable.ic_sentiment_very_satisfied_black_24dp
+                    1 -> R.drawable.ic_sentiment_satisfied_black_24dp
+                    else -> R.drawable.ic_sentiment_very_dissatisfied_black_24dp
+                }),
                 modifier = Modifier
                     .aspectRatio(1f)
                     .layoutId("sentimentImageView")
