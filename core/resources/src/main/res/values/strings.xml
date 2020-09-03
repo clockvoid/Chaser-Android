@@ -26,4 +26,10 @@
 
     <!-- Analytics Fragment -->
     <string name="analytics">Analytics</string>
+
+    <!-- Setting Activity -->
+    <string name="setting_title">Settings</string>
+    <string name="display_alcohol">Alcoholタブを表示する</string>
+    <string name="display_caffeine">Caffeineタブを表示する</string>
+    <string name="display_cigarette">Cigaretteタブを表示する</string>
 </resources>

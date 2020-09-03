@@ -16,6 +16,7 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.viewbinding.BindableItem
 import dagger.hilt.android.AndroidEntryPoint
+import jp.co.clockvoid.chaser.components.setting.SettingActivity
 import jp.co.clockvoid.chaser.core.android.SpacingItemDecoration
 import jp.co.clockvoid.chaser.feature.cigarette.databinding.FragmentCigaretteBinding
 import jp.co.clockvoid.chaser.feature.cigarette.extensions.FragmentExtension.dataBinding
@@ -44,6 +45,18 @@ class CigaretteFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.toolBar.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.menu_setting -> {
+                    startActivity(SettingActivity.from(requireActivity()))
+                    true
+                }
+                else -> {
+                    false
+                }
+            }
+        }
 
         binding.analyticsCigaretteRecyclerView.also {
             it.adapter = adapter

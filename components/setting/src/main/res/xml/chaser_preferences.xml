@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <CheckBoxPreference
+        app:key="is_alcohol_visible"
+        app:title="@string/display_alcohol"
+        app:defaultValue="true"
+        app:icon="@drawable/ic_local_bar_black_24dp" />
+
+    <CheckBoxPreference
+        app:key="is_caffeine_visible"
+        app:title="@string/display_caffeine"
+        app:defaultValue="true"
+        app:icon="@drawable/ic_local_cafe_black_24dp" />
+
+    <CheckBoxPreference
+        app:key="is_cigarette_visible"
+        app:title="@string/display_cigarette"
+        app:defaultValue="true"
+        app:icon="@drawable/ic_smoking_rooms_black_24dp" />
+</PreferenceScreen>

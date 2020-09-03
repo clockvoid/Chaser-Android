@@ -15,11 +15,13 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent">
 
-            <Toolbar
+            <com.google.android.material.appbar.MaterialToolbar
+                android:id="@+id/toolBar"
                 style="@style/MainToolBarStyle"
                 android:layout_width="match_parent"
                 android:layout_height="?android:attr/actionBarSize"
-                android:title="@string/cigarette" />
+                app:title="@string/cigarette"
+                app:menu="@menu/toolbar_menu" />
         </com.google.android.material.appbar.AppBarLayout>
 
         <androidx.recyclerview.widget.RecyclerView

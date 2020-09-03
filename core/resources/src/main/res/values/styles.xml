@@ -1,8 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <style name="ChaserThemeOverlay_Toolbar" parent="ThemeOverlay.MaterialComponents.Toolbar.Primary">
+        <item name="colorOnPrimary">?attr/colorOnBackground</item>
+    </style>
+
     <style name="MainToolBarStyle" parent="Widget.MaterialComponents.Toolbar">
         <item name="titleTextColor">?attr/colorOnBackground</item>
         <item name="android:background">?android:colorBackground</item>
+        <item name="android:theme">@style/ChaserThemeOverlay_Toolbar</item>
     </style>
 
     <style name="HomeFloatingActionButtonStyle" parent="Widget.MaterialComponents.ExtendedFloatingActionButton">
