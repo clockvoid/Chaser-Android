@@ -15,6 +15,7 @@ import androidx.lifecycle.coroutineScope
 import androidx.ui.tooling.preview.Preview
 import com.google.android.material.composethemeadapter.MdcTheme
 import dagger.hilt.android.AndroidEntryPoint
+import jp.co.clockvoid.chaser.components.setting.SettingActivity
 import jp.co.clockvoid.chaser.feature.alcohol.model.AlcoholItem
 import jp.co.clockvoid.chaser.feature.alcohol.ui.AlcoholFragmentBody
 import kotlinx.coroutines.launch
@@ -35,7 +36,7 @@ class AlcoholFragment : Fragment() {
         return FrameLayout(requireContext()).apply {
             setContent(Recomposer.current()) {
                 MdcTheme {
-                    AlcoholFragmentBody(viewModel.alcoholItem) {
+                    AlcoholFragmentBody(viewModel.alcoholItem, {
                         viewLifecycleOwner.lifecycle.coroutineScope.launch {
                             runCatching {
                                 viewModel.drink(ZonedDateTime.now())
@@ -45,7 +46,9 @@ class AlcoholFragment : Fragment() {
                                 Timber.d(it)
                             }
                         }
-                    }
+                    }, {
+                        startActivity(SettingActivity.from(requireActivity()))
+                    })
                 }
             }
         }
@@ -74,7 +77,8 @@ fun AlcoholFragmentPreview() {
                 body = "12時間",
                 sentimentLevel = 1
             )
-        ))) {
-        }
+        )), {
+        }, {
+        })
     }
 }
