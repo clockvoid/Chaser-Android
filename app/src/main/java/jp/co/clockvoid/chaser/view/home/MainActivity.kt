@@ -60,8 +60,9 @@ class MainActivity : AppCompatActivity() {
         val inflater = navHostFragment.navController.navInflater
         val navGraph = inflater.inflate(R.navigation.nav_graph_home).apply {
             val firstVisibleItem = menuItems.find { item -> item.isVisible }
+            val lastShownItem = preferenceStorage.lastShownFragment
             requireNotNull(firstVisibleItem)
-            startDestination = firstVisibleItem.itemId
+            startDestination = if (lastShownItem == -1) firstVisibleItem.itemId else lastShownItem
         }
         navHostFragment.navController.graph = navGraph
         NavigationUI.setupWithNavController(
@@ -69,6 +70,12 @@ class MainActivity : AppCompatActivity() {
                 R.id.navHostFragment
             )
         )
+    }
+
+    override fun onStop() {
+        super.onStop()
+
+        preferenceStorage.lastShownFragment = binding.homeBottomNavigation.selectedItemId
     }
 
     override fun onDestroy() {

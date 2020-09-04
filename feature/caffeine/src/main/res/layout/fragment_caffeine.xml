@@ -18,7 +18,7 @@
             style="@style/MainToolBarStyle"
             android:layout_width="match_parent"
             android:layout_height="?android:attr/actionBarSize"
-            app:title="@string/cigarette"
+            app:title="@string/caffeine"
             app:menu="@menu/toolbar_menu" />
     </com.google.android.material.appbar.AppBarLayout>
 

@@ -18,12 +18,14 @@ class PreferenceStorageImpl @Inject constructor(
     override var isAlcoholVisible by BooleanPreference(prefs, PREF_IS_ALCOHOL_VISIBLE, true)
     override var isCaffeineVisible by BooleanPreference(prefs, PREF_IS_CAFFEINE_VISIBLE, true)
     override var isCigaretteVisible by BooleanPreference(prefs, PREF_IS_CIGARETTE_VISIBLE, true)
+    override var lastShownFragment: Int by IntPreference(prefs, PREF_LAST_SHOWN_FRAGMENT, -1)
 
     companion object {
         private const val PREFS_NAME = "jp.co.clockvoid.chaser_preferences"
         private const val PREF_IS_ALCOHOL_VISIBLE = "is_alcohol_visible"
         private const val PREF_IS_CAFFEINE_VISIBLE = "is_caffeine_visible"
         private const val PREF_IS_CIGARETTE_VISIBLE = "is_cigarette_visible"
+        private const val PREF_LAST_SHOWN_FRAGMENT = "last_shown_fragment"
     }
 }
 
