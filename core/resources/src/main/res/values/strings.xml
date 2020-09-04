@@ -25,6 +25,8 @@
     <string name="do_boost">I have a boost</string>
     <string name="caffeine_number_of_today">今日のカフェイン量</string>
     <string name="since_last_boost">最後に飲んでから</string>
+    <string name="select_drink">飲んだものを選択してください</string>
+    <string name="select">選択</string>
 
     <!-- Analytics Fragment -->
     <string name="analytics">Analytics</string>

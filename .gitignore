@@ -13,3 +13,6 @@
 /captures
 .externalNativeBuild
 .cxx
+
+release_key_store
+

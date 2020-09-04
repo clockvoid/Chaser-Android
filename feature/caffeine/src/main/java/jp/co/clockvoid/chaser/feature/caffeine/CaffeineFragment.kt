@@ -17,6 +17,7 @@ import com.xwray.groupie.GroupAdapter
 import com.xwray.groupie.GroupieViewHolder
 import com.xwray.groupie.viewbinding.BindableItem
 import dagger.hilt.android.AndroidEntryPoint
+import jp.co.clockvoid.chaser.components.setting.SettingActivity
 import jp.co.clockvoid.chaser.core.android.SpacingItemDecoration
 import jp.co.clockvoid.chaser.core.model.BoostType
 import jp.co.clockvoid.chaser.feature.caffeine.databinding.FragmentCaffeineBinding
@@ -48,6 +49,18 @@ class CaffeineFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.toolBar.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.menu_setting -> {
+                    startActivity(SettingActivity.from(requireActivity()))
+                    true
+                }
+                else -> {
+                    false
+                }
+            }
+        }
+
         val adapter = GroupAdapter<GroupieViewHolder>()
 
         binding.analyticsCaffeineRecyclerView.also {
@@ -63,8 +76,8 @@ class CaffeineFragment : Fragment() {
                 listItemsSingleChoice(items = myItems, initialSelection = 0) { _, index, _ ->
                     doBoost(adapter, BoostType.values()[index])
                 }
-                title(text = "飲んだものを選択してください")
-                positiveButton(text = "選択")
+                title(R.string.select_drink)
+                positiveButton(R.string.select)
             }.lifecycleOwner(viewLifecycleOwner)
         }
     }
