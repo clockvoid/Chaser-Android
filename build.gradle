@@ -18,7 +18,7 @@ buildscript {
         classpath(Dependencies.Kotlin.gradlePlugin)
         classpath(Dependencies.AndroidX.Navigation.gradlePlugin)
         classpath(Dependencies.Dagger.Hilt.plugin)
-        classpath 'com.google.android.gms:oss-licenses-plugin:0.10.2'
+        classpath(Dependencies.GmsOssLicense.gradlePlugin)
     }
 }
 

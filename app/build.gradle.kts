@@ -87,7 +87,7 @@ dependencies {
     // leak canary
     debugImplementation(Dependencies.leakCanary)
 
-    implementation("com.google.android.gms:play-services-oss-licenses:17.0.0")
+    implementation(Dependencies.GmsOssLicense.runtime)
 
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test.ext:junit:1.1.1")
