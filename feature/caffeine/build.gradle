@@ -5,6 +5,7 @@ apply from: rootProject.file("gradle/android.gradle")
 
 apply plugin: "kotlin-kapt"
 apply plugin: "androidx.navigation.safeargs.kotlin"
+apply plugin: "dagger.hilt.android.plugin"
 
 android.buildFeatures.viewBinding = true
 
@@ -14,7 +15,9 @@ dependencies {
     implementation(project(":components:setting"))
 
     implementation(Dependencies.Dagger.Hilt.runtime)
+    kapt(Dependencies.Dagger.Hilt.compiler)
     implementation(Dependencies.AndroidX.Hilt.viewModel)
+    kapt(Dependencies.AndroidX.Hilt.compiler)
 
     implementation(Dependencies.MaterialDialogs.color)
     implementation(Dependencies.MaterialDialogs.input)
