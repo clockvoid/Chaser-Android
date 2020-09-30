@@ -102,7 +102,7 @@ class CigaretteFragment : Fragment() {
                 viewModel.getSmokeOfToday()
             }.onSuccess {
                 items[NUMBER] = NumberItem(it.fold(0) { acc, smoke -> acc + smoke.number })
-                it.map { smoke -> smoke.timeStamp }.max()?.let { lastSmokedTime ->
+                it.map { smoke -> smoke.timeStamp }.maxOrNull()?.let { lastSmokedTime ->
                     items[TIME] = TimeItem(Duration.between(lastSmokedTime, ZonedDateTime.now()))
                 }
                 adapter.update(items.values.toList().filterNotNull())

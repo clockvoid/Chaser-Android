@@ -4,7 +4,6 @@ import dependencies.Dependencies
 apply from: rootProject.file("gradle/android.gradle")
 
 apply plugin: "kotlin-kapt"
-apply plugin: "dagger.hilt.android.plugin"
 
 dependencies {
     implementation(Dependencies.Kotlin.stdlib)
@@ -21,5 +20,4 @@ dependencies {
     implementation(Dependencies.Dagger.dagger)
     kapt(Dependencies.Dagger.compiler)
     implementation(Dependencies.Dagger.Hilt.runtime)
-    kapt(Dependencies.Dagger.Hilt.compiler)
 }

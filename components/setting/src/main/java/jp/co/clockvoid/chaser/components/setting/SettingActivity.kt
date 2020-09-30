@@ -70,7 +70,7 @@ class SettingActivity : AppCompatActivity() {
             )
             visibleList.map { item ->
                 requireNotNull(item)
-                item.setOnPreferenceChangeListener { preference, newValue ->
+                item.setOnPreferenceChangeListener { _, newValue ->
                     visibleList.forEach { it!!.isEnabled = true }
                     val checked = visibleList.filter { it!!.isChecked && (newValue == false && it == item).not() }
                     if (checked.size == 1 && newValue == false) checked.last()!!.isEnabled = false

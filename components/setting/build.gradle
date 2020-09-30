@@ -1,11 +1,8 @@
 
-import dependencies.Dependencies
-
 apply from: rootProject.file("gradle/android.gradle")
 
 apply plugin: "kotlin-kapt"
 apply plugin: "androidx.navigation.safeargs.kotlin"
-apply plugin: "dagger.hilt.android.plugin"
 
 android.buildFeatures.viewBinding = true
 
@@ -13,12 +10,6 @@ dependencies {
     implementation(project(":core:android"))
     implementation(project(":data:repository"))
     implementation(project(":components:license"))
-
-    implementation(Dependencies.Dagger.Hilt.runtime)
-    kapt(Dependencies.Dagger.Hilt.compiler)
-    implementation(Dependencies.AndroidX.Hilt.common)
-    implementation(Dependencies.AndroidX.Hilt.viewModel)
-    kapt(Dependencies.AndroidX.Hilt.compiler)
 
     implementation("androidx.preference:preference:1.1.1")
     implementation("androidx.preference:preference-ktx:1.1.1")
