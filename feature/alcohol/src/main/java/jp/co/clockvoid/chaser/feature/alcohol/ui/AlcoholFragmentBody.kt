@@ -1,6 +1,6 @@
 package jp.co.clockvoid.chaser.feature.alcohol.ui
 
-import androidx.compose.foundation.layout.InnerPadding
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.lazy.LazyColumnForIndexed
 import androidx.compose.material.FabPosition
 import androidx.compose.material.Scaffold
@@ -25,7 +25,7 @@ fun AlcoholFragmentBody(
     ) {
         LazyColumnForIndexed(
             items = items.value,
-            contentPadding = InnerPadding(top = 8.dp)
+            contentPadding = PaddingValues(top = 8.dp)
         ) { index, item ->
 
             AnalyticsItem(
