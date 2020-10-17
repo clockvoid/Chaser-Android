@@ -9,9 +9,7 @@ buildscript {
         google()
         jcenter()
         mavenCentral()
-        maven {
-            url "https://plugins.gradle.org/m2/"
-        }
+        maven { url "https://plugins.gradle.org/m2/" }
     }
     dependencies {
         classpath(Dependencies.GradlePlugin.android)
@@ -30,6 +28,8 @@ allprojects {
         maven { url 'https://dl.bintray.com/lisawray/maven' }
         // for inject viewmodel by dagger hilt. see https://aakira.app/blog/2020/05/dagger-hilt/
         maven { url "https://androidx.dev/snapshots/builds/6543454/artifacts/repository/" }
+        // for MPAndroidChart. see https://github.com/PhilJay/MPAndroidChart
+        maven { url "https://jitpack.io" }
     }
 }
 

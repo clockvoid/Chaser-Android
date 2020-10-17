@@ -79,6 +79,8 @@ object Dependencies {
         const val lifecycle = "com.afollestad.material-dialogs:lifecycle:$version"
     }
 
+    const val mpAndroidChart = "com.github.PhilJay:MPAndroidChart:v3.1.0"
+
     object Dagger {
         private const val version = "2.28.3"
         const val dagger = "com.google.dagger:dagger:$version"
