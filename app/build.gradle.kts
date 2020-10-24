@@ -48,12 +48,6 @@ android {
     kotlinOptions {
         jvmTarget = JavaVersion.VERSION_1_8.toString()
     }
-
-    // solution to https://issuetracker.google.com/issues/170026127
-    // There is a bug around lint tool that is bundled with AGP 4.2.0-alpha13
-    lintOptions {
-        disable("InvalidFragmentVersionForActivityResult")
-    }
 }
 
 kapt {
