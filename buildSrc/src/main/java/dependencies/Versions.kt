@@ -1,11 +1,12 @@
 package dependencies
 
-@Suppress("unused,WeakerAccess")
+@Suppress("unused")
 object Versions {
+    @SuppressWarnings("WeakerAccess")
     const val compileSdkVersion: Int = 29
     const val minSdkVersion: Int = 23
     const val targetSdkVersion: Int = compileSdkVersion
-    const val buildToolsVersion: String = "30.0.0"
+    const val buildToolsVersion: String = "30.0.2"
 
     private const val versionMajor: Int = 1
     private const val versionMinor: Int = 0
