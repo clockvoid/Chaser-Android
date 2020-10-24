@@ -32,8 +32,10 @@ jobs:
         chmod +x ./gradlew
         ./gradlew build
 
-    - name: Upload apk file
-      uses: actions/upload-artifact@v1
-      with:
-        name: apk
-        path: app/build/outputs/apk/debug/app-debug.apk
+  # Upload to Artifacts
+  # Deleted because of lack of discspace on GitHub Actions
+  # - name: Upload apk file
+  #   uses: actions/upload-artifact@v1
+  #   with:
+  #     name: apk
+  #     path: app/build/outputs/apk/debug/app-debug.apk
