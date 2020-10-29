@@ -23,9 +23,5 @@
         <activity
             android:name=".components.license.LicenseHtmlActivity"
             android:label="@string/open_source_license" />
-
-        <activity
-            android:name="com.google.android.gms.oss.licenses.OssLicensesMenuActivity"
-            android:theme="@style/Theme.Chaser.OssLicense" />
     </application>
 </manifest>
