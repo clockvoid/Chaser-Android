@@ -16,7 +16,6 @@ buildscript {
         classpath(Dependencies.Kotlin.gradlePlugin)
         classpath(Dependencies.AndroidX.Navigation.gradlePlugin)
         classpath(Dependencies.Dagger.Hilt.plugin)
-        classpath(Dependencies.GmsOssLicense.gradlePlugin)
     }
 }
 

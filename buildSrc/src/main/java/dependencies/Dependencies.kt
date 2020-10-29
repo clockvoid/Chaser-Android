@@ -3,7 +3,7 @@ package dependencies
 @Suppress("unused")
 object Dependencies {
     object GradlePlugin {
-        const val android = "com.android.tools.build:gradle:4.2.0-alpha14"
+        const val android = "com.android.tools.build:gradle:4.2.0-alpha15"
     }
 
     object Kotlin {
@@ -93,11 +93,6 @@ object Dependencies {
             const val compiler = "com.google.dagger:hilt-android-compiler:$version"
             const val plugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
         }
-    }
-
-    object GmsOssLicense {
-        const val gradlePlugin = "com.google.android.gms:oss-licenses-plugin:0.10.2"
-        const val runtime = "com.google.android.gms:play-services-oss-licenses:17.0.0"
     }
 
     object Hyperion {

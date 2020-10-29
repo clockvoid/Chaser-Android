@@ -11,7 +11,6 @@ plugins {
 
     // https://github.com/jmatsu/license-list-plugin
     id("io.github.jmatsu.license-list") version ("0.6.1")
-    id("com.google.android.gms.oss-licenses-plugin")
 }
 
 android {
@@ -86,8 +85,6 @@ dependencies {
 
     // leak canary
     debugImplementation(Dependencies.leakCanary)
-
-    implementation(Dependencies.GmsOssLicense.runtime)
 
     testImplementation("junit:junit:4.12")
     androidTestImplementation("androidx.test.ext:junit:1.1.1")
