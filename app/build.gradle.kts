@@ -10,8 +10,7 @@ plugins {
     kotlin("kapt")
 
     // https://github.com/jmatsu/license-list-plugin
-    id("io.github.jmatsu.license-list") version ("0.6.1")
-    id("com.google.android.gms.oss-licenses-plugin")
+    id("io.github.jmatsu.license-list") version ("0.7.0")
 }
 
 android {
