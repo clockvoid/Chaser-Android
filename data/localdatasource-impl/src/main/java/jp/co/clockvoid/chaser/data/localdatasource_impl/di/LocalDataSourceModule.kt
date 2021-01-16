@@ -6,7 +6,7 @@ import dagger.Binds
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
-import dagger.hilt.android.components.ApplicationComponent
+import dagger.hilt.components.SingletonComponent
 import jp.co.clockvoid.chaser.data.localdatasource.AlcoholLocalDataSource
 import jp.co.clockvoid.chaser.data.localdatasource.CaffeineLocalDataSource
 import jp.co.clockvoid.chaser.data.localdatasource.CigaretteLocalDataSource
@@ -18,7 +18,7 @@ import jp.co.clockvoid.chaser.data.localdatasource_impl.cigarette.CigaretteDatab
 import jp.co.clockvoid.chaser.data.localdatasource_impl.cigarette.CigaretteLocalDataSourceImpl
 
 @Suppress("unused")
-@InstallIn(ApplicationComponent::class)
+@InstallIn(SingletonComponent::class)
 @Module
 abstract class LocalDataSourceModule {
 
