@@ -93,11 +93,6 @@ object Dependencies {
         }
     }
 
-    object GmsOssLicense {
-        const val gradlePlugin = "com.google.android.gms:oss-licenses-plugin:0.10.2"
-        const val runtime = "com.google.android.gms:play-services-oss-licenses:17.0.0"
-    }
-
     object Hyperion {
         private const val version = "0.9.27"
         const val core = "com.willowtreeapps.hyperion:hyperion-core:$version"
