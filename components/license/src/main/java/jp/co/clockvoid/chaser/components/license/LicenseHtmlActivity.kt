@@ -26,6 +26,9 @@ internal class LicenseHtmlActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+        binding.toolbar.setNavigationOnClickListener {
+            finish()
+        }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         binding.web.loadUrl(intent.getStringExtra(EXTRA_HTML))
