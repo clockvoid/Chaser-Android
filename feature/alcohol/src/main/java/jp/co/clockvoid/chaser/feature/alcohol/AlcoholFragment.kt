@@ -4,15 +4,13 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.FrameLayout
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.Recomposer
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.ui.platform.setContent
+import androidx.compose.ui.platform.ComposeView
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
-import androidx.ui.tooling.preview.Preview
 import com.google.android.material.composethemeadapter.MdcTheme
 import dagger.hilt.android.AndroidEntryPoint
 import jp.co.clockvoid.chaser.components.setting.SettingActivity
@@ -32,9 +30,9 @@ class AlcoholFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return FrameLayout(requireContext()).apply {
-            setContent(Recomposer.current()) {
+    ): View {
+        return ComposeView(requireContext()).apply {
+            setContent {
                 MdcTheme {
                     AlcoholFragmentBody(viewModel.alcoholItem, {
                         viewLifecycleOwner.lifecycle.coroutineScope.launch {

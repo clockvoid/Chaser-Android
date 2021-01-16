@@ -12,7 +12,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import jp.co.clockvoid.chaser.R
 import jp.co.clockvoid.chaser.data.repository.PreferenceStorage
 import jp.co.clockvoid.chaser.databinding.ActivityMainBinding
-import kotlinx.android.synthetic.main.activity_main.*
 import javax.inject.Inject
 
 data class BottomNavigationBarItems(@IdRes val itemId: Int, val isVisible: Boolean)
@@ -56,7 +55,8 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
-        val navHostFragment = navHostFragment as NavHostFragment
+        val navHostFragment =
+            supportFragmentManager.findFragmentById(R.id.navHostFragment) as NavHostFragment
         val inflater = navHostFragment.navController.navInflater
         val navGraph = inflater.inflate(R.navigation.nav_graph_home).apply {
             val firstVisibleItem = menuItems.find { item -> item.isVisible }

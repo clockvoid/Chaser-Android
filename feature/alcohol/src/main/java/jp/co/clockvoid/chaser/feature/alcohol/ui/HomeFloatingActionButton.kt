@@ -1,10 +1,10 @@
 package jp.co.clockvoid.chaser.feature.alcohol.ui
 
-import androidx.compose.foundation.Icon
-import androidx.compose.foundation.Text
 import androidx.compose.foundation.layout.*
 import androidx.compose.material.FloatingActionButton
+import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.layoutId
@@ -43,11 +43,11 @@ fun HomeFloatingActionButton(onClick: () -> Unit) {
                 .defaultMinSizeConstraints(minWidth = 200.dp)
         ) {
             Icon(
-                asset = vectorResource(id = R.drawable.ic_local_bar_black_24dp),
-                tint = MaterialTheme.colors.onPrimary,
+                imageVector = vectorResource(id = R.drawable.ic_local_bar_black_24dp),
                 modifier = Modifier
                     .padding(start = 20.dp)
-                    .layoutId("icon")
+                    .layoutId("icon"),
+                tint = MaterialTheme.colors.onPrimary
             )
             Text(
                 text = "I DRANK",

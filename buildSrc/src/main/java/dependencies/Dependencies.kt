@@ -3,11 +3,11 @@ package dependencies
 @Suppress("unused")
 object Dependencies {
     object GradlePlugin {
-        const val android = "com.android.tools.build:gradle:4.2.0-alpha15"
+        const val android = "com.android.tools.build:gradle:7.0.0-alpha04"
     }
 
     object Kotlin {
-        private const val version = "1.4.0"
+        private const val version = "1.4.21"
 
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
@@ -15,7 +15,7 @@ object Dependencies {
 
     object KotlinX {
         object Coroutine {
-            private const val version = "1.3.2"
+            private const val version = "1.4.2"
 
             const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
             const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
@@ -24,7 +24,7 @@ object Dependencies {
 
     object AndroidX {
         object AppCompat {
-            private const val version = "1.1.0"
+            private const val version = "1.2.0"
 
             const val runtime = "androidx.appcompat:appcompat:$version"
         }
@@ -38,7 +38,7 @@ object Dependencies {
         }
 
         object Navigation {
-            private const val version = "2.3.0"
+            private const val version = "2.3.2"
 
             const val fragment = "androidx.navigation:navigation-fragment:$version"
             const val ui = "androidx.navigation:navigation-ui:$version"
@@ -51,16 +51,16 @@ object Dependencies {
         }
 
         object Room {
-            private const val version = "2.2.5"
+            private const val version = "2.2.6"
             const val runtime = "androidx.room:room-runtime:$version"
             const val compiler = "androidx.room:room-compiler:$version"
             const val ktx = "androidx.room:room-ktx:$version"
             const val test = "androidx.room:room-testing:$version"
         }
 
-        const val constraint = "androidx.constraintlayout:constraintlayout:1.1.3"
-        const val ktx = "androidx.core:core-ktx:1.3.1"
-        const val material = "com.google.android.material:material:1.1.0"
+        const val constraint = "androidx.constraintlayout:constraintlayout:2.0.4"
+        const val ktx = "androidx.core:core-ktx:1.3.2"
+        const val material = "com.google.android.material:material:1.2.1"
     }
 
     object Groupie {
@@ -82,13 +82,13 @@ object Dependencies {
     const val mpAndroidChart = "com.github.PhilJay:MPAndroidChart:v3.1.0"
 
     object Dagger {
-        private const val version = "2.28.3"
+        private const val version = "2.30.1"
         const val dagger = "com.google.dagger:dagger:$version"
         const val android = "com.google.dagger:dagger-android:$version"
         const val compiler = "com.google.dagger:dagger-compiler:$version"
 
         object Hilt {
-            private const val version = "2.28-alpha"
+            private const val version = "2.30-alpha"
             const val runtime = "com.google.dagger:hilt-android:$version"
             const val compiler = "com.google.dagger:hilt-android-compiler:$version"
             const val plugin = "com.google.dagger:hilt-android-gradle-plugin:$version"
