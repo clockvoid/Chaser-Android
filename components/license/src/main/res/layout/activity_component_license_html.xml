@@ -12,16 +12,14 @@
 
         <com.google.android.material.appbar.MaterialToolbar
             android:id="@+id/toolbar"
-            style="@style/Widget.MaterialComponents.Toolbar.Surface"
+            style="@style/MainToolBarStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             tools:title="OSS Licenses" />
-
     </com.google.android.material.appbar.AppBarLayout>
 
     <WebView
         android:id="@+id/web"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
-
 </LinearLayout>

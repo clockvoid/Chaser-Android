@@ -6,11 +6,11 @@ plugins {
     id("com.android.application")
     id("dagger.hilt.android.plugin")
     kotlin("android")
-    kotlin("android.extensions")
+    id("kotlin-parcelize")
     kotlin("kapt")
 
     // https://github.com/jmatsu/license-list-plugin
-    id("io.github.jmatsu.license-list") version ("0.6.1")
+    id("io.github.jmatsu.license-list") version ("0.7.0")
 }
 
 android {
