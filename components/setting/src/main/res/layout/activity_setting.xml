@@ -16,7 +16,7 @@
             android:id="@+id/toolBar"
             style="@style/MainToolBarStyle"
             android:layout_width="match_parent"
-            android:layout_height="?android:attr/actionBarSize"
+            android:layout_height="?attr/actionBarSize"
             app:title="@string/setting_title" />
     </com.google.android.material.appbar.AppBarLayout>
 
