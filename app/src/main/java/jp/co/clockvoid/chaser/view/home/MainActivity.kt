@@ -14,7 +14,11 @@ import jp.co.clockvoid.chaser.data.repository.PreferenceStorage
 import jp.co.clockvoid.chaser.databinding.ActivityMainBinding
 import javax.inject.Inject
 
-data class BottomNavigationBarItems(@IdRes val itemId: Int, val isVisible: Boolean)
+data class BottomNavigationBarItems(
+    @IdRes val itemId: Int,
+    val isVisible: Boolean,
+    val title: String
+)
 
 @AndroidEntryPoint
 class MainActivity : AppCompatActivity() {
@@ -24,9 +28,26 @@ class MainActivity : AppCompatActivity() {
     private var _binding: ActivityMainBinding? = null
     private val binding: ActivityMainBinding
         get() = _binding!!
+    private lateinit var menuItems: List<BottomNavigationBarItems>
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        menuItems  = listOf(
+            BottomNavigationBarItems(
+                R.id.cigaretteFragment,
+                preferenceStorage.isCigaretteVisible,
+                getString(R.string.cigarette)
+            ),
+            BottomNavigationBarItems(R.id.alcoholFragment,
+                preferenceStorage.isAlcoholVisible,
+                getString(R.string.alcohol)
+            ),
+            BottomNavigationBarItems(R.id.caffeineFragment,
+                preferenceStorage.isCaffeineVisible,
+                getString(R.string.caffeine)
+            )
+        )
 
         _binding = DataBindingUtil.setContentView(
             this,
@@ -36,12 +57,6 @@ class MainActivity : AppCompatActivity() {
 
     override fun onStart() {
         super.onStart()
-
-        val menuItems = listOf(
-            BottomNavigationBarItems(R.id.cigaretteFragment, preferenceStorage.isCigaretteVisible),
-            BottomNavigationBarItems(R.id.alcoholFragment, preferenceStorage.isAlcoholVisible),
-            BottomNavigationBarItems(R.id.caffeineFragment, preferenceStorage.isCaffeineVisible)
-        )
 
         binding.homeBottomNavigation.menu.clear()
         menuInflater.inflate(R.menu.home_bottom_navigation_menu, binding.homeBottomNavigation.menu)
@@ -62,7 +77,11 @@ class MainActivity : AppCompatActivity() {
             val firstVisibleItem = menuItems.find { item -> item.isVisible }
             val lastShownItem = preferenceStorage.lastShownFragment
             requireNotNull(firstVisibleItem)
-            startDestination = if (lastShownItem == -1) firstVisibleItem.itemId else lastShownItem
+            startDestination = if (lastShownItem == null) {
+                firstVisibleItem.itemId
+            } else {
+                menuItems.findLast { item -> item.title == lastShownItem }!!.itemId
+            }
         }
         navHostFragment.navController.graph = navGraph
         NavigationUI.setupWithNavController(
@@ -75,7 +94,9 @@ class MainActivity : AppCompatActivity() {
     override fun onStop() {
         super.onStop()
 
-        preferenceStorage.lastShownFragment = binding.homeBottomNavigation.selectedItemId
+        preferenceStorage.lastShownFragment = menuItems.find { item ->
+            item.itemId == binding.homeBottomNavigation.selectedItemId
+        }?.title
     }
 
     override fun onDestroy() {
