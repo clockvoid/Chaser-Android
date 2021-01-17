@@ -18,7 +18,7 @@ class PreferenceStorageImpl @Inject constructor(
     override var isAlcoholVisible by BooleanPreference(prefs, PREF_IS_ALCOHOL_VISIBLE, true)
     override var isCaffeineVisible by BooleanPreference(prefs, PREF_IS_CAFFEINE_VISIBLE, true)
     override var isCigaretteVisible by BooleanPreference(prefs, PREF_IS_CIGARETTE_VISIBLE, true)
-    override var lastShownFragment: Int by IntPreference(prefs, PREF_LAST_SHOWN_FRAGMENT, -1)
+    override var lastShownFragment: String? by StringPreference(prefs, PREF_LAST_SHOWN_FRAGMENT)
 
     companion object {
         private const val PREFS_NAME = "jp.co.clockvoid.chaser_preferences"
@@ -64,7 +64,7 @@ private class BooleanPreference(
 private class StringPreference(
     private val prefs: SharedPreferences,
     private val name: String,
-    private val defaultValue: String?
+    private val defaultValue: String? = null
 ) : ReadWriteProperty<Any, String?> {
 
     @WorkerThread
