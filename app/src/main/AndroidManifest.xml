@@ -18,7 +18,6 @@
             </intent-filter>
         </activity>
 
-        <activity android:name=".components.setting.SettingActivity" />
 
         <activity
             android:name=".components.license.LicenseHtmlActivity"
