@@ -3,5 +3,10 @@
     package="jp.co.clockvoid.chaser.components.setting">
 
     <application
-        android:theme="@style/Theme.Chaser.DayNight" />
+        android:theme="@style/Theme.Chaser.DayNight">
+
+        <activity
+            android:name=".SettingActivity"
+            android:theme="@style/Theme.Chaser.Preference" />
+    </application>
 </manifest>
