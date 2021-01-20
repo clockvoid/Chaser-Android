@@ -25,4 +25,8 @@
     </style>
 
     <style name="Theme.Chaser.DayNight" parent="Theme.Chaser.Dark" />
+
+    <style name="Theme.Chaser.Preference" parent="Theme.Chaser.Dark">
+        <item name="colorSecondary">?attr/colorPrimary</item>
+    </style>
 </resources>
