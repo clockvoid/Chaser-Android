@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Theme.Chaser.Dark" parent="Base.Theme.Chaser">
+        <!-- color -->
+        <item name="colorPrimary">@color/primaryColor</item>
+        <item name="colorPrimaryVariant">@color/primaryDarkColor</item>
+        <item name="colorSecondary">@color/secondaryColor</item>
+        <item name="colorSecondaryVariant">@color/secondaryDarkColor</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorOnSecondary">@color/white</item>
+        <item name="colorOnBackground">@color/white</item>
+        <item name="colorOnSurface">@color/white</item>
+        <item name="colorSurface">@color/gray</item>
+        <item name="android:colorBackground">@color/black</item>
+        <item name="android:statusBarColor">@color/black</item>
+        <item name="android:windowLightStatusBar">false</item>
+
+        <!-- Material Dialogs -->
+        <item name="md_color_title">?attr/colorOnBackground</item>
+        <item name="md_color_content">?attr/colorOnBackground</item>
+        <item name="md_color_button_text">?attr/colorPrimary</item>
+        <item name="md_ripple_color">?attr/colorPrimary</item>
+        <item name="md_color_widget">?attr/colorPrimary</item>
+    </style>
+
+    <style name="Theme.Chaser.DayNight" parent="Theme.Chaser.Dark" />
+</resources>
