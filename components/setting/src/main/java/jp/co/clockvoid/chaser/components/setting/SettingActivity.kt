@@ -4,9 +4,9 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.preference.CheckBoxPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.SwitchPreference
 import jp.co.clockvoid.chaser.components.license.License
 import jp.co.clockvoid.chaser.components.setting.databinding.ActivitySettingBinding
 
@@ -62,7 +62,7 @@ class SettingActivity : AppCompatActivity() {
     class SettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.chaser_preferences, rootKey)
-            val visibleList: List<CheckBoxPreference?> = listOf(
+            val visibleList: List<SwitchPreference?> = listOf(
                 findPreference("is_alcohol_visible"),
                 findPreference("is_caffeine_visible"),
                 findPreference("is_cigarette_visible")

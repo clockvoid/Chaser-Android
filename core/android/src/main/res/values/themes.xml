@@ -43,7 +43,12 @@
         <item name="md_color_widget">?attr/colorPrimary</item>
     </style>
 
-    <style name="Theme.Chaser.DayNight" parent="Theme.Chaser" />
+    <style name="Theme.Chaser.DayNight" parent="Theme.Chaser">
+    </style>
+
+    <style name="Theme.Chaser.Preference" pareng="Theme.Chaser">
+        <item name="colorSecondary">?attr/colorPrimary</item>
+    </style>
 
     <style name="Theme.Chaser.OssLicense" parent="Theme.AppCompat.Light">
         <!-- color -->
