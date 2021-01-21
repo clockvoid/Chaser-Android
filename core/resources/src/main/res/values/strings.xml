@@ -36,4 +36,7 @@
     <string name="display_alcohol">Alcoholタブを表示する</string>
     <string name="display_caffeine">Caffeineタブを表示する</string>
     <string name="display_cigarette">Cigaretteタブを表示する</string>
+
+    <!-- License Activity -->
+    <string name="copyright_c">Copyright © %1$s</string>
 </resources>

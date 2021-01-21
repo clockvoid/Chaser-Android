@@ -3,10 +3,17 @@ package jp.co.clockvoid.chaser.components.license
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.Menu
+import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.lifecycleScope
+import dagger.hilt.android.AndroidEntryPoint
 import jp.co.clockvoid.chaser.components.license.databinding.ActivityComponentLicenseHtmlBinding
+import jp.co.clockvoid.chaser.core.android.SpacingItemDecoration
+import kotlinx.coroutines.flow.collect
 
-internal class LicenseHtmlActivity : AppCompatActivity() {
+@AndroidEntryPoint
+class LicenseHtmlActivity : AppCompatActivity() {
 
     companion object {
 
@@ -20,17 +27,46 @@ internal class LicenseHtmlActivity : AppCompatActivity() {
         }
     }
 
+    private val viewModel: LicenseActivityViewModel by viewModels()
+    private val adapter: LicenseListAdapter = LicenseListAdapter()
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
         val binding = ActivityComponentLicenseHtmlBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
         binding.toolbar.setNavigationOnClickListener {
             finish()
         }
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        binding.toolbar.setOnMenuItemClickListener { item ->
+            when (item.itemId) {
+                R.id.menu_search -> {
+//                    binding.searchView.isVisible = true
+                    true
+                }
+                else -> false
+            }
+        }
 
-        binding.web.loadUrl(intent.getStringExtra(EXTRA_HTML))
+        binding.licenseListRecyclerView.also {
+            it.adapter = adapter
+            it.addItemDecoration(SpacingItemDecoration(8))
+        }
+
+        lifecycleScope.launchWhenStarted {
+            viewModel.packageLicenseList.collect {
+                adapter.submitList(it)
+            }
+        }
+
+        viewModel.getPackageLicenseList()
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.menu_search, menu)
+        return super.onCreateOptionsMenu(menu)
     }
 }
