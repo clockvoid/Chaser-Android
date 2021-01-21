@@ -7,6 +7,7 @@ import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
@@ -34,8 +35,26 @@ class LicenseActivityViewModel @ViewModelInject constructor(
     @ApplicationContext val context: Context
 ) : ViewModel() {
 
+    private var holeLicenseList: List<PackageLicense>? = null
+
     private val _packageLicenseList = MutableStateFlow<List<PackageLicense>>(emptyList())
     val packageLicenseList: StateFlow<List<PackageLicense>> = _packageLicenseList
+
+    val filterQuery: MutableStateFlow<String> = MutableStateFlow("")
+
+    init {
+
+        viewModelScope.launch {
+            filterQuery.collect { query ->
+                _packageLicenseList.value = holeLicenseList?.filter { license ->
+                    val regex = Regex(query.toLowerCase())
+                    val project = license.project.toLowerCase() ?: ""
+                    val description = license.description?.toLowerCase() ?: ""
+                    regex.containsMatchIn(project) or regex.containsMatchIn(description)
+                } ?: emptyList()
+            }
+        }
+    }
 
     private fun readLicensesJson(): String {
 
@@ -48,9 +67,11 @@ class LicenseActivityViewModel @ViewModelInject constructor(
     }
 
     fun getPackageLicenseList() {
+
         viewModelScope.launch {
             val json = readLicensesJson()
-            _packageLicenseList.value = Json.decodeFromString(json)
+            holeLicenseList = Json.decodeFromString(json)
+            _packageLicenseList.value = holeLicenseList!!
         }
     }
 }
