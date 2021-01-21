@@ -3,5 +3,10 @@
     package="jp.co.clockvoid.chaser.components.license">
 
     <application
-        android:theme="@style/Theme.Chaser.DayNight" />
+        android:theme="@style/Theme.Chaser.DayNight">
+
+        <activity
+            android:name=".LicenseHtmlActivity"
+            android:label="@string/open_source_license" />
+    </application>
 </manifest>
