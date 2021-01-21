@@ -6,7 +6,7 @@
         android:theme="@style/Theme.Chaser.DayNight">
 
         <activity
-            android:name=".LicenseHtmlActivity"
+            android:name=".LicenseListActivity"
             android:windowSoftInputMode="adjustResize"
             android:label="@string/open_source_license" />
     </application>

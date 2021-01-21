@@ -13,24 +13,19 @@ import androidx.core.view.isVisible
 import androidx.lifecycle.lifecycleScope
 import com.afollestad.materialdialogs.utils.MDUtil.textChanged
 import dagger.hilt.android.AndroidEntryPoint
-import jp.co.clockvoid.chaser.components.license.databinding.ActivityComponentLicenseHtmlBinding
+import jp.co.clockvoid.chaser.components.license.databinding.ActivityLicenseListBinding
 import jp.co.clockvoid.chaser.core.android.SpacingItemDecoration
 import kotlinx.coroutines.flow.collect
 
-
 @AndroidEntryPoint
-class LicenseHtmlActivity : AppCompatActivity() {
+class LicenseListActivity : AppCompatActivity() {
 
     companion object {
 
-        private const val EXTRA_HTML = "license.html.path"
-
-        fun newIntent(context: Context, htmlPath: String) = Intent(
+        fun newIntent(context: Context) = Intent(
             context,
-            LicenseHtmlActivity::class.java
-        ).apply {
-            putExtra(EXTRA_HTML, htmlPath)
-        }
+            LicenseListActivity::class.java
+        )
     }
 
     private val viewModel: LicenseActivityViewModel by viewModels()
@@ -39,7 +34,7 @@ class LicenseHtmlActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
-        val binding = ActivityComponentLicenseHtmlBinding.inflate(layoutInflater)
+        val binding = ActivityLicenseListBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         setSupportActionBar(binding.toolbar)
