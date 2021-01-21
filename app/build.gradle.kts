@@ -8,9 +8,6 @@ plugins {
     kotlin("android")
     id("kotlin-parcelize")
     kotlin("kapt")
-
-    // https://github.com/jmatsu/license-list-plugin
-    id("io.github.jmatsu.license-list") version "0.7.0"
     id("com.jaredsburrows.license")
 }
 
@@ -92,34 +89,12 @@ dependencies {
     androidTestImplementation("androidx.test.espresso:espresso-core:3.2.0")
 }
 
-// https://github.com/jmatsu/license-list-plugin#extension
-licenseList {
-    defaultVariant = "release"
-
-    variants {
-
-        create("release") {
-            baseDir = file("license-list")
-
-            assembly {
-                format = "yaml"
-                style = "structured"
-            }
-
-            visualization {
-                format = "json"
-            }
-        }
-    }
-}
-
 licenseReport {
     generateCsvReport = false
-    generateHtmlReport = true
-    generateJsonReport = false
+    generateHtmlReport = false
+    generateJsonReport = true
 
     // These options are ignored for Java projects
     copyHtmlReportToAssets = false
-    copyHtmlReportToAssets = true
-    copyJsonReportToAssets = false
+    copyJsonReportToAssets = true
 }
