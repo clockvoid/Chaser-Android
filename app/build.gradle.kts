@@ -10,7 +10,8 @@ plugins {
     kotlin("kapt")
 
     // https://github.com/jmatsu/license-list-plugin
-    id("io.github.jmatsu.license-list") version ("0.7.0")
+    id("io.github.jmatsu.license-list") version "0.7.0"
+    id("com.jaredsburrows.license")
 }
 
 android {
@@ -106,8 +107,19 @@ licenseList {
             }
 
             visualization {
-                format = "html"
+                format = "json"
             }
         }
     }
+}
+
+licenseReport {
+    generateCsvReport = false
+    generateHtmlReport = true
+    generateJsonReport = false
+
+    // These options are ignored for Java projects
+    copyHtmlReportToAssets = false
+    copyHtmlReportToAssets = true
+    copyJsonReportToAssets = false
 }
