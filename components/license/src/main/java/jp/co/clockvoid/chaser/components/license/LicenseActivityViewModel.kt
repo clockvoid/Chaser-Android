@@ -5,10 +5,12 @@ import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import dagger.hilt.android.qualifiers.ApplicationContext
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
 import kotlinx.coroutines.flow.StateFlow
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
@@ -56,13 +58,15 @@ class LicenseActivityViewModel @ViewModelInject constructor(
         }
     }
 
-    private fun readLicensesJson(): String {
+    private suspend fun readLicensesJson(): String {
 
-        val path = context.getString(R.string.assets_license_json_path)
-        val bufferedReader = context.assets.open(path).bufferedReader()
+        return withContext(Dispatchers.IO) {
+            val path = context.getString(R.string.assets_license_json_path)
+            val bufferedReader = context.assets.open(path).bufferedReader()
 
-        return bufferedReader.use {
-            it.readText()
+            bufferedReader.use {
+                it.readText()
+            }
         }
     }
 
