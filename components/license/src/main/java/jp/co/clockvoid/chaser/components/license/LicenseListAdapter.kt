@@ -2,6 +2,7 @@ package jp.co.clockvoid.chaser.components.license
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.core.view.isGone
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -51,15 +52,18 @@ class LicenseListAdapter
             packageNameTextView.text = item.project
             copyrightTextView.text = holder.binding.root.context.getString(
                 R.string.copyright_c,
-                item.year?.plus(" ") ?: "" +
+                (item.year?.plus(" ") ?: "") +
                 item.developers.foldIndexed("") { index, acc, item ->
                     "$acc${if (index != 0) ", " else ""}$item"
                 }
             )
+            copyrightTextView.isGone = item.developers.isEmpty()
             urlTextView.text = item.url
+            urlTextView.isGone = item.url.isNullOrEmpty()
             licenseTextView.text = item.licenses.foldIndexed("") { index, acc, item ->
                 "$acc${if (index != 0) ", " else ""}${item.license}"
             }
+            licenseTextView.isGone = item.licenses.isEmpty()
         }
     }
 }
