@@ -17,7 +17,14 @@
             style="@style/MainToolBarStyle"
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
-            tools:title="@string/oss_license_title" />
+            tools:title="@string/oss_license_title">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/searchEditText"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:visibility="gone" />
+        </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
