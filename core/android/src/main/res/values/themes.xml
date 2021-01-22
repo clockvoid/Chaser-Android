@@ -1,5 +1,7 @@
 <resources>
 
+    <attr name="textAppearanceUrl" format="reference" />
+
     <style name="Base.Theme.Chaser" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Text appearances -->
         <item name="textAppearanceHeadline4">@style/TextAppearance.Chaser.Headline4</item>
@@ -11,6 +13,7 @@
         <item name="textAppearanceBody2">@style/TextAppearance.Chaser.Body2</item>
         <item name="textAppearanceCaption">@style/TextAppearance.Chaser.Caption</item>
         <item name="textAppearanceButton">@style/TextAppearance.Chaser.Button</item>
+        <item name="textAppearanceUrl">@style/TextAppearance.Chaser.Url</item>
 
         <!-- Shape appearance -->
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Chaser.SmallComponent</item>

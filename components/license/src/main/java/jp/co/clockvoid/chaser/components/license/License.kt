@@ -10,9 +10,6 @@ object License {
     }
 
     private fun newIntent(context: Context): Intent {
-        return LicenseHtmlActivity.newIntent(
-            context,
-            context.getString(R.string.assets_license_html_path)
-        )
+        return LicenseListActivity.newIntent(context)
     }
 }

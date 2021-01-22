@@ -1,13 +1,26 @@
 
+import dependencies.Dependencies
+
+plugins {
+    id 'org.jetbrains.kotlin.plugin.serialization' version '1.4.21'
+}
+
 apply from: rootProject.file("gradle/android.gradle")
 
 apply plugin: "kotlin-kapt"
+apply plugin: "dagger.hilt.android.plugin"
 
 android.buildFeatures.viewBinding = true
 
 dependencies {
     implementation(project(":core:android"))
 
-    implementation("androidx.activity:activity:1.2.0-alpha08")
+    implementation(Dependencies.Dagger.Hilt.runtime)
+    kapt(Dependencies.Dagger.Hilt.compiler)
+    implementation(Dependencies.AndroidX.Hilt.viewModel)
+    kapt(Dependencies.AndroidX.Hilt.compiler)
+
+    implementation(Dependencies.AndroidX.AppCompat.runtime)
+    implementation(Dependencies.KotlinX.serialization)
     implementation("com.google.android.gms:play-services-oss-licenses:17.0.0")
 }
