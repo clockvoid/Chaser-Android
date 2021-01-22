@@ -23,6 +23,8 @@
                 android:id="@+id/searchEditText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:singleLine="true"
+                android:maxLines="1"
                 android:visibility="gone" />
         </com.google.android.material.appbar.MaterialToolbar>
     </com.google.android.material.appbar.AppBarLayout>
@@ -31,6 +33,7 @@
         android:id="@+id/licenseListRecyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:scrollbarStyle="insideInset"
         app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
         tools:listitem="@layout/item_license_list" />
 </LinearLayout>
