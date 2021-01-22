@@ -9,6 +9,9 @@
 
     <string name="open_source_license">オープンソースライセンス</string>
 
+    <!-- Main Activity -->
+    <string name="menu_setting">設定</string>
+
     <!-- Cigarette Fragment -->
     <string name="cigarette">Cigarette</string>
     <string name="since_last_smoked">最後に吸ってから</string>
@@ -39,4 +42,5 @@
 
     <!-- License Activity -->
     <string name="copyright_c">Copyright © %1$s</string>
+    <string name="menu_search">検索</string>
 </resources>
