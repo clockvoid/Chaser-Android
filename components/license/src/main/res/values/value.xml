@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="assets_license_html_path" translatable="false">file:///android_asset/license-list.html</string>
+    <string name="assets_license_html_path" translatable="false">file:///android_asset/open_source_licenses.html</string>
+    <string name="assets_license_json_path" translatable="false">open_source_licenses.json</string>
 
     <string name="screen_license">オープンソースライセンス</string>
 </resources>

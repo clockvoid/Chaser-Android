@@ -2,8 +2,10 @@ package dependencies
 
 @Suppress("unused")
 object Dependencies {
+
     object GradlePlugin {
         const val android = "com.android.tools.build:gradle:7.0.0-alpha04"
+        const val licenseReport = "com.jaredsburrows:gradle-license-plugin:0.8.90"
     }
 
     object Kotlin {
@@ -20,6 +22,8 @@ object Dependencies {
             const val core = "org.jetbrains.kotlinx:kotlinx-coroutines-core:$version"
             const val android = "org.jetbrains.kotlinx:kotlinx-coroutines-android:$version"
         }
+
+        const val serialization = "org.jetbrains.kotlinx:kotlinx-serialization-json:1.0.1"
     }
 
     object AndroidX {

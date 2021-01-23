@@ -1,6 +1,8 @@
 <resources>
 
-    <style name="Base.Theme.Chaser" parent="Theme.MaterialComponents.Light.NoActionBar">
+    <attr name="textAppearanceUrl" format="reference" />
+
+    <style name="Base.Theme.Chaser" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Text appearances -->
         <item name="textAppearanceHeadline4">@style/TextAppearance.Chaser.Headline4</item>
         <item name="textAppearanceHeadline5">@style/TextAppearance.Chaser.Headline5</item>
@@ -11,6 +13,7 @@
         <item name="textAppearanceBody2">@style/TextAppearance.Chaser.Body2</item>
         <item name="textAppearanceCaption">@style/TextAppearance.Chaser.Caption</item>
         <item name="textAppearanceButton">@style/TextAppearance.Chaser.Button</item>
+        <item name="textAppearanceUrl">@style/TextAppearance.Chaser.Url</item>
 
         <!-- Shape appearance -->
         <item name="shapeAppearanceSmallComponent">@style/ShapeAppearance.Chaser.SmallComponent</item>
@@ -31,6 +34,7 @@
         <item name="colorOnSecondary">@color/white</item>
         <item name="colorOnBackground">@color/black</item>
         <item name="colorOnSurface">@color/black</item>
+        <item name="colorSurface">@color/white</item>
         <item name="android:colorBackground">@color/white</item>
         <item name="android:statusBarColor">@color/white</item>
         <item name="android:windowLightStatusBar">true</item>
@@ -45,14 +49,7 @@
 
     <style name="Theme.Chaser.DayNight" parent="Theme.Chaser" />
 
-    <style name="Theme.Chaser.OssLicense" parent="Theme.AppCompat.Light">
-        <!-- color -->
-        <item name="android:textColorPrimary">@color/black</item>
-        <item name="colorPrimary">@color/white</item>
-        <item name="colorOnPrimary">@color/black</item>
-        <item name="colorOnBackground">@color/black</item>
-        <item name="android:colorBackground">@color/white</item>
-        <item name="android:statusBarColor">@color/white</item>
-        <item name="android:windowLightStatusBar">true</item>
+    <style name="Theme.Chaser.Preference" pareng="Theme.Chaser">
+        <item name="colorSecondary">?attr/colorPrimary</item>
     </style>
 </resources>

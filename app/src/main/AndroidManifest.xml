@@ -17,11 +17,5 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
-        <activity android:name=".components.setting.SettingActivity" />
-
-        <activity
-            android:name=".components.license.LicenseHtmlActivity"
-            android:label="@string/open_source_license" />
     </application>
 </manifest>

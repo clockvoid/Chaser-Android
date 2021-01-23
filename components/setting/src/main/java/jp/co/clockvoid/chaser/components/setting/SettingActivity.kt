@@ -3,12 +3,15 @@ package jp.co.clockvoid.chaser.components.setting
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
+import android.util.TypedValue
+import androidx.annotation.ColorInt
 import androidx.appcompat.app.AppCompatActivity
-import androidx.preference.CheckBoxPreference
 import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
+import androidx.preference.SwitchPreference
 import jp.co.clockvoid.chaser.components.license.License
 import jp.co.clockvoid.chaser.components.setting.databinding.ActivitySettingBinding
+
 
 /**
  * SettingActivity
@@ -62,14 +65,18 @@ class SettingActivity : AppCompatActivity() {
     class SettingsFragment : PreferenceFragmentCompat() {
         override fun onCreatePreferences(savedInstanceState: Bundle?, rootKey: String?) {
             setPreferencesFromResource(R.xml.chaser_preferences, rootKey)
-            val visibleList: List<CheckBoxPreference?> = listOf(
+            val visibleList: List<SwitchPreference?> = listOf(
                 findPreference("is_alcohol_visible"),
                 findPreference("is_caffeine_visible"),
                 findPreference("is_cigarette_visible")
-
             )
             visibleList.map { item ->
                 requireNotNull(item)
+                val typedValue = TypedValue()
+                val theme = requireContext().theme
+                theme.resolveAttribute(R.attr.colorOnBackground, typedValue, true)
+                @ColorInt val color = typedValue.data
+                item.icon.setTint(color)
                 item.setOnPreferenceChangeListener { _, newValue ->
                     visibleList.forEach { it!!.isEnabled = true }
                     val checked = visibleList.filter { it!!.isChecked && (newValue == false && it == item).not() }

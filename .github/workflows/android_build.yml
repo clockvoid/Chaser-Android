@@ -30,7 +30,7 @@ jobs:
     - name: Build with Gradle
       run: |
         chmod +x ./gradlew
-        ./gradlew build
+        ./gradlew :app:lintDebug
 
   # Upload to Artifacts
   # Deleted because of lack of discspace on GitHub Actions

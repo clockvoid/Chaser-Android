@@ -3,5 +3,11 @@
     package="jp.co.clockvoid.chaser.components.license">
 
     <application
-        android:theme="@style/Theme.Chaser.DayNight" />
+        android:theme="@style/Theme.Chaser.DayNight">
+
+        <activity
+            android:name=".LicenseListActivity"
+            android:windowSoftInputMode="adjustResize"
+            android:label="@string/open_source_license" />
+    </application>
 </manifest>
