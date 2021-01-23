@@ -1,5 +1,9 @@
 package jp.co.clockvoid.chaser.components.license
 
+import android.os.Build
+import android.text.Html
+import android.text.Spanned
+import android.text.method.LinkMovementMethod
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.core.view.isGone
@@ -60,10 +64,21 @@ class LicenseListAdapter
             copyrightTextView.isGone = item.developers.isEmpty()
             urlTextView.text = item.url
             urlTextView.isGone = item.url.isNullOrEmpty()
-            licenseTextView.text = item.licenses.foldIndexed("") { index, acc, item ->
-                "$acc${if (index != 0) ", " else ""}${item.license}"
-            }
+            licenseTextView.text = fromHtml(item.licenses.foldIndexed("Under ") { index, acc, item ->
+                "$acc${if (index != 0) ", " else ""}<a href=\"${item.license_url}\">${item.license}</a>"
+            })
+            licenseTextView.movementMethod = LinkMovementMethod.getInstance()
             licenseTextView.isGone = item.licenses.isEmpty()
+        }
+    }
+
+    private fun fromHtml(html: String): Spanned {
+
+        return if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
+            Html.fromHtml(html, Html.FROM_HTML_MODE_LEGACY)
+        } else {
+            @Suppress("DEPRECATION")
+            Html.fromHtml(html)
         }
     }
 }
