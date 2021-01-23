@@ -31,6 +31,7 @@ class CigaretteFragment : Fragment() {
     private val binding: FragmentCigaretteBinding by dataBinding(R.layout.fragment_cigarette)
     private val adapter = GroupAdapter<GroupieViewHolder>()
     private val items = mutableMapOf<Int, BindableItem<out ViewBinding>?>(
+        CHART to ChartContainerItem(),
         TIME to null,
         NUMBER to null
     )
@@ -39,7 +40,7 @@ class CigaretteFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         return binding.root
     }
 
@@ -118,7 +119,8 @@ class CigaretteFragment : Fragment() {
     }
 
     companion object {
-        private const val TIME = 0
-        private const val NUMBER = 1
+        private const val CHART = 0
+        private const val TIME = 1
+        private const val NUMBER = 2
     }
 }
