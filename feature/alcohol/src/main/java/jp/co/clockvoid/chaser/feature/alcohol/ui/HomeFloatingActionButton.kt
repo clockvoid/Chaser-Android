@@ -8,6 +8,7 @@ import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.layoutId
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import jp.co.clockvoid.chaser.feature.alcohol.R
@@ -43,7 +44,8 @@ fun HomeFloatingActionButton(onClick: () -> Unit) {
                 .defaultMinSizeConstraints(minWidth = 200.dp)
         ) {
             Icon(
-                imageVector = vectorResource(id = R.drawable.ic_local_bar_black_24dp),
+                painter = painterResource(id = R.drawable.ic_local_bar_black_24dp),
+                contentDescription = null,
                 modifier = Modifier
                     .padding(start = 20.dp)
                     .layoutId("icon"),

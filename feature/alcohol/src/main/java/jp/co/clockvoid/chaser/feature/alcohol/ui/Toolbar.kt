@@ -10,8 +10,8 @@ import androidx.compose.material.TopAppBar
 import androidx.compose.material.ripple.rememberRipple
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
-import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import jp.co.clockvoid.chaser.feature.alcohol.R
@@ -23,14 +23,13 @@ fun Toolbar(onClickActionIcon: () -> Unit) {
         backgroundColor = (MaterialTheme.colors).background,
         actions = {
             Icon(
-                imageVector = vectorResource(R.drawable.ic_baseline_settings_24),
+                painter = painterResource(R.drawable.ic_baseline_settings_24),
+                contentDescription = null,
                 tint = MaterialTheme.colors.onBackground,
                 modifier = Modifier
                     .padding(end = 8.dp, start = 8.dp)
                     .fillMaxHeight()
-                    .clickable(
-                        indication = rememberRipple(bounded = false, radius = 20.dp)
-                    ) {
+                    .clickable {
                         onClickActionIcon()
                     }
             )

@@ -1,12 +1,18 @@
 package jp.co.clockvoid.chaser.feature.alcohol.ui
 
 import androidx.compose.foundation.Image
-import androidx.compose.foundation.Text
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.ConstraintLayout
+import androidx.compose.foundation.layout.ConstraintSet
+import androidx.compose.foundation.layout.Dimension
+import androidx.compose.foundation.layout.aspectRatio
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.Card
+import androidx.compose.material.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.layoutId
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
@@ -62,11 +68,14 @@ fun AnalyticsItem(title: String, body: String, sentimentLevel: Int, isLast: Bool
                     .layoutId("bodyTextView"),
             )
             Image(
-                vectorResource(id = when (sentimentLevel) {
-                    0 -> R.drawable.ic_sentiment_very_satisfied_black_24dp
-                    1 -> R.drawable.ic_sentiment_satisfied_black_24dp
-                    else -> R.drawable.ic_sentiment_very_dissatisfied_black_24dp
-                }),
+                painterResource(
+                    id = when (sentimentLevel) {
+                        0 -> R.drawable.ic_sentiment_very_satisfied_black_24dp
+                        1 -> R.drawable.ic_sentiment_satisfied_black_24dp
+                        else -> R.drawable.ic_sentiment_very_dissatisfied_black_24dp
+                    },
+                ),
+                contentDescription = null,
                 modifier = Modifier
                     .aspectRatio(1f)
                     .layoutId("sentimentImageView")
