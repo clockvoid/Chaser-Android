@@ -1,6 +1,8 @@
 package jp.co.clockvoid.chaser.feature.alcohol.ui
 
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.defaultMinSizeConstraints
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.FloatingActionButton
 import androidx.compose.material.Icon
 import androidx.compose.material.MaterialTheme
@@ -9,12 +11,14 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.layout.layoutId
 import androidx.compose.ui.res.painterResource
-import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
+import androidx.constraintlayout.compose.ConstraintLayout
+import androidx.constraintlayout.compose.ConstraintSet
 import jp.co.clockvoid.chaser.feature.alcohol.R
 
 @Composable
 fun HomeFloatingActionButton(onClick: () -> Unit) {
+
     FloatingActionButton(
         onClick = { onClick() },
         backgroundColor = MaterialTheme.colors.primary,
@@ -22,6 +26,7 @@ fun HomeFloatingActionButton(onClick: () -> Unit) {
         modifier = Modifier
             .height(48.dp)
     ) {
+
         ConstraintLayout(
             constraintSet = ConstraintSet {
 
@@ -33,6 +38,7 @@ fun HomeFloatingActionButton(onClick: () -> Unit) {
                     start.linkTo(parent.start)
                     bottom.linkTo(parent.bottom)
                 }
+
                 constrain(text) {
                     top.linkTo(parent.top)
                     start.linkTo(icon.end)
