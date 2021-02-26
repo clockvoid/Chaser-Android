@@ -75,7 +75,7 @@ object Dependencies {
 
         object Compose {
 
-            private const val version = "1.0.0-alpha12"
+            private const val version = "1.0.0-beta01"
 
             const val animation = "androidx.compose.animation:animation:$version"
 

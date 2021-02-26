@@ -1,6 +1,6 @@
 package jp.co.clockvoid.chaser.feature.alcohol.ui
 
-import androidx.compose.foundation.layout.defaultMinSizeConstraints
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.FloatingActionButton
@@ -47,7 +47,7 @@ fun HomeFloatingActionButton(onClick: () -> Unit) {
                 }
             },
             modifier = Modifier
-                .defaultMinSizeConstraints(minWidth = 200.dp)
+                .defaultMinSize(minWidth = 200.dp)
         ) {
             Icon(
                 painter = painterResource(id = R.drawable.ic_local_bar_black_24dp),
