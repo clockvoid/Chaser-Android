@@ -120,7 +120,7 @@ object Dependencies {
 
     object Groupie {
 
-        private const val version = "2.8.0"
+        private const val version = "2.9.0"
 
         const val runtime = "com.xwray:groupie:$version"
         const val ktx = "com.xwray:groupie-kotlin-android-extensions:$version"
