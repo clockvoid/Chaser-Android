@@ -157,7 +157,7 @@ object Dependencies {
 
     object Hyperion {
 
-        private const val version = "0.9.27"
+        private const val version = "0.9.31"
 
         const val core = "com.willowtreeapps.hyperion:hyperion-core:$version"
         const val attr = "com.willowtreeapps.hyperion:hyperion-attr:$version"
