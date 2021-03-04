@@ -19,7 +19,7 @@ dependencies {
     // android
     api(Dependencies.AndroidX.AppCompat.runtime)
     api(Dependencies.AndroidX.ktx)
-    api(Dependencies.AndroidX.constraint)
+    api(Dependencies.AndroidX.ConstraintLayout.runtime)
 
     // dagger
     api(Dependencies.Dagger.dagger)
