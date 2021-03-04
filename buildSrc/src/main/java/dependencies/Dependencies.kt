@@ -10,8 +10,10 @@ object Dependencies {
     }
 
     object Kotlin {
+        // see: https://kotlinlang.org/docs/releases.html#release-details
 
-        private const val version = "1.4.30"
+        @Suppress("unused")
+        const val version = "1.4.30"
 
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
@@ -31,6 +33,7 @@ object Dependencies {
     }
 
     object AndroidX {
+        // see: https://developer.android.com/jetpack/androidx/versions/all-channel
 
         object AppCompat {
 
@@ -75,7 +78,7 @@ object Dependencies {
 
         object Compose {
 
-            private const val version = "1.0.0-beta01"
+            const val version = "1.0.0-beta01"
 
             const val animation = "androidx.compose.animation:animation:$version"
 
