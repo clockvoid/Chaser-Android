@@ -41,7 +41,7 @@ object Dependencies {
 
         object Hilt {
 
-            private const val version = "1.0.0-alpha02"
+            private const val version = "1.0.0-alpha03"
 
             const val common = "androidx.hilt:hilt-common:$version"
             const val viewModel = "androidx.hilt:hilt-lifecycle-viewmodel:$version"
@@ -108,7 +108,7 @@ object Dependencies {
         object ConstraintLayout {
 
             const val runtime = "androidx.constraintlayout:constraintlayout:2.0.4"
-            const val compose = "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha02"
+            const val compose = "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha03"
         }
 
         const val ktx = "androidx.core:core-ktx:1.3.2"
@@ -136,7 +136,7 @@ object Dependencies {
 
     object Dagger {
 
-        private const val version = "2.30.1"
+        private const val version = "2.33"
 
         const val dagger = "com.google.dagger:dagger:$version"
         const val android = "com.google.dagger:dagger-android:$version"
@@ -144,7 +144,7 @@ object Dependencies {
 
         object Hilt {
 
-            private const val version = "2.30-alpha"
+            private const val version = "2.33-beta"
 
             const val runtime = "com.google.dagger:hilt-android:$version"
             const val compiler = "com.google.dagger:hilt-android-compiler:$version"
