@@ -173,6 +173,6 @@ object Dependencies {
     }
 
     const val threeTen = "com.jakewharton.threetenabp:threetenabp:1.3.0"
-    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.4"
+    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:2.6"
     const val timber = "com.jakewharton.timber:timber:4.7.1"
 }
