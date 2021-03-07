@@ -1,7 +1,7 @@
 package jp.co.clockvoid.chaser.feature.caffeine
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import jp.co.clockvoid.chaser.core.model.Boost
 import jp.co.clockvoid.chaser.core.model.BoostType
 import jp.co.clockvoid.chaser.data.repository.CaffeineRepository
@@ -9,8 +9,10 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.threeten.bp.LocalDate
 import org.threeten.bp.ZonedDateTime
+import javax.inject.Inject
 
-class CaffeineViewModel @ViewModelInject constructor(
+@HiltViewModel
+class CaffeineViewModel @Inject constructor(
     private val repository: CaffeineRepository
 ): ViewModel() {
 

@@ -3,10 +3,9 @@ package jp.co.clockvoid.chaser.feature.alcohol
 import android.content.Context
 import androidx.compose.runtime.MutableState
 import androidx.compose.runtime.mutableStateOf
-import androidx.hilt.Assisted
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.SavedStateHandle
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import jp.co.clockvoid.chaser.data.repository.AlcoholRepository
 import jp.co.clockvoid.chaser.feature.alcohol.model.AlcoholItem
@@ -14,11 +13,13 @@ import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.threeten.bp.LocalDate
 import org.threeten.bp.ZonedDateTime
+import javax.inject.Inject
 
-class AlcoholViewModel @ViewModelInject constructor(
+@HiltViewModel
+class AlcoholViewModel @Inject constructor(
     private val repository: AlcoholRepository,
     @ApplicationContext private val  context: Context,
-    @Assisted private val savedStateHandle: SavedStateHandle
+    private val savedStateHandle: SavedStateHandle
 ) : ViewModel() {
 
     val alcoholItem: MutableState<List<AlcoholItem>> = mutableStateOf(emptyList())
