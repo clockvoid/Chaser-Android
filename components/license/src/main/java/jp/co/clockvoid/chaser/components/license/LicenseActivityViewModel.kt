@@ -1,9 +1,9 @@
 package jp.co.clockvoid.chaser.components.license
 
 import android.content.Context
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import dagger.hilt.android.lifecycle.HiltViewModel
 import dagger.hilt.android.qualifiers.ApplicationContext
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.flow.MutableStateFlow
@@ -14,6 +14,7 @@ import kotlinx.coroutines.withContext
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
+import javax.inject.Inject
 
 @Serializable
 data class PackageLicense(
@@ -33,7 +34,8 @@ data class OssLicense(
     val license_url: String
 )
 
-class LicenseActivityViewModel @ViewModelInject constructor(
+@HiltViewModel
+class LicenseActivityViewModel @Inject constructor(
     @ApplicationContext val context: Context
 ) : ViewModel() {
 

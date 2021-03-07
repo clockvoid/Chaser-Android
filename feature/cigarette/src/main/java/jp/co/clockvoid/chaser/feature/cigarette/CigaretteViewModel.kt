@@ -1,15 +1,17 @@
 package jp.co.clockvoid.chaser.feature.cigarette
 
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.ViewModel
+import dagger.hilt.android.lifecycle.HiltViewModel
 import jp.co.clockvoid.chaser.core.model.Smoke
 import jp.co.clockvoid.chaser.data.repository.CigaretteRepository
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.withContext
 import org.threeten.bp.LocalDate
 import org.threeten.bp.ZonedDateTime
+import javax.inject.Inject
 
-class CigaretteViewModel @ViewModelInject constructor(
+@HiltViewModel
+class CigaretteViewModel @Inject constructor(
     private val repository: CigaretteRepository
 ) : ViewModel() {
 
