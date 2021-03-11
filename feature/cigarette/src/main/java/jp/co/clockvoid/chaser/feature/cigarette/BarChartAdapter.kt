@@ -3,6 +3,7 @@ package jp.co.clockvoid.chaser.feature.cigarette
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.github.mikephil.charting.components.XAxis
 import com.github.mikephil.charting.data.BarData
 import com.github.mikephil.charting.data.BarDataSet
 import com.github.mikephil.charting.data.BarEntry
@@ -38,7 +39,10 @@ class BarChartAdapter(
             isDoubleTapToZoomEnabled = false
             setPinchZoom(false)
             xAxis.apply {
+                setPosition(XAxis.XAxisPosition.BOTTOM)
                 setTouchEnabled(false)
+                contentDescription = null
+                description = null
             }
             axisRight.apply {
                 setTouchEnabled(false)

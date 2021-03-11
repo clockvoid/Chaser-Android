@@ -24,8 +24,8 @@ class SpacingItemDecoration(
             if (parent.getChildAdapterPosition(view) == 0) {
                 top = spacingPixel
             }
-            left =  spacingPixel
-            right = spacingPixel
+//            left =  spacingPixel
+//            right = spacingPixel
             bottom = spacingPixel
         }
     }
