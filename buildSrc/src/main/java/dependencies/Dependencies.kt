@@ -5,7 +5,7 @@ object Dependencies {
 
     object GradlePlugin {
 
-        const val android = "com.android.tools.build:gradle:7.0.0-alpha09"
+        const val android = "com.android.tools.build:gradle:7.0.0-alpha12"
         const val licenseReport = "com.jaredsburrows:gradle-license-plugin:0.8.90"
     }
 
