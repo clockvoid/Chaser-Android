@@ -13,7 +13,7 @@ object Dependencies {
         // see: https://kotlinlang.org/docs/releases.html#release-details
 
         @Suppress("unused")
-        const val version = "1.4.30"
+        const val version = "1.4.31"
 
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
