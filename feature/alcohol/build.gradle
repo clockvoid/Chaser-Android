@@ -9,7 +9,6 @@ apply plugin: "dagger.hilt.android.plugin"
 
 android {
     composeOptions {
-        kotlinCompilerVersion = Dependencies.Kotlin.version
         kotlinCompilerExtensionVersion = Dependencies.AndroidX.Compose.version
     }
 

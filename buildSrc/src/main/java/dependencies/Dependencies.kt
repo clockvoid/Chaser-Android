@@ -5,7 +5,7 @@ object Dependencies {
 
     object GradlePlugin {
 
-        const val android = "com.android.tools.build:gradle:7.0.0-alpha09"
+        const val android = "com.android.tools.build:gradle:7.0.0-alpha12"
         const val licenseReport = "com.jaredsburrows:gradle-license-plugin:0.8.90"
     }
 
@@ -13,7 +13,7 @@ object Dependencies {
         // see: https://kotlinlang.org/docs/releases.html#release-details
 
         @Suppress("unused")
-        const val version = "1.4.30"
+        const val version = "1.4.31"
 
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
@@ -78,7 +78,7 @@ object Dependencies {
 
         object Compose {
 
-            const val version = "1.0.0-beta01"
+            const val version = "1.0.0-beta02"
 
             const val animation = "androidx.compose.animation:animation:$version"
 
