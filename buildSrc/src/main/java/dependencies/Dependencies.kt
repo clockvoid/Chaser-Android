@@ -13,7 +13,7 @@ object Dependencies {
         // see: https://kotlinlang.org/docs/releases.html#release-details
 
         @Suppress("unused")
-        const val version = "1.4.31"
+        const val version = "1.4.32"
 
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
@@ -76,7 +76,7 @@ object Dependencies {
 
         object Compose {
 
-            const val version = "1.0.0-beta02"
+            const val version = "1.0.0-beta06"
 
             const val animation = "androidx.compose.animation:animation:$version"
 
@@ -109,7 +109,7 @@ object Dependencies {
         object ConstraintLayout {
 
             const val runtime = "androidx.constraintlayout:constraintlayout:2.0.4"
-            const val compose = "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha03"
+            const val compose = "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha06"
         }
 
         const val ktx = "androidx.core:core-ktx:1.3.2"
