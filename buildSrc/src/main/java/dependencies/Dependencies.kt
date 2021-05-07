@@ -51,7 +51,7 @@ object Dependencies {
 
         object Navigation {
 
-            private const val version = "2.3.3"
+            private const val version = "2.3.5"
 
             const val fragment = "androidx.navigation:navigation-fragment:$version"
             const val ui = "androidx.navigation:navigation-ui:$version"
