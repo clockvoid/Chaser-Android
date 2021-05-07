@@ -16,8 +16,6 @@ dependencies {
 
     implementation(Dependencies.Dagger.Hilt.runtime)
     kapt(Dependencies.Dagger.Hilt.compiler)
-    implementation(Dependencies.AndroidX.Hilt.viewModel)
-    kapt(Dependencies.AndroidX.Hilt.compiler)
 
     implementation(Dependencies.MaterialDialogs.color)
     implementation(Dependencies.MaterialDialogs.input)

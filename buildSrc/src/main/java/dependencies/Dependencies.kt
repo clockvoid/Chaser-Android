@@ -13,7 +13,7 @@ object Dependencies {
         // see: https://kotlinlang.org/docs/releases.html#release-details
 
         @Suppress("unused")
-        const val version = "1.4.31"
+        const val version = "1.4.32"
 
         const val stdlib = "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$version"
         const val gradlePlugin = "org.jetbrains.kotlin:kotlin-gradle-plugin:$version"
@@ -44,16 +44,14 @@ object Dependencies {
 
         object Hilt {
 
-            private const val version = "1.0.0-alpha03"
+            private const val version = "1.0.0"
 
-            const val common = "androidx.hilt:hilt-common:$version"
-            const val viewModel = "androidx.hilt:hilt-lifecycle-viewmodel:$version"
-            const val compiler = "androidx.hilt:hilt-compiler:$version"
+            const val common = "androidx.hilt:hilt:$version"
         }
 
         object Navigation {
 
-            private const val version = "2.3.3"
+            private const val version = "2.3.5"
 
             const val fragment = "androidx.navigation:navigation-fragment:$version"
             const val ui = "androidx.navigation:navigation-ui:$version"
@@ -68,7 +66,7 @@ object Dependencies {
 
         object Room {
 
-            private const val version = "2.2.6"
+            private const val version = "2.3.0"
 
             const val runtime = "androidx.room:room-runtime:$version"
             const val compiler = "androidx.room:room-compiler:$version"
@@ -78,7 +76,7 @@ object Dependencies {
 
         object Compose {
 
-            const val version = "1.0.0-beta02"
+            const val version = "1.0.0-beta06"
 
             const val animation = "androidx.compose.animation:animation:$version"
 
@@ -111,7 +109,7 @@ object Dependencies {
         object ConstraintLayout {
 
             const val runtime = "androidx.constraintlayout:constraintlayout:2.0.4"
-            const val compose = "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha03"
+            const val compose = "androidx.constraintlayout:constraintlayout-compose:1.0.0-alpha06"
         }
 
         const val ktx = "androidx.core:core-ktx:1.3.2"
@@ -139,7 +137,7 @@ object Dependencies {
 
     object Dagger {
 
-        private const val version = "2.33"
+        private const val version = "2.35.1"
 
         const val dagger = "com.google.dagger:dagger:$version"
         const val android = "com.google.dagger:dagger-android:$version"
@@ -147,7 +145,7 @@ object Dependencies {
 
         object Hilt {
 
-            private const val version = "2.33-beta"
+            private const val version = "2.35.1"
 
             const val runtime = "com.google.dagger:hilt-android:$version"
             const val compiler = "com.google.dagger:hilt-android-compiler:$version"
