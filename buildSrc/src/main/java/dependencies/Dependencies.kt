@@ -44,11 +44,9 @@ object Dependencies {
 
         object Hilt {
 
-            private const val version = "1.0.0-alpha03"
+            private const val version = "1.0.0"
 
-            const val common = "androidx.hilt:hilt-common:$version"
-            const val viewModel = "androidx.hilt:hilt-lifecycle-viewmodel:$version"
-            const val compiler = "androidx.hilt:hilt-compiler:$version"
+            const val common = "androidx.hilt:hilt:$version"
         }
 
         object Navigation {
@@ -139,7 +137,7 @@ object Dependencies {
 
     object Dagger {
 
-        private const val version = "2.33"
+        private const val version = "2.35.1"
 
         const val dagger = "com.google.dagger:dagger:$version"
         const val android = "com.google.dagger:dagger-android:$version"
@@ -147,7 +145,7 @@ object Dependencies {
 
         object Hilt {
 
-            private const val version = "2.33-beta"
+            private const val version = "2.35.1"
 
             const val runtime = "com.google.dagger:hilt-android:$version"
             const val compiler = "com.google.dagger:hilt-android-compiler:$version"
