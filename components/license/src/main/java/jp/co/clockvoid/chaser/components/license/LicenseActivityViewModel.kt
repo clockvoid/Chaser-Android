@@ -34,6 +34,7 @@ data class OssLicense(
     val license_url: String
 )
 
+@ExperimentalStdlibApi // TODO: This is for String#lowercase(). Delete when kotlin version is 1.5.0
 @HiltViewModel
 class LicenseActivityViewModel @Inject constructor(
     @ApplicationContext val context: Context
@@ -51,9 +52,9 @@ class LicenseActivityViewModel @Inject constructor(
         viewModelScope.launch {
             filterQuery.collect { query ->
                 _packageLicenseList.value = holeLicenseList?.filter { license ->
-                    val regex = Regex(query.toLowerCase())
-                    val project = license.project.toLowerCase() ?: ""
-                    val description = license.description?.toLowerCase() ?: ""
+                    val regex = Regex(query.lowercase())
+                    val project = license.project.lowercase()
+                    val description = license.description?.lowercase() ?: ""
                     regex.containsMatchIn(project) or regex.containsMatchIn(description)
                 } ?: emptyList()
             }
