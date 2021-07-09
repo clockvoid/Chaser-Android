@@ -5,7 +5,7 @@ object Dependencies {
 
     object GradlePlugin {
 
-        const val android = "com.android.tools.build:gradle:7.0.0-alpha15"
+        const val android = "com.android.tools.build:gradle:7.0.0-beta05"
         const val licenseReport = "com.jaredsburrows:gradle-license-plugin:0.8.90"
     }
 
@@ -137,7 +137,7 @@ object Dependencies {
 
     object Dagger {
 
-        private const val version = "2.35.1"
+        private const val version = "2.37"
 
         const val dagger = "com.google.dagger:dagger:$version"
         const val android = "com.google.dagger:dagger-android:$version"
@@ -145,7 +145,7 @@ object Dependencies {
 
         object Hilt {
 
-            private const val version = "2.35.1"
+            private const val version = "2.37"
 
             const val runtime = "com.google.dagger:hilt-android:$version"
             const val compiler = "com.google.dagger:hilt-android-compiler:$version"
